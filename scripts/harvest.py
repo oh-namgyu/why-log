@@ -116,6 +116,15 @@ def _pathspec(hide: Sequence[str], extra: Set[str]) -> List[str]:
     return ["."] + [f":(exclude){g}" for g in hide] + [f":(exclude,literal){p}" for p in sorted(extra)]
 
 
+def pack_pathspec(pack: Dict) -> List[str]:
+    """The pathspec that re-reads a commit with the pack's hidden paths still excluded."""
+    return _pathspec(pack.get("hidden") or [], set(pack.get("hidden_renamed") or []))
+
+
+def pack_hides(pack: Dict, path: str) -> bool:
+    return _is_hidden(path, pack.get("hidden") or [], set(pack.get("hidden_renamed") or []))
+
+
 def _docs(repo: str, sha: str, hide: Sequence[str], extra: Set[str]) -> List[Dict]:
     tracked = git(repo, "-c", "core.quotePath=false", "ls-tree", "-r", "--name-only", sha).splitlines()
     docs = []

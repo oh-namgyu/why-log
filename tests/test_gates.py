@@ -9,8 +9,8 @@ import unittest
 from typing import Dict, List, Optional
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "scripts"))
-sys.path.insert(0, os.path.join(ROOT, "tests", "fixtures"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import helpers  # noqa: E402,F401  (shared sys.path + git isolation)
 
 import make_fixture  # noqa: E402
 import schema  # noqa: E402
@@ -66,6 +66,16 @@ class ExistenceGateTest(FixtureCase):
         self.assertTrue(ev["exists"])
         self.assertEqual(len(ev["ref"]), 40)
         self.assertTrue(ev["ref"].startswith(self.sha["F11"]))
+
+    def test_quote_from_a_hidden_file_does_not_exist(self) -> None:
+        quote = "gateway returns 503 under load"
+        ev = {"kind": "commit", "ref": self.sha["F06"], "quote": quote}
+        self.assertTrue(self.gate(ev)["exists"])  # control: visible when nothing is hidden
+        hidden = dict(self.pack, hidden=["app/pay.py"])
+        self.assertFalse(self.gate(ev, hidden)["exists"])
+        file_ev = self.gate({"kind": "file", "ref": f"app/pay.py@{self.sha['F06']}", "quote": quote}, hidden)
+        self.assertFalse(file_ev["exists"])
+        self.assertEqual(file_ev["rejected"], "path is hidden for this run")
 
     def test_fake_sha(self) -> None:
         self.assertFalse(self.gate({"kind": "commit", "ref": "deadbeefdeadbeef", "quote": TRAP})["exists"])

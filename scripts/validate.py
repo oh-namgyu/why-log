@@ -7,6 +7,7 @@ import re
 from typing import Dict, List, Optional, Tuple
 
 import schema
+import harvest
 from common import git, git_ok, normalize_ws
 
 MIN_QUOTE = 10
@@ -38,19 +39,22 @@ def _strip_diff_markers(text: str) -> str:
 
 def _commit_text(repo: str, pack: Dict, sha: str) -> str:
     message = git(repo, "show", "-s", "--format=%B", sha)
-    diffs = [git(repo, "show", "--format=", "--unified=3", "-M", sha)]
+    # Re-read with the pack's hidden paths still excluded, or a hidden (gold) file would count as evidence.
+    diffs = [git(repo, "show", "--format=", "--unified=3", "-M", sha, "--", *harvest.pack_pathspec(pack))]
     diffs += [d["diff"] for d in pack.get("diffs") or [] if d.get("sha") == sha]
     parts = [message] + [v for d in diffs for v in (d, _strip_diff_markers(d))]
     return _SEP.join(parts)
 
 
-def _file_text(repo: str, head: str, ref: str) -> Tuple[Optional[str], str, Optional[str]]:
+def _file_text(repo: str, pack: Dict, head: str, ref: str) -> Tuple[Optional[str], str, Optional[str]]:
     """Returns (text, canonical ref, rejection reason) for a `path@sha` ref."""
     if "@" not in ref:
         return None, ref, "file ref must be path@sha"
     path, sha = ref.rsplit("@", 1)
     if not path or path.startswith("/") or ".." in path.split("/"):
         return None, ref, "file path must be repo-relative"
+    if harvest.pack_hides(pack, path):
+        return None, ref, "path is hidden for this run"
     full, why = resolve_commit(repo, head, sha)
     if not full:
         return None, ref, why
@@ -66,7 +70,7 @@ def _source(repo: str, pack: Dict, ev: Dict) -> Tuple[Optional[str], str, Option
         full, why = resolve_commit(repo, head, ref)
         return (_commit_text(repo, pack, full), full, None) if full else (None, ref, why)
     if kind == "file":
-        return _file_text(repo, head, ref)
+        return _file_text(repo, pack, head, ref)
     if kind == "doc":
         doc = next((d["text"] for d in pack.get("docs") or [] if d.get("path") == ref), None)
         return (doc, ref, None) if doc is not None else (None, ref, "doc is not in the pack")

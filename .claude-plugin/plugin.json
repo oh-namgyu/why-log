@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "why-log",
+  "version": "0.1.0",
+  "description": "Reconstruct a repository's design decisions (ADRs) from its git history. Reasons are written only when a verbatim quote states them; anything unsupported is asked, not invented.",
+  "author": {
+    "name": "oh-namgyu",
+    "url": "https://github.com/oh-namgyu"
+  },
+  "repository": "https://github.com/oh-namgyu/why-log",
+  "license": "MIT",
+  "keywords": ["adr", "architecture-decision-records", "git", "documentation", "reverse-engineering"],
+  "skills": ["./skills/why-log"]
+}

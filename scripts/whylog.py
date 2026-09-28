@@ -59,19 +59,24 @@ def run(repo: str, run_id: Optional[str], budget: int, hide: List[str], model: O
     if dry_run:
         print("[dry-run] nothing sent to the model. docs:", ", ".join(d["path"] for d in pack["docs"]))
         return 0
-    decisions = validate.check_existence(repo, pack, _reconstruct(run_dir, packs, model))
+    rejected: List[Dict] = []
+    decisions = validate.check_existence(repo, pack, _reconstruct(run_dir, packs, model), rejected)
+    if rejected:
+        write_json_atomic(os.path.join(run_dir, "schema_rejected.json"), rejected)
     path, sup = _stage(run_dir, "support")
     if sup is None:
         sup = support.judge(decisions, model)
         write_json_atomic(path, sup)
     decisions = sup["decisions"]
+    malformed = sup.get("malformed") or []
     written = render.render(decisions, pack["head"], os.path.join(run_dir, "adr"))
     counts = {k: sum(1 for d in decisions if d["confidence"] == k) for k in ("explicit", "inferred", "guess")}
-    print(f"[done] decisions {len(decisions)} {counts} · ADR files {len(written)} · {run_dir}")
+    print(f"[done] decisions {len(decisions)} {counts} · ADR files {len(written)} · "
+          f"schema-rejected {len(rejected)} · judge-malformed {len(malformed)} · {run_dir}")
     moved = harvest.head_moved(repo, pack["head"])
     if moved:
         print(f"[warn] HEAD moved: {pack['head'][:12]}→{moved[:12]}; results are pinned to {pack['head'][:12]}")
-    return 0 if counts["guess"] == 0 else 1
+    return 0 if counts["guess"] == 0 and not rejected and not malformed else 1
 
 
 def main(argv: Optional[List[str]] = None) -> int:
