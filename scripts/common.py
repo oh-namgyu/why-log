@@ -32,10 +32,16 @@ def require_repo(repo: str) -> str:
     return git(repo, "rev-parse", "--show-toplevel").strip()
 
 
+CALL_OVERHEAD_TOKENS = 3000
+
+
 def estimate_tokens(text: str) -> int:
-    """Conservative estimate: ASCII ~4 chars/token, other scripts ~1 char/token."""
+    """Deliberately high: ASCII 2.2 chars/token (diffs are symbol-dense), other scripts 1.5 tokens/char.
+
+    Fitted on two measured calls (English fixture, Korean-heavy repo) so both land at or above actual usage.
+    """
     ascii_chars = sum(1 for ch in text if ord(ch) < 128)
-    return ascii_chars // 4 + (len(text) - ascii_chars)
+    return int(ascii_chars / 2.2 + (len(text) - ascii_chars) * 1.5)
 
 
 def normalize_ws(text: str) -> str:

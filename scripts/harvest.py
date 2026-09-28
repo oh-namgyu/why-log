@@ -3,7 +3,7 @@ import fnmatch
 import re
 from typing import Dict, List, Sequence
 
-from common import WhyLogError, estimate_tokens, git, require_repo
+from common import CALL_OVERHEAD_TOKENS, WhyLogError, estimate_tokens, git, require_repo
 
 MANIFESTS = ("package.json", "requirements.txt", "pyproject.toml", "go.mod", "Cargo.toml", "Gemfile",
              "pom.xml", "build.gradle", "Dockerfile", "docker-compose.yml", "setup.py", "setup.cfg")
@@ -62,7 +62,7 @@ def _docs(repo: str, sha: str, hide: Sequence[str]) -> List[Dict]:
     return docs
 
 
-def build_pack(repo: str, budget_tokens: int = 700000, hide: Sequence[str] = (), allow_shallow: bool = False) -> Dict:
+def build_pack(repo: str, budget_tokens: int = 600000, hide: Sequence[str] = (), allow_shallow: bool = False) -> Dict:
     repo = require_repo(repo)
     shallow = git(repo, "rev-parse", "--is-shallow-repository").strip() == "true"
     if shallow and not allow_shallow:
@@ -74,7 +74,7 @@ def build_pack(repo: str, budget_tokens: int = 700000, hide: Sequence[str] = (),
     commits = [c for c in commits if c["files"] or not hide]
     pack = {"schema": "why-log-pack/1", "head": sha, "history_truncated": shallow, "hidden": list(hide),
             "commits": commits, "docs": _docs(repo, sha, hide), "diffs": []}
-    used = estimate_tokens(str(pack))
+    used = CALL_OVERHEAD_TOKENS + estimate_tokens(str(pack))
     if used > budget_tokens:
         raise WhyLogError(f"history alone needs ~{used} tokens (> budget {budget_tokens}); time-window split not implemented yet", code=2)
     # Highest-signal diffs first, then every other diff while the budget lasts: reasons often hide in code comments.

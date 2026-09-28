@@ -49,11 +49,36 @@ def render_pack(pack: Dict) -> str:
     return "\n".join(lines)
 
 
-def reconstruct(pack: Dict, model: Optional[str] = None, max_decisions: int = 40) -> Dict:
-    prompt = PROMPT.replace("{max_decisions}", str(max_decisions)).replace("{data}", render_pack(pack))
-    reply = llm.call(prompt, model=model)
-    decisions = extract_json(reply["text"])
-    if not isinstance(decisions, list):
-        raise WhyLogError("model reply did not contain a JSON array of decisions", code=3)
-    return {"decisions": decisions, "call": {k: reply[k] for k in ("usage", "cost_usd", "seconds", "model")},
-            "prompt_chars": len(prompt), "raw_tail": reply["text"][-300:]}
+CONTINUE = """
+
+You already returned these decisions (do NOT repeat them): {known}
+Return the NEXT batch of further decisions in the same JSON format, ids continuing from D{next:03d}.
+If there are no further decisions, return []."""
+
+
+def reconstruct(pack: Dict, model: Optional[str] = None, max_decisions: int = 100, max_rounds: int = 3) -> Dict:
+    """Ask for up to max_decisions; when a batch hits the cap, ask for the rest.
+
+    The rules+data prefix is byte-identical across rounds so later rounds reuse the prompt cache.
+    """
+    base = PROMPT.replace("{max_decisions}", str(max_decisions)).replace("{data}", render_pack(pack))
+    decisions: List[Dict] = []
+    calls = []
+    for _ in range(max_rounds):
+        suffix = "" if not decisions else CONTINUE.replace(
+            "{known}", json.dumps([d.get("title", "") for d in decisions], ensure_ascii=False)).replace(
+            "{next:03d}", f"{len(decisions) + 1:03d}")
+        reply = llm.call(base + suffix, model=model)
+        calls.append({k: reply[k] for k in ("usage", "cost_usd", "seconds", "model")})
+        batch = extract_json(reply["text"])
+        if not isinstance(batch, list):
+            if decisions:
+                break  # keep what earlier rounds produced; the failure is recorded in calls
+            raise WhyLogError("model reply did not contain a JSON array of decisions", code=3)
+        decisions.extend(d for d in batch if isinstance(d, dict))
+        if len(batch) < max_decisions:
+            break
+    for n, d in enumerate(decisions, 1):
+        d["id"] = f"D{n:03d}"
+    return {"decisions": decisions, "calls": calls, "prompt_chars": len(base),
+            "complete": len(calls) < max_rounds or len(decisions) % max_decisions != 0}

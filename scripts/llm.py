@@ -8,9 +8,10 @@ from typing import Any, Dict, Optional
 from common import WhyLogError
 
 DEFAULT_MODEL = "claude-opus-5-5[1m]"
-# `--disallowedTools` leaves MCP tools reachable; only `--tools ""` plus
-# `--strict-mcp-config` removes every tool (verified with a file-read canary).
-NO_TOOLS = ["--tools", "", "--strict-mcp-config"]
+# `--disallowedTools` leaves MCP tools reachable; `--tools ""` + `--strict-mcp-config` removes every tool,
+# and `--safe-mode` keeps the user's CLAUDE.md/memory/plugins out of the analysis (both verified with canaries).
+# `--bare` would also isolate but drops subscription auth.
+ISOLATION = ["--safe-mode", "--tools", "", "--strict-mcp-config"]
 
 
 def call(prompt: str, model: Optional[str] = None, timeout: int = 1800) -> Dict[str, Any]:
@@ -18,7 +19,7 @@ def call(prompt: str, model: Optional[str] = None, timeout: int = 1800) -> Dict[
     exe = shutil.which("claude")
     if not exe:
         raise WhyLogError("claude CLI not found on PATH", code=3)
-    cmd = [exe, "-p", "--model", model or DEFAULT_MODEL, "--output-format", "json", *NO_TOOLS]
+    cmd = [exe, "-p", "--model", model or DEFAULT_MODEL, "--output-format", "json", *ISOLATION]
     started = time.time()
     try:
         proc = subprocess.run(cmd, input=prompt.encode("utf-8"), capture_output=True, timeout=timeout, check=False)

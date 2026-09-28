@@ -55,7 +55,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser(prog="why-log")
     ap.add_argument("repo")
     ap.add_argument("--run-id")
-    ap.add_argument("--budget", type=int, default=700000)
+    ap.add_argument("--budget", type=int, default=600000)
     ap.add_argument("--hide", action="append", default=[], help="glob to exclude from the pack (repeatable)")
     ap.add_argument("--model")
     ap.add_argument("--allow-shallow", action="store_true")
