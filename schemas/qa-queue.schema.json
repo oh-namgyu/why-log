@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "why-log question queue entry (qa-queue/1)",
+  "description": "One line of .why-log/questions.jsonl: a question for the maintainer about one decision.",
+  "type": "object",
+  "required": ["schema", "id", "source", "subject", "question", "evidence", "options", "priority", "status",
+               "answer", "run_id", "created_at"],
+  "properties": {
+    "schema": {"type": "string", "enum": ["qa-queue/1"]},
+    "id": {"type": "string", "minLength": 2, "maxLength": 16},
+    "source": {"type": "string", "enum": ["why-log"]},
+    "subject": {"type": "string", "minLength": 1, "maxLength": 32},
+    "title": {"type": "string", "maxLength": 300},
+    "question": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "evidence": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 160}},
+    "options": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 300}},
+    "priority": {"type": "number"},
+    "status": {"type": "string", "enum": ["open", "answered", "skipped"]},
+    "answer": {
+      "type": ["object", "null"],
+      "required": ["text", "mode", "by", "at"],
+      "properties": {
+        "text": {"type": "string", "maxLength": 2000},
+        "mode": {"type": "string", "enum": ["choice", "free", "unknown"]},
+        "by": {"type": "string", "enum": ["user", "mock"]},
+        "at": {"type": "string", "minLength": 1}
+      }
+    },
+    "run_id": {"type": "string"},
+    "created_at": {"type": "string", "minLength": 1}
+  }
+}
