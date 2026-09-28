@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "why-log decision",
+  "description": "One reconstructed design decision. Model output is adopted only if it validates against this schema.",
+  "type": "object",
+  "required": ["id", "title", "reason", "confidence", "evidence"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1, "maxLength": 32},
+    "title": {"type": "string", "minLength": 1, "maxLength": 300},
+    "decision": {"type": "string", "maxLength": 4000},
+    "alternatives": {"type": "array", "items": {"type": "string", "maxLength": 1000}},
+    "reason": {"type": "string", "maxLength": 4000},
+    "impact": {"type": "integer", "enum": [1, 2, 3]},
+    "confidence": {"type": "string", "enum": ["explicit", "inferred", "guess"]},
+    "model_confidence": {"type": ["string", "null"], "enum": ["explicit", "inferred", "guess", null]},
+    "provenance": {"type": "string", "enum": ["code", "testimony", "unknown"]},
+    "question": {"type": ["string", "null"], "maxLength": 1000},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref", "quote"],
+        "properties": {
+          "kind": {"type": "string", "enum": ["commit", "file", "doc"]},
+          "ref": {"type": "string", "minLength": 1, "maxLength": 1000},
+          "quote": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "exists": {"type": "boolean"},
+          "rejected": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "testimony": {
+      "type": ["object", "null"],
+      "required": ["answer", "mode", "at"],
+      "properties": {
+        "answer": {"type": "string"},
+        "mode": {"type": "string", "enum": ["choice", "free", "unknown"]},
+        "at": {"type": "string", "minLength": 1}
+      }
+    },
+    "conflict": {"type": ["string", "null"]},
+    "support": {
+      "type": "object",
+      "required": ["verdict"],
+      "properties": {
+        "verdict": {"type": "string", "enum": ["states", "implies", "unrelated", "contradicts", "unjudged"]},
+        "why": {"type": "string"}
+      }
+    }
+  }
+}
