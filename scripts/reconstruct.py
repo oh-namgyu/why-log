@@ -3,7 +3,7 @@ import json
 from typing import Dict, List, Optional
 
 import llm
-from common import WhyLogError, extract_json
+from common import WhyLogError, extract_json, normalize_ws
 
 PROMPT = """You reconstruct the DESIGN DECISIONS of a software repository from its history.
 
@@ -32,21 +32,43 @@ Rules:
 """
 
 
+def render_commit(c: Dict) -> str:
+    files = ", ".join(f"{f['path']} (+{f['added']}/-{f['deleted']})" for f in c["files"][:30])
+    head = f"### {c['sha']} {c['date']} {c['subject']}"
+    return "\n".join([head, c["body"], f"files: {files}"] if c["body"] else [head, f"files: {files}"])
+
+
+def render_diff(d: Dict) -> str:
+    return f"### diff {d['sha']}\n{d['diff']}"
+
+
+def render_doc(doc: Dict) -> str:
+    return f"### doc {doc['path']}\n{doc['text']}"
+
+
 def render_pack(pack: Dict) -> str:
     lines: List[str] = [f"HEAD {pack['head']}", "", "## COMMITS (newest first)"]
-    for c in pack["commits"]:
-        files = ", ".join(f"{f['path']} (+{f['added']}/-{f['deleted']})" for f in c["files"][:30])
-        lines.append(f"### {c['sha']} {c['date']} {c['subject']}")
-        if c["body"]:
-            lines.append(c["body"])
-        lines.append(f"files: {files}")
+    lines.extend(render_commit(c) for c in pack["commits"])
     lines.append("\n## SELECTED DIFFS")
-    for d in pack["diffs"]:
-        lines.append(f"### diff {d['sha']}\n{d['diff']}")
+    lines.extend(render_diff(d) for d in pack["diffs"])
     lines.append("\n## DOCS AT HEAD")
-    for doc in pack["docs"]:
-        lines.append(f"### doc {doc['path']}\n{doc['text']}")
+    lines.extend(render_doc(doc) for doc in pack["docs"])
     return "\n".join(lines)
+
+
+def merge_windows(recs: List[Dict]) -> List[Dict]:
+    """Concatenate per-window decisions (newest window first), drop repeated titles, renumber D001.."""
+    seen, merged = set(), []
+    for rec in recs:
+        for d in rec["decisions"]:
+            key = normalize_ws(str(d.get("title", ""))).lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            merged.append(d)
+    for n, d in enumerate(merged, 1):
+        d["id"] = f"D{n:03d}"
+    return merged
 
 
 CONTINUE = """
