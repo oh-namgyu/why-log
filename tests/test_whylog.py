@@ -29,21 +29,21 @@ class WhylogWiring(unittest.TestCase):
         self._tmp.cleanup()
 
     def test_non_git_exit_2_writes_nothing(self) -> None:
-        self.assertEqual(_quiet([self.tmp, "--dry-run"]), 2)
+        self.assertEqual(_quiet(["run", self.tmp, "--dry-run"]), 2)
         self.assertEqual(os.listdir(self.tmp), [])
 
     def test_windowed_dry_run_checkpoints_and_resumes(self) -> None:
         repo = os.path.join(self.tmp, "fx")
         make_fixture.build(repo)
         budget = str(CALL_OVERHEAD_TOKENS + 400)
-        self.assertEqual(_quiet([repo, "--run-id", "t", "--budget", budget, "--dry-run"]), 0)
+        self.assertEqual(_quiet(["run", repo, "--run-id", "t", "--budget", budget, "--dry-run"]), 0)
         run_dir = os.path.join(repo, ".why-log", "run", "t")
         names = sorted(os.listdir(run_dir))
         count = len([n for n in names if n.startswith("pack-w")])
         self.assertGreater(count, 1)
         self.assertIn("windows.json", names)
         with mock.patch.object(harvest, "build_packs", side_effect=AssertionError("harvest re-ran")):
-            self.assertEqual(_quiet([repo, "--run-id", "t", "--budget", budget, "--dry-run"]), 0)
+            self.assertEqual(_quiet(["run", repo, "--run-id", "t", "--budget", budget, "--dry-run"]), 0)
 
     def test_reconstruct_per_window_then_merge(self) -> None:
         packs = [{"window": {"index": 1}}, {"window": {"index": 2}}]

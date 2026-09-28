@@ -1,7 +1,7 @@
 """Render graded decisions as MADR-style ADRs plus an index and an unknowns list."""
 import os
 import re
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 MARKER = "<!-- why-log:generated -->"
 BADGE = {"explicit": "근거 명시 (code)", "inferred": "추론 (code, inferred)", "guess": "근거 없음 — 질문 필요"}
@@ -45,3 +45,13 @@ def render(decisions: List[Dict], head: str, out_dir: str) -> List[str]:
         with open(os.path.join(out_dir, name), "w", encoding="utf-8") as fh:
             fh.write("\n".join(body) + "\n")
     return written
+
+
+def render_current(repo: str, run_id: Optional[str] = None, out: Optional[str] = None, preview: bool = False) -> Dict:
+    """STUB (stage 4): render <repo>/.why-log/decisions.json transactionally into .why-log/adr or `out`."""
+    raise NotImplementedError
+
+
+def undo(repo: str, run_id: str) -> Dict:
+    """STUB (stage 4): restore the files a render changed, from its manifest."""
+    raise NotImplementedError
