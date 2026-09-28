@@ -1,0 +1,151 @@
+{
+  "schema": "why-log-gold/1",
+  "repo": "educational-platform",
+  "head": "a6f575c3df95acd0e2891f23f8cab229cbb89c87",
+  "adr_dir": "docs/architecture-decisions",
+  "decisions": [
+    {
+      "id": "G01",
+      "title": "Communications between bounded contexts",
+      "decision": "Communication between bounded contexts asynchronous. Bounded contexts don't share data, it's forbidden to create a transaction which spans more than one bounded context. - https://www.infoq.com/news/2014/11/sharing-data-bounded-contexts/ - http://www.kamilgrzybek.com/design/modular-monolith-primer/ - https://github.com/kgrzybek/modular-monolith-with-ddd#37-modules-integration",
+      "reason": "Some common data should be used by several bounded contexts (modules, in the case of monolith application).",
+      "status": "Accepted",
+      "date": "2020-02-29",
+      "source": "docs/architecture-decisions/0001-bounded-contexts-communication.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G02",
+      "title": "Integration events",
+      "decision": "We will start from standard Spring Events classes: ApplicationListener, ApplicationEvent without dependency to external middleware component. We can add custom features to Spring functionality when it's needed. todo: For now, all events will be stored in integration-events module. But this solution should be reviewed. Integration events should be published after successful transaction. - https://devblogs.microsoft.com/cesardelatorre/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/",
+      "reason": "For implementing event-driven application, the platform should be available for communication with integration events.",
+      "status": "Accepted",
+      "date": "2020-03-04",
+      "source": "docs/architecture-decisions/0002-integration-events-implementation.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G03",
+      "title": "CQRS",
+      "decision": "CQRS principle will be used. It gives the flexibility in optimizing model for read and write operations. The simple version of CQRS is implemented in this application. On write operations, full logic is executed via aggregate. On read operations, DTO objects are created via JPQL queries on repository level. - https://dzone.com/articles/cqrs-understanding-from-first-principles - https://stackoverflow.com/questions/24474859/what-is-the-difference-between-command-commandhandler-and-service",
+      "reason": "There are possible solutions for writing and reading operations: - use the same model; - use separate models;",
+      "status": "Accepted",
+      "date": "2020-03-22",
+      "source": "docs/architecture-decisions/0003-cqrs.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G04",
+      "title": "Validation",
+      "decision": "Always valid approach will be used. So domain model will be changed from one valid state to another valid state. Technically, validation rules are defined on `Command` models and executed during processing the command. Javax validation-api is used for defining the validation rules via annotations. Useful links: - https://danielwhittaker.me/2016/04/20/how-to-validate-commands-in-a-cqrs-application/ - https://enterprisecraftsmanship.com/posts/validate-commands-cqrs/ - https://enterprisecraftsmanship.com/posts/validation-and-ddd/ - https://enterprisecraftsmanship.com/posts/always-valid-vs-not-always-valid-domain-model/ - http://www.kamilgrzybek.com/design/domain-model-validation/ - http://www.kamilgrzybek.com/design/rest-api-data-validation/",
+      "reason": "There are possible solutions related to validation topic: - always valid approach. Domain model is encapsulated, all requests are validated before executing logic in domain model; - deferred validation. Write all data to domain model from request and validate everything in domain model; - return validation object.",
+      "status": "Accepted",
+      "date": "2020-03-25",
+      "source": "docs/architecture-decisions/0004-validation.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G05",
+      "title": "Identifier between modules",
+      "decision": "Natural keys or uuids should be used. Primary keys are forbidden for communications between modules or with external systems. If entity has good natural key - it's the most preferable choice for identifier between modules. Useful links: - https://tomharrisonjr.com/uuid-or-guid-as-primary-keys-be-careful-7b2aa3dcb439",
+      "reason": "During communications between bounded contexts, global identifiers for entities are needed. Also, these identifiers are needed for possible future integrations with external systems.",
+      "status": "Accepted",
+      "date": "2020-04-28",
+      "source": "docs/architecture-decisions/0005-identifier-between-modules.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G06",
+      "title": "Rich domain model",
+      "decision": "Rich domain model solution will be used. Domain model will encapsulate internal structure and logic.",
+      "reason": "Possible solutions related to domain model implementation: - anemic domain model without any logic inside; - rich domain model with encapsulated logic;",
+      "status": "Accepted",
+      "date": "2020-05-05",
+      "source": "docs/architecture-decisions/0006-rich-domain-model.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G07",
+      "title": "API First",
+      "decision": "By defining APIs outside the code, we want to facilitate early review feedback and also a development discipline that focus service interface design on: - profound understanding of the domain and required functionality - generalized business entities / resources, i.e. avoidance of use case specific APIs - clear separation of WHAT vs. HOW concerns, i.e. abstraction from implementation aspects — APIs should be stable even if we replace complete service implementation including its underlying technology stack Useful links: - https://opensource.zalando.com/restful-api-guidelines/#api-first",
+      "reason": "API should have the documentation, we should define the process of delivering API and documentation.",
+      "status": "Accepted",
+      "date": "2020-05-05",
+      "source": "docs/architecture-decisions/0007-api-first.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G08",
+      "title": "Results from command handlers",
+      "decision": "Command handlers can return generated identifiers after processing if it's needed.",
+      "reason": "The idea from CQRS - do not return anything from command processing. But in some cases, we need to get generated identifiers of new created resources.",
+      "status": "Accepted",
+      "date": "2020-05-14",
+      "source": "docs/architecture-decisions/0008-result-from-comand-handlers.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G09",
+      "title": "Architecture tests",
+      "decision": "Architecture tests with using Archunit should be implemented.",
+      "reason": "We need to have the mechanism for supporting and validating common architecture principles in all application.",
+      "status": "Accepted",
+      "date": "2020-06-27",
+      "source": "docs/architecture-decisions/0009-architecture-tests.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G10",
+      "title": "Axon Framework",
+      "decision": "Axon Framework will be used as DDD library.",
+      "reason": "Currently, a lot of custom classes are defined for DDD building blocks. It will be better to use DDD library for these goals.",
+      "status": "Accepted",
+      "date": "2020-07-06",
+      "source": "docs/architecture-decisions/0010-use-axon-framework.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G11",
+      "title": "Integration events implementation by using Axon Framework",
+      "decision": "Axon Framework will be used for integration events implementation.",
+      "reason": "In [0002-integration-events-implementation.md](0002-integration-events-implementation.md) was defined the solution for using Spring-event related classes for publishing and listening integration events. In current implementation of application we have Axon Framework which have rich tools for implementing such functionality. After migrating to Axon implementation of integration events, in future, we can enable event sourcing.",
+      "status": "Accepted",
+      "date": "2021-01-10",
+      "source": "docs/architecture-decisions/0011-use-axon-event-publishing-mechanism.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G12",
+      "title": "Make Application Framework Independent",
+      "decision": "We will refactor the application to remove framework-specific details from the core modules. As a next step, we will attempt to integrate Quarkus as an alternative framework, verifying the framework independence of the core modules.",
+      "reason": "The current application is tightly coupled to Spring. This creates difficulties if we want to switch to another framework (e.g., Quarkus) or run parts of the system without Spring. To align with hexagonal architecture principles, the core domain should be independent from any framework.",
+      "status": "Accepted",
+      "date": "2025-09-24",
+      "source": "docs/architecture-decisions/0012-make-application-framework-independent.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G13",
+      "title": "Removal of Lombok Dependency",
+      "decision": "We will migrate away from `Lombok` dependency by replacing its annotations with standard Java language features and explicit code.",
+      "reason": "The codebase currently uses `Lombok` for reducing boilerplate code (getters, setters, builders, etc.). However, this introduces: - Build tool compatibility issues during JDK upgrades - Hidden complexity that complicates debugging - Unnecessary third-party dependency for features now available in modern Java",
+      "status": "Done",
+      "date": "2026-01-09",
+      "source": "docs/architecture-decisions/0013-removal-of-lombok-dependency.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    }
+  ]
+}

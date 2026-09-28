@@ -1,0 +1,68 @@
+[
+  {
+    "gold": "G01",
+    "rec": "D004",
+    "verdict": "unsupported",
+    "why": "Decoupling motive is quote-backed but absent from gold; gold's shared-data need is not stated."
+  },
+  {
+    "gold": "G02",
+    "rec": "D020",
+    "verdict": "consistent",
+    "why": "Asynchronous inter-context communication matches gold's event-driven integration-events motive."
+  },
+  {
+    "gold": "G03",
+    "rec": "D007",
+    "verdict": "consistent",
+    "why": "Separate read/write optimization matches gold's 'use separate models' option."
+  },
+  {
+    "gold": "G04",
+    "rec": "D012",
+    "verdict": "consistent",
+    "why": "Valid-to-valid state paraphrases gold's always-valid approach option."
+  },
+  {
+    "gold": "G05",
+    "rec": "D006",
+    "verdict": "consistent",
+    "why": "Avoiding primary keys between modules and external systems matches gold's global-identifier need."
+  },
+  {
+    "gold": "G06",
+    "rec": "D010",
+    "verdict": "consistent",
+    "why": "Encapsulated structure and logic matches gold's rich domain model option."
+  },
+  {
+    "gold": "G07",
+    "rec": "D009",
+    "verdict": "unsupported",
+    "why": "Early feedback and design discipline are absent from gold; 'stable APIs' is not in quotes."
+  },
+  {
+    "gold": "G08",
+    "rec": "D008",
+    "verdict": "consistent",
+    "why": "Returning generated identifiers as a trade-off matches gold."
+  },
+  {
+    "gold": "G09",
+    "rec": "D014",
+    "verdict": "unsupported",
+    "why": "Lists specific rules, not gold's motive of enforcing architecture principles application-wide."
+  },
+  {
+    "gold": "G10",
+    "rec": "D002",
+    "verdict": "consistent",
+    "why": "Avoiding custom DDD building-block classes matches gold; extra Axon detail doesn't conflict."
+  },
+  {
+    "gold": "G13",
+    "rec": "D024",
+    "verdict": "consistent",
+    "why": "Hedged guess about modern Java records matches gold's point about modern Java features."
+  }
+]

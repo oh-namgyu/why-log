@@ -1,0 +1,1519 @@
+{
+  "summary": {
+    "run_id": "eval",
+    "head": "a6f575c3df95acd0e2891f23f8cab229cbb89c87",
+    "decisions": 38,
+    "confidence": {
+      "explicit": 8,
+      "inferred": 12,
+      "guess": 18
+    },
+    "questions_queued": 30,
+    "abstain": false,
+    "files": [
+      "0001-remove-axon-framework-in-favour-of-plain-spring-ev.md",
+      "0002-adopt-axon-framework-for-commandquery-dispatch-and.md",
+      "0003-modular-monolith-with-ddd-bounded-contexts.md",
+      "0004-asynchronous-data-replicating-communication-betwee.md",
+      "0006-use-uuidsnatural-keys-never-primary-keys-across-mo.md",
+      "0007-simple-cqrs-command-handlers-for-writes-dto-querie.md",
+      "0008-command-handlers-may-return-generated-identifiers.md",
+      "0009-api-first-with-openapi-contracts.md",
+      "0010-rich-domain-model-without-getterssetters.md",
+      "0011-aggregates-reference-other-aggregates-by-id-instea.md",
+      "0012-always-valid-domain-with-validation-on-command-mod.md",
+      "0014-enforce-architecture-rules-with-archunit-tests-in-.md",
+      "0016-derive-the-acting-user-from-the-security-context-i.md",
+      "0018-separate-security-config-module-with-a-property-to.md",
+      "0019-per-context-integration-events-published-outside-t.md",
+      "0023-status-workflow-a-course-must-be-approved-before-p.md",
+      "0025-use-jakarta-annotations-named-nonnull-instead-of-s.md",
+      "0027-centralize-dependency-versions-buildsrc-then-gradl.md",
+      "0036-distinct-jpa-entity-name-for-the-enrollments-side-.md",
+      "0037-increment-student-count-from-enrollment-events-ins.md",
+      "README.md",
+      "unknowns.md"
+    ],
+    "schema_rejected": 0,
+    "judge_malformed": 0,
+    "head_moved_to": null
+  },
+  "dry_run": {
+    "dry_run": true,
+    "run_id": "eval",
+    "windows": 1,
+    "tokens": 599971,
+    "docs": [
+      "README.md"
+    ]
+  },
+  "wall_seconds": 193.7,
+  "bodies_left": 7,
+  "pipeline_calls": [
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 535593,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 18444,
+        "output_tokens_details": {
+          "thinking_tokens": 7908
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 535593,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 18444,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 535593,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 535593
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 4.6539238,
+      "seconds": 158.9,
+      "model": "claude-opus-5-5[1m]",
+      "purpose": "reconstruct"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3535,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1853,
+        "output_tokens_details": {
+          "thinking_tokens": 987
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3535,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1853,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3535,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3535
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.06852079999999999,
+      "seconds": 19.4,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2707,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1320,
+        "output_tokens_details": {
+          "thinking_tokens": 541
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2707,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1320,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 2707,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2707
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.050660800000000006,
+      "seconds": 13.8,
+      "purpose": "support"
+    }
+  ],
+  "schema": "why-log-decisions/1",
+  "head": "a6f575c3df95acd0e2891f23f8cab229cbb89c87",
+  "run_id": "eval",
+  "hidden": [
+    "docs/architecture-decisions"
+  ],
+  "decisions": [
+    {
+      "id": "D001",
+      "title": "Remove Axon Framework in favour of plain Spring events and direct handler calls",
+      "decision": "Axon command/query/event gateways and annotations were removed. Integration events are published with Spring's ApplicationEventPublisher and consumed with @Async/@EventListener, and controllers and event handlers call command/query handlers directly.",
+      "alternatives": [
+        "Keep Axon Framework (CommandGateway/QueryGateway/EventBus)"
+      ],
+      "reason": "Part of the 'Framework independence' roadmap item. The data does not state why Axon specifically was dropped (for example, the cost of the Axon 5 API migration).",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4a776edcff95a093cc036f45633450a88bea2e91",
+          "quote": "remove axon",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "667b9d641bd32faff79e4f21f217c7c01b6c93dd",
+          "quote": "remove commandGateway",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4171433dc7a6d13d2a6105c4f873f5a2516c93cb",
+          "quote": "simplify course proposals",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c1b1ab8a0b41c0284d34e503508decddd86f845f",
+          "quote": "framework independence",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Event publishing/subscribing is used from Spring's `ApplicationEventPublisher`",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was Axon removed only for framework independence, or also because of the Axon 5 migration effort (see 'use new axon version', 'fixes for new version')?",
+      "support": {
+        "verdict": "implies",
+        "why": "'remove axon' alongside 'framework independence' suggests link; no quote states the motive"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D002",
+      "title": "Adopt Axon Framework for command/query dispatch and event handling (later reverted)",
+      "decision": "Handlers were marked with Axon annotations. Controllers used CommandGateway/QueryGateway instead of calling handlers directly, and integration events moved from Spring @EventListener to Axon EventBus/@EventHandler.",
+      "alternatives": [
+        "Direct calls to handler beans",
+        "Spring ApplicationEventPublisher"
+      ],
+      "reason": "To avoid writing custom DDD building block classes, and to get Axon's event publishing and event sourcing functionality.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "c3edeb03a4620a34235457bb7344a087740c3e5b",
+          "quote": "axon framework integration: - command gateway instead of direct calls to handlers;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4aeba1f0c07f6d67a96376d70c7f3ae6271f2b9e",
+          "quote": "Axon Framework is used as DDD library for not creating custom building block classes.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4aeba1f0c07f6d67a96376d70c7f3ae6271f2b9e",
+          "quote": "more functionality for event publishing/event sourcing is used from Axon functionality",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes explicitly cite avoiding custom building blocks and event publishing/sourcing"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D003",
+      "title": "Modular monolith with DDD bounded contexts",
+      "decision": "The single user-management app was restructured into a multi-project Gradle build. Each bounded context is a separate module (administration, courses, course-enrollments, course-reviews, users) plus common/web/configuration/security modules.",
+      "alternatives": [
+        "Single-module application",
+        "Microservices from the start"
+      ],
+      "reason": "Intended as an example modular monolith with DDD that can later be moved to microservices.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "de63fcdb2b840a148b47a081f783aaac0ca758ee",
+          "quote": "- parent gradle project settings; - user service module; - remove not actual changes;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Example of Modular Monolith Java application with Domain-Driven Design.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "In the plans, this application will be moved to microservices architecture.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes say example modular monolith with DDD, planned move to microservices"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D004",
+      "title": "Asynchronous, data-replicating communication between bounded contexts",
+      "decision": "Bounded contexts communicate only through asynchronous integration events. They do not share data or transactions, and each context keeps its own local copies of related concepts (Teacher, Student, Reviewer, ReviewableCourse, EnrollCourse).",
+      "alternatives": [
+        "Shared tables/entities across modules",
+        "Synchronous cross-module calls",
+        "Transactions spanning several contexts"
+      ],
+      "reason": "Data replication reduces coupling between bounded contexts and increases their independence.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Communication between bounded contexts is asynchronous. Bounded contexts don't share data, it's forbidden to create a transaction which spans more than one bounded context.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "This solution reduces coupling of bounded contexts through data replication across contexts which results to higher bounded contexts independence.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "efef2fea8e0c",
+          "quote": "- user created integration event; - command handler for courses module; - teacher model with repo;",
+          "exists": false,
+          "rejected": "no such commit (or ambiguous short id)"
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says replication reduces coupling, increases independence"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D005",
+      "title": "Integration events as a public sub-module per business module",
+      "decision": "The shared 'integration-events' module was split. Each business module now exposes its own integration-events sub-module, and other modules depend only on that.",
+      "alternatives": [
+        "One global integration-events module"
+      ],
+      "reason": "Not stated. Presumably it makes each module own its published contract and limits cross-module dependencies to event definitions.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "33657d16b72a518e349e799cca4be4ac6c22375f",
+          "quote": "- integration events as public sub-module for each module;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Integration events which can be published from this business module.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What drove splitting the global integration-events module into per-module sub-modules?",
+      "support": {
+        "verdict": "implies",
+        "why": "Public integration-events sub-module suggests owned contract; rationale not said"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D006",
+      "title": "Use UUIDs/natural keys, never primary keys, across module boundaries",
+      "decision": "Cross-module identifiers switched from Integer primary keys to course UUIDs and usernames.",
+      "alternatives": [
+        "Exposing database primary keys between modules"
+      ],
+      "reason": "To avoid exposing primary keys from related modules. Primary keys are forbidden for communication between modules or with external systems.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a30d4503d4056e60b437c79ba0398344e248fcff",
+          "quote": "- course enrollments module with using course uuids and student usernames instead of exposing primary keys from related modules;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Primary keys are forbidden for communications between modules or with external systems.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes explicitly forbid exposing primary keys between modules"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D007",
+      "title": "Simple CQRS: command handlers for writes, DTO queries for reads",
+      "decision": "Service classes were replaced by command handlers that run full aggregate logic on writes. Query handlers build DTOs directly with JPQL constructor expressions on reads.",
+      "alternatives": [
+        "Classic service layer returning entities/DTOs for both reads and writes"
+      ],
+      "reason": "Gives flexibility to optimize the model separately for read and write operations.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "82e18db44b0350a365dcd69674c89326e48eb2c8",
+          "quote": "- cqrs decision log; - update gradle dependencies;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "CQRS principle is used. It gives the flexibility in optimizing model for read and write operations.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says CQRS gives flexibility optimizing read and write models"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D008",
+      "title": "Command handlers may return generated identifiers",
+      "decision": "Create-style command handlers return the new resource's UUID.",
+      "alternatives": [
+        "Strict CQRS where commands return nothing"
+      ],
+      "reason": "A trade-off: clients sometimes need the identifier of a newly created resource.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "eaf956a5678e613d2b1c8d09a8c8e2f26c48c8f8",
+          "quote": "- results from command handlers decision;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "So as trade-off, command handlers can return generated identifiers after processing if it's needed.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote calls returning generated identifiers a trade-off when needed"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D009",
+      "title": "API First with OpenAPI contracts",
+      "decision": "OpenAPI YAML contracts are written per module before the controllers are implemented.",
+      "alternatives": [
+        "Code-first API documentation (e.g. Spring REST Docs, used earlier)"
+      ],
+      "reason": "To get early review feedback, and to keep a design discipline focused on the domain and on stable, implementation-independent APIs.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "441909c3c123b439220ca666b7418ca0da9a69eb",
+          "quote": "- api first documentation;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "By defining APIs outside the code, we want to facilitate early review feedback",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Early feedback stated; domain focus and stable APIs not in quotes"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D010",
+      "title": "Rich domain model without getters/setters",
+      "decision": "Domain entities encapsulate their state and behaviour. Lombok getters/setters were removed from domain models, and tests assert via reflection.",
+      "alternatives": [
+        "Anemic entities with getters/setters"
+      ],
+      "reason": "The rich domain model decision: the domain model encapsulates its internal structure and logic.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a8f4d2a3e62c7f08d87fa7e0824d5d66302a7000",
+          "quote": "- rich domain model decision;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d73fb20acda3a26293dfa1abd4133bbf38d27d8d",
+          "quote": "- remove getter/setter from domain models; - update tests for using reflection for assert;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Rich domain model solution is used. Domain model encapsulates internal structure and logic.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly: domain model encapsulates internal structure and logic"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D011",
+      "title": "Aggregates reference other aggregates by id instead of JPA associations",
+      "decision": "@ManyToOne links between aggregates (e.g. CourseEnrollment→EnrollCourse/Student, CourseReview→Reviewer/ReviewableCourse) were replaced by Integer id fields during an aggregate review.",
+      "alternatives": [
+        "JPA object associations across aggregates"
+      ],
+      "reason": "Not stated. Likely to enforce aggregate boundaries.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "09fdb8b5a8eab5d7d54bddbda8dc353e41954955",
+          "quote": "#6 Review aggregates in all modules: - course enrollments module;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "09fdb8b5a8eab5d7d54bddbda8dc353e41954955",
+          "quote": "private Integer course;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d100d9800fd2a0bdff2f6ee8a272172753f47330",
+          "quote": "#6 Review aggregates in all modules: - course reviews module;",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Confirm that removing @ManyToOne was meant to enforce aggregate boundaries (reference by identity).",
+      "support": {
+        "verdict": "implies",
+        "why": "Aggregate review suggests boundary enforcement; no reason given"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D012",
+      "title": "Always-valid domain with validation on command models",
+      "decision": "Bean Validation annotations are defined on commands and executed in factories/handlers. Controllers additionally do fail-fast format validation with @Valid.",
+      "alternatives": [
+        "Validation only at the API layer",
+        "Validation inside entities"
+      ],
+      "reason": "The domain model should only move from one valid state to another.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Always valid approach is used. So domain model will be changed from one valid state to another valid state.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Technically, validation rules are defined on `Command` models and executed during processing the command.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says model changes from one valid state to another"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D013",
+      "title": "Split each business module into application / integration-events / web sub-modules",
+      "decision": "Each business module has an application sub-module (domain and handlers), a web sub-module (API) and an integration-events sub-module.",
+      "alternatives": [
+        "One module per bounded context containing all layers"
+      ],
+      "reason": "Not stated.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "221f0587fd3d9c7401f36dd69b731c803a49b7f0",
+          "quote": "- API to IN PROGRESS status; - prepare courses-application and courses-web modules;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "Each business module has 3 sub-modules:",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why separate web and application into distinct Gradle modules (dependency enforcement, reuse, future microservices)?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes describe module structure only, give no reason"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D014",
+      "title": "Enforce architecture rules with ArchUnit tests in the configuration module",
+      "decision": "ArchUnit tests check the following: controllers must not access repositories, command handler return types need nullability annotations, commands must be immutable, and handlers follow naming conventions.",
+      "alternatives": [
+        "Relying on code review only"
+      ],
+      "reason": "Controllers should delegate all logic to command/query handlers. Handlers should document their API via nullability. Commands should be immutable.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a1a676ba7dee6d0170f2419f9220e2e325b151b5",
+          "quote": "architecture test definition",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "dce7b5112e4c7fe2683d9d5ad3df6bb43c15044d",
+          "quote": "Controllers should not contain repository calls, all logic should be executed via command/query handlers.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "dce7b5112e4c7fe2683d9d5ad3df6bb43c15044d",
+          "quote": "Command handlers should provide detailed documentation of API, it's why nullability annotations are needed.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "37dc9138dea5a876e18e514f9ef1334299edea06",
+          "quote": "architecture tests: - commands should be immutable;",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes explicitly state delegation, nullability documentation, immutable commands"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D015",
+      "title": "Method-level authorization with @PreAuthorize on command/query handlers",
+      "decision": "Role and ownership rules (e.g. hasRole('ADMIN'), reviewer/teacher checkers) are enforced with @PreAuthorize on handler methods in the application layer, not in controllers.",
+      "alternatives": [
+        "URL-based authorization in the web security config",
+        "Checks in controllers"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0252930230ee0c2db7052cd13890846097efe70f",
+          "quote": "administration security: - approve course proposal rules;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "0252930230ee0c2db7052cd13890846097efe70f",
+          "quote": "@PreAuthorize(\"hasRole('ADMIN')\")",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why place authorization on application-layer handlers instead of web endpoints?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes show admin rule and annotation, no rationale"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D016",
+      "title": "Derive the acting user from the security context instead of request/command parameters",
+      "decision": "The student/reviewer username was removed from commands and requests. CurrentUserAsStudent/Reviewer/Teacher resolve the user from the SecurityContext.",
+      "alternatives": [
+        "Passing the user identity in the request body/command"
+      ],
+      "reason": "Inferred: the client-supplied user field was an explicit temporary placeholder until the current user could be taken from security; it is also safer.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ad13f336ac62",
+          "quote": "course enrollments security: - remove student param from command;",
+          "exists": false,
+          "rejected": "no such commit (or ambiguous short id)"
+        },
+        {
+          "kind": "commit",
+          "ref": "1c57d201b538e218dfc735ded141f75b7cc774cd",
+          "quote": "// todo get student from current user",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "TODO suggests placeholder; 'safer' is not said"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D017",
+      "title": "Stateless JWT authentication",
+      "decision": "Users sign in or sign up and receive a JWT. A JWT filter authenticates requests, and sessions are stateless.",
+      "alternatives": [
+        "Session-based authentication"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "30b9be498e10297e6247a5b7df165a4e7190400b",
+          "quote": "users security: - jwt token provider; - user details service implementation;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "ba9621a7ec29b8a8575a700c5c448863bb445757",
+          "quote": "http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why JWT/stateless rather than sessions?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes show JWT and stateless config, no rationale"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D018",
+      "title": "Separate security-config module with a property toggle",
+      "decision": "Shared security configuration moved to a security:config module. Security beans are conditional on com.educational.platform.security.enabled, which tests switch off.",
+      "alternatives": [
+        "Security configured inside the users module only"
+      ],
+      "reason": "Inferred: lets non-user modules apply security rules and lets tests disable security.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "58213c28979c13cd4bf8956d48a41a421bb7d7eb",
+          "quote": "- security config as separate module; - course security rule;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "7b4aac319a6a2a903c693fbcf1ee72179dd50a87",
+          "quote": "name = \"com.educational.platform.security.enabled\"",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "1a5bbccae569b39ce814cfab20401af40c18981f",
+          "quote": "properties = \"com.educational.platform.security.enabled=false\"",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Separate module and enable flag suggest reuse and test disabling"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D019",
+      "title": "Per-context integration events published outside the write transaction",
+      "decision": "Handlers run the aggregate change inside a TransactionTemplate and publish the integration event only after the transaction completes.",
+      "alternatives": [
+        "Publishing events inside the transaction"
+      ],
+      "reason": "Inferred: event consumers should not observe or depend on uncommitted state.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "5e899e56f4ff5fb5a291ea5b80d440c8c093bcf2",
+          "quote": "// todo integration event outside transaction",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.md",
+          "quote": "// publishing integration event outside the transaction",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Quotes note publishing outside transaction; motive not stated"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D020",
+      "title": "Asynchronous Spring event listeners for integration events",
+      "decision": "Integration events are delivered via @Async @EventListener, with @EnableAsync on the application. This was the original mechanism and was reinstated after Axon was removed.",
+      "alternatives": [
+        "Synchronous listeners",
+        "Message broker"
+      ],
+      "reason": "Communication between contexts is meant to be asynchronous (see D004).",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f0c79e9759128349a6e2e8c4d2338fdff31c16f1",
+          "quote": "- integration events solution; - integration events module;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "efef2fea8e0c",
+          "quote": "import org.springframework.scheduling.annotation.EnableAsync;",
+          "exists": false,
+          "rejected": "no such commit (or ambiguous short id)"
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes mention integration events only; asynchrony not referenced"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D021",
+      "title": "Liquibase schema migrations with per-module changelogs",
+      "decision": "Liquibase was introduced. Each module owns a db/<module>.yml changelog that a master changelog in the configuration module includes.",
+      "alternatives": [
+        "Hibernate DDL auto-generation"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "9548a3ac31f980786f8ae8cd6d003551cce300fe",
+          "quote": "#14 add liquibase dependency",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "9548a3ac31f980786f8ae8cd6d003551cce300fe",
+          "quote": "spring.liquibase.change-log=classpath:db/changelog/db.changelog-master.yml",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why Liquibase, and why per-module changelog files?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given; quotes show only Liquibase setup, not a motive."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D022",
+      "title": "In-memory H2 database (PostgreSQL left commented out)",
+      "decision": "The application runs on an in-memory H2 datasource. A PostgreSQL runtime dependency is present but commented out.",
+      "alternatives": [
+        "PostgreSQL"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b6d601148b313e497b0ddba03054f048eeed6a94",
+          "quote": "spring.datasource.url=jdbc:h2:mem:testdb",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "9548a3ac31f980786f8ae8cd6d003551cce300fe",
+          "quote": "runtimeOnly 'org.postgresql:postgresql'",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Is H2 intended only for the demo? Is PostgreSQL planned?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given; quotes show only H2 and Postgres config."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D023",
+      "title": "Status workflow: a course must be approved before publishing",
+      "decision": "The single Status was split into PublishStatus and ApprovalStatus. publish() throws CourseCannotBePublishedException unless the course was approved by an admin.",
+      "alternatives": [
+        "Single status field without approval gate"
+      ],
+      "reason": "A course must first be approved by an admin.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4579ac47de8231bc433cb60ebb5993d3b64e57d5",
+          "quote": "- approval status in course domain model; - restrictions for publish action;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4579ac47de8231bc433cb60ebb5993d3b64e57d5",
+          "quote": "course should be approved by admin at first",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says course should be approved by admin at first."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D024",
+      "title": "Remove Lombok in favour of Java records and explicit constructors",
+      "decision": "Lombok was removed from all modules. Commands, DTOs, value objects and events became records, and handlers got hand-written constructors and builders.",
+      "alternatives": [
+        "Keep Lombok"
+      ],
+      "reason": "Not stated. Likely enabled by modern Java records and aligned with framework independence.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f84e86130ff491c46297b3a564b29f9f77a024ed",
+          "quote": "remove lombok",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "e026806a16ea1e8ac65c40fa8521ea9e9543d991",
+          "quote": "public record CreateCourseCommand(@NotBlank String name, @NotBlank String description,",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why was Lombok removed (Java records, JDK 25 compatibility, fewer dependencies)?",
+      "support": {
+        "verdict": "implies",
+        "why": "Lombok removal alongside records suggests records replaced it; independence unmentioned."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D025",
+      "title": "Use jakarta annotations (@Named, @Nonnull) instead of Spring-specific ones",
+      "decision": "Handlers use jakarta.inject @Named instead of @Component, and jakarta.annotation @Nonnull/@Nullable instead of Spring's @NonNull/@Nullable.",
+      "alternatives": [
+        "Spring stereotype and org.springframework.lang annotations"
+      ],
+      "reason": "Part of the framework-independence effort.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "84082adeb66c884127a9b9712f4398b734adc9f9",
+          "quote": "framework independence: administration module",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "84082adeb66c884127a9b9712f4398b734adc9f9",
+          "quote": "import jakarta.inject.Named;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "0801cd7dcabfb27d0f76affe983f80a83a7d6e5d",
+          "quote": "use jakarta annotations for nonnull/nullable return values",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Jakarta import appears under framework-independence commit; the link is not stated."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D026",
+      "title": "Remove controller and handler integration tests",
+      "decision": "WebMvcTest controller integration tests and SpringBootTest handler integration tests were deleted. Unit, security and API tests remain.",
+      "alternatives": [
+        "Rewrite the tests for direct handler calls"
+      ],
+      "reason": "Not stated. They were written against Axon gateways and had been re-enabled only shortly before.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a6f575c3df95acd0e2891f23f8cab229cbb89c87",
+          "quote": "remove handler integration tests",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2f144ea35a90ab2bf4458e6acf33f1714ff8da93",
+          "quote": "simplify courses",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why delete these integration tests rather than adapt them after removing Axon? Is there replacement coverage?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes mention neither Axon gateways nor recent re-enabling."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D027",
+      "title": "Centralize dependency versions (buildSrc, then Gradle version catalog)",
+      "decision": "Hard-coded versions moved first into a buildSrc Versions interface, then into gradle/libs.versions.toml, and buildSrc was deleted.",
+      "alternatives": [
+        "Versions inline in each build file"
+      ],
+      "reason": "Versions should be organized in one place.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "de63fcdb2b840a148b47a081f783aaac0ca758ee",
+          "quote": "// todo organize versions in one place",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "20d8f839bf31e558d9293ee78cbf508837b2eafa",
+          "quote": "#2 Update libraries to latest versions",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "32906993f788a2d64d79bed35d7ae0a4732fdb6b",
+          "quote": "use libs versions toml",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "TODO explicitly says organize versions in one place."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D028",
+      "title": "Migrate Gradle build scripts from Groovy to Kotlin DSL",
+      "decision": "All build.gradle/settings.gradle files were converted to .kts.",
+      "alternatives": [
+        "Keep Groovy DSL"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "fa059a4c037959e547080515d54e120e89f20efa",
+          "quote": "migration from groovy to kotlin dsl (root project)",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What motivated the Kotlin DSL migration?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given; the quote only describes the migration."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D029",
+      "title": "Replace Springfox with springdoc-openapi",
+      "decision": "The Springfox swagger dependencies were replaced by springdoc-openapi-starter-webmvc-ui, and the contracts were bumped to OpenAPI 3.1.1.",
+      "alternatives": [
+        "Springfox"
+      ],
+      "reason": "Not stated. Springfox likely does not support Spring Boot 3.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "6483efc64b10f74979b140fdc3ae4bd377616ffa",
+          "quote": "openapi version",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "6483efc64b10f74979b140fdc3ae4bd377616ffa",
+          "quote": "springdoc-openapi-starter-webmvc-ui",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was the switch forced by Spring Boot 3 incompatibility of Springfox?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes mention neither Springfox nor Spring Boot 3."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D030",
+      "title": "MapStruct instead of ModelMapper, later dropped for hand-written mapping",
+      "decision": "MapStruct replaced ModelMapper in the early prototype. It was later removed from common, users and the web modules in favour of domain methods such as toDTO() and explicit construction.",
+      "alternatives": [
+        "ModelMapper",
+        "MapStruct everywhere"
+      ],
+      "reason": "Not stated.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "540d0b5300e740f52b48c53a65748e4ac7c62201",
+          "quote": "MapStruct instead of ModelMapper, exception handlers",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d73fb20acda3a26293dfa1abd4133bbf38d27d8d",
+          "quote": "api 'org.mapstruct:mapstruct:1.3.1.Final'",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why was MapStruct dropped once the rich domain model was adopted?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given for choosing MapStruct over ModelMapper."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D031",
+      "title": "DDD building-block marker interfaces",
+      "decision": "Common marker interfaces AggregateRoot and ValueObject were introduced in the common module and applied to domain classes.",
+      "alternatives": [
+        "No explicit markers",
+        "Library-provided building blocks (Axon)"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "7df2cb0c6e662af99621ffb8814be4b2bdf40eb0",
+          "quote": "- ddd building blocks; - aggregate root/value object markers;",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Are the markers only documentary, or used by architecture tests?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given; the quote only lists the building blocks."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D032",
+      "title": "Polymorphic curriculum items (Lecture and Quiz)",
+      "decision": "A course holds CurriculumItems with Lecture and Quiz subtypes (quizzes have questions), created via CurriculumItemFactory.",
+      "alternatives": [
+        "Single Lecture type"
+      ],
+      "reason": "Not stated.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b9140c28fd9c51fac6eec47f7ba90d961499c0ff",
+          "quote": "#12 define different types of lecture model/commands",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What requirement introduced multiple curriculum item types?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given for different lecture types."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D033",
+      "title": "Central GlobalExceptionHandler mapping domain exceptions to HTTP statuses",
+      "decision": "The shared web module maps validation errors to 400, ResourceNotFoundException to 404 and UnprocessableEntityException to 422 via @RestControllerAdvice.",
+      "alternatives": [
+        "Per-controller exception handling"
+      ],
+      "reason": "Not stated.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "8486cad98ab483bfcda9ad41beefc27838ce4c85",
+          "quote": "- error response/exception handling",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c504877f38283d5db5d2043e8d13a8cf776a0698",
+          "quote": "@ExceptionHandler(ConstraintViolationException.class)",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given; quotes only show the exception handling."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D034",
+      "title": "In-memory Axon token store and event storage (superseded)",
+      "decision": "Axon's default beans were overridden with InMemoryTokenStore and InMemoryEventStorageEngine, and axon-server-connector was excluded.",
+      "alternatives": [
+        "Axon Server",
+        "JPA-backed token/event store"
+      ],
+      "reason": "Not stated.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "5dfe07fcf36fbbc6163f62a91a7bf5d6ccd3d80c",
+          "quote": "override axon beans",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "5dfe07fcf36fbbc6163f62a91a7bf5d6ccd3d80c",
+          "quote": "return new InMemoryTokenStore();",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "95e4460e578294eb46214ddd826f484bc5ad7850",
+          "quote": "exclude group: \"org.axonframework\", module: \"axon-server-connector\"",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why in-memory stores: to avoid persisting Axon state alongside Liquibase-managed tables?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given; quotes only show the Axon overrides."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D035",
+      "title": "Rename users table to custom_user",
+      "decision": "The Liquibase table for User was renamed from 'user' to 'custom_user'.",
+      "alternatives": [
+        "Table named 'user'"
+      ],
+      "reason": "Not stated. 'user' is likely a reserved word in the database.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4dbca0782945315da94999f8c3304ddb4eba3358",
+          "quote": "fix liquibase",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4dbca0782945315da94999f8c3304ddb4eba3358",
+          "quote": "tableName: custom_user",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was the rename caused by 'user' being a reserved word in H2?",
+      "support": {
+        "verdict": "implies",
+        "why": "The rename during the Liquibase fix suggests a 'user' name conflict."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D036",
+      "title": "Distinct JPA entity name for the enrollments-side course",
+      "decision": "The course-enrollments Course entity was renamed EnrollCourse with @Entity(name = \"enroll_course\").",
+      "alternatives": [
+        "Same Course entity name in several modules"
+      ],
+      "reason": "Inferred from 'application start fix': entity names clashed in the single application context.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "9126fa0c3eaf092c7b35f8811b6e357db4bd66ed",
+          "quote": "application start fix",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "9126fa0c3eaf092c7b35f8811b6e357db4bd66ed",
+          "quote": "@Entity(name = \"enroll_course\")",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Explicit entity name within a start fix suggests a naming clash."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D037",
+      "title": "Increment student count from enrollment events instead of setting it",
+      "decision": "UpdateNumberOfStudentsCommand (set a value) was replaced by IncreaseNumberOfStudentsCommand, which is triggered by StudentEnrolledToCourseIntegrationEvent.",
+      "alternatives": [
+        "Set absolute number of students"
+      ],
+      "reason": "Inferred: the courses module only receives per-enrollment events.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "9cf43fef096e9b6378292f6dadd4e3a1b126d844",
+          "quote": "- number of students command handler updates; - student enrolled event;",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "9cf43fef096e9b6378292f6dadd4e3a1b126d844",
+          "quote": "numberOfStudents = new NumberOfStudents(numberOfStudents.getNumber() + 1);",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "The increment-by-one handler suggests per-enrollment student events."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D038",
+      "title": "Restrict self-registration roles to STUDENT/TEACHER; Passay password rules",
+      "decision": "Registration accepts a RoleDTO without ADMIN. Passwords are validated with Passay rules via the @ValidPassword constraint.",
+      "alternatives": [
+        "Any role at sign-up",
+        "Simple length check"
+      ],
+      "reason": "Not stated.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f94e719e4785f24cf5a3d71c58ec68fdee57013a",
+          "quote": "Possible values of roles during registration.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "ae22a6b67ac5c0de615833264b30483c80710f2f",
+          "quote": "implementation 'org.passay:passay:1.5.0'",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "How are admin accounts meant to be created?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "No reason given for roles or the Passay dependency."
+      },
+      "model_confidence": "guess"
+    }
+  ]
+}

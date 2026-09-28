@@ -1,0 +1,32 @@
+[
+  {
+    "gold": "G01",
+    "rec": "D016",
+    "verdict": "not-stated",
+    "why": "Only says the rationale lives in an ADR that was not provided."
+  },
+  {
+    "gold": "G02",
+    "rec": "D002",
+    "verdict": "consistent",
+    "why": "Supporting relative pipeline paths matches the gold's central idea of parent-relative paths."
+  },
+  {
+    "gold": "G03",
+    "rec": "D042",
+    "verdict": "not-stated",
+    "why": "Explicitly says the data states no reason."
+  },
+  {
+    "gold": "G04",
+    "rec": "D014",
+    "verdict": "consistent",
+    "why": "Making hardcoded values configurable matches the gold's goal of configurability via a config file."
+  },
+  {
+    "gold": "G05",
+    "rec": "D017",
+    "verdict": "not-stated",
+    "why": "Explicitly says the data states no reason."
+  }
+]

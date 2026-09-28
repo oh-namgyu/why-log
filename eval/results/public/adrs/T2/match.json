@@ -1,0 +1,140 @@
+{
+  "candidates": [
+    {
+      "gold": "G04",
+      "rec": "D001",
+      "verdict": "same",
+      "score": 0.95
+    },
+    {
+      "gold": "G02",
+      "rec": "D001",
+      "verdict": "related",
+      "score": 0.2
+    },
+    {
+      "gold": "G05",
+      "rec": "D002",
+      "verdict": "same",
+      "score": 0.95
+    },
+    {
+      "gold": "G06",
+      "rec": "D002",
+      "verdict": "related",
+      "score": 0.4
+    },
+    {
+      "gold": "G06",
+      "rec": "D006",
+      "verdict": "related",
+      "score": 0.2
+    },
+    {
+      "gold": "G06",
+      "rec": "D055",
+      "verdict": "related",
+      "score": 0.1
+    },
+    {
+      "gold": "G07",
+      "rec": "D038",
+      "verdict": "same",
+      "score": 0.8
+    },
+    {
+      "gold": "G07",
+      "rec": "D042",
+      "verdict": "related",
+      "score": 0.15
+    },
+    {
+      "gold": "G07",
+      "rec": "D041",
+      "verdict": "related",
+      "score": 0.05
+    },
+    {
+      "gold": "G08",
+      "rec": "D011",
+      "verdict": "same",
+      "score": 0.95
+    },
+    {
+      "gold": "G08",
+      "rec": "D065",
+      "verdict": "related",
+      "score": 0.2
+    },
+    {
+      "gold": "G08",
+      "rec": "D010",
+      "verdict": "related",
+      "score": 0.1
+    },
+    {
+      "gold": "G08",
+      "rec": "D012",
+      "verdict": "related",
+      "score": 0.1
+    },
+    {
+      "gold": "G08",
+      "rec": "D015",
+      "verdict": "related",
+      "score": 0.1
+    },
+    {
+      "gold": "G09",
+      "rec": "D005",
+      "verdict": "same",
+      "score": 0.95
+    },
+    {
+      "gold": "G09",
+      "rec": "D004",
+      "verdict": "related",
+      "score": 0.3
+    },
+    {
+      "gold": "G09",
+      "rec": "D052",
+      "verdict": "related",
+      "score": 0.15
+    },
+    {
+      "gold": "G01",
+      "rec": "D051",
+      "verdict": "related",
+      "score": 0.1
+    }
+  ],
+  "pairs": [
+    {
+      "gold": "G04",
+      "rec": "D001",
+      "score": 0.95
+    },
+    {
+      "gold": "G05",
+      "rec": "D002",
+      "score": 0.95
+    },
+    {
+      "gold": "G07",
+      "rec": "D038",
+      "score": 0.8
+    },
+    {
+      "gold": "G08",
+      "rec": "D011",
+      "score": 0.95
+    },
+    {
+      "gold": "G09",
+      "rec": "D005",
+      "score": 0.95
+    }
+  ],
+  "malformed": false
+}

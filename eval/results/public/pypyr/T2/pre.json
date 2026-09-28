@@ -1,0 +1,2991 @@
+{
+  "summary": {
+    "run_id": "eval",
+    "head": "b3e8f8c6063c11e37c1c762b89b4cd8620460c79",
+    "decisions": 82,
+    "confidence": {
+      "explicit": 19,
+      "inferred": 33,
+      "guess": 30
+    },
+    "questions_queued": 63,
+    "abstain": false,
+    "files": [
+      "0001-introduce-a-context-class-dict-subclass-as-the-pip.md",
+      "0002-replace-mainmain-with-context-with-a-single-run-ap.md",
+      "0005-context-input-as-positional-nargs-instead-of---con.md",
+      "0006-model-each-step-as-a-pypyrdslstep-class.md",
+      "0011-pluggable-pipeline-loaders.md",
+      "0012-rename-package-pypyr-clipypyrcli-to-pypyr.md",
+      "0013-cmdout-becomes-a-subprocessresult-object-with-dict.md",
+      "0014-global-pypyrconfig-singleton-with-cross-platform-c.md",
+      "0018-setuppy-reads-version-without-importing-the-packag.md",
+      "0021-tag-releases-in-ci-after-the-full-build-matrix-pas.md",
+      "0022-default-encoding-for-all-file-operations-from-conf.md",
+      "0023-add-windows-to-ci-but-only-on-the-latest-python.md",
+      "0024-asynchronousconcurrent-command-steps-in-a-pypyraio.md",
+      "0025-venv-step-creates-environments-in-parallel-but-ins.md",
+      "0026-custom-notify-log-level-25-as-the-cli-default.md",
+      "0027-use-standard-logginggetlogger-instead-of-a-custom-.md",
+      "0028-split-log-output-notify-and-below-to-stdout-warnin.md",
+      "0029-deprecation-cycle-for-step-input-formats.md",
+      "0030-pipeline-shortcuts-in-config-resolved-via-a-pipeli.md",
+      "0031-pluggable-retry-back-off-strategies.md",
+      "0032-while-decorator-checks-stop-condition-only-after-e.md",
+      "0033-stop-instructions-honoured-inside-failure-handlers.md",
+      "0036-py-step-py-input-exposes-context-keys-as-variables.md",
+      "0039-ship-built-in-pipelines-inside-the-package.md",
+      "0040-rename-pypyrcontext-module-to-pypyrparser.md",
+      "0041-stay-compatible-with-older-minimum-python-via-shim.md",
+      "0043-use-stdlib-tomllib-on-python-311-tomli-only-for-ol.md",
+      "0044-track-ruamelyaml-versions-pin-then-upgrade-then-re.md",
+      "0048-windows-commands-are-not-shlex-split.md",
+      "0049-use-the-full-sysexecutable-path-add-pypyrstepspyth.md",
+      "0050-use-pyfakefs-for-filesystem-unit-tests.md",
+      "0051-integration-tests-assert-on-in-code-lists-instead-.md",
+      "0053-move-file-loader-cache-to-pypyrcachefilecache-and-.md",
+      "0054-file-loader-cache-uses-str-keys.md",
+      "0055-friendly-error-when-a-pipeline-is-not-a-mapping-at.md",
+      "0056-check-loaded-data-against-mapping-not-mutablemappi.md",
+      "0057-exclude-transient-runtime-refs-from-context-pickli.md",
+      "0058-step-gets-its-stepsrunner-from-contextcurrent-pipe.md",
+      "0059-parsers-use-partition-instead-of-split-for-keyvalu.md",
+      "0061-save-shlex-split-args-in-subprocessresult.md",
+      "0063-verify-pypi-publish-in-a-temporary-venv.md",
+      "0066-ci-caching-setup-python-pip-cache-with-cache-busti.md",
+      "0067-adapt-toxini-to-tox-4.md",
+      "0069-1-based-linecolumn-numbers-in-user-facing-errors.md",
+      "0070-prevent-duplicate-syspath-entries-under-a-lock.md",
+      "0071-foreach-iterates-generators-without-len.md",
+      "0072-evaluate-skipswallow-lazily.md",
+      "0073-debug-step-uses-pprint-instead-of-jsondumps.md",
+      "0077-binary-mode-object-representers-for-toml.md",
+      "0079-argskwargs-parser-for-makefile-style-args.md",
+      "0081-readme-claims-cross-platform-support-instead-of-th.md",
+      "0082-pypyrversion-step-output-matches-pypyr---version.md",
+      "README.md",
+      "unknowns.md"
+    ],
+    "schema_rejected": 0,
+    "judge_malformed": 0,
+    "head_moved_to": null
+  },
+  "dry_run": {
+    "dry_run": true,
+    "run_id": "eval",
+    "windows": 1,
+    "tokens": 599885,
+    "docs": [
+      "README.md"
+    ]
+  },
+  "wall_seconds": 395.3,
+  "bodies_left": 116,
+  "pipeline_calls": [
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 573854,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 35501,
+        "output_tokens_details": {
+          "thinking_tokens": 14496
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 573854,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 35501,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 573854,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 573854
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 5.3011517999999995,
+      "seconds": 302.8,
+      "model": "claude-opus-5-5[1m]",
+      "purpose": "reconstruct"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3430,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2198,
+        "output_tokens_details": {
+          "thinking_tokens": 1328
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3430,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2198,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3430,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3430
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.07453180000000001,
+      "seconds": 23.0,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3305,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2126,
+        "output_tokens_details": {
+          "thinking_tokens": 1278
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3305,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2126,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3305,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3305
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.07200379999999999,
+      "seconds": 21.0,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3051,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1900,
+        "output_tokens_details": {
+          "thinking_tokens": 1070
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3051,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1900,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3051,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3051
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.06527980000000001,
+      "seconds": 19.7,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2890,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2005,
+        "output_tokens_details": {
+          "thinking_tokens": 1148
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2890,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2005,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 2890,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2890
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0659758,
+      "seconds": 20.8,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1305,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 185,
+        "output_tokens_details": {
+          "thinking_tokens": 99
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1305,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 185,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 1305,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1305
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0156548,
+      "seconds": 4.7,
+      "purpose": "support"
+    }
+  ],
+  "schema": "why-log-decisions/1",
+  "head": "b3e8f8c6063c11e37c1c762b89b4cd8620460c79",
+  "run_id": "eval",
+  "hidden": [
+    "docs/adr"
+  ],
+  "decisions": [
+    {
+      "id": "D001",
+      "title": "Introduce a Context class (dict subclass) as the pipeline state object",
+      "decision": "Replace the plain dict passed between steps with a pypyr Context class that subclasses dict and provides assert/validation and formatting helpers. All built-in steps were migrated to it as a breaking change. Missing keys raise an error that inherits from KeyError.",
+      "alternatives": [
+        "Keep a plain dict and separate validator module (pypyr.validate.asserts)"
+      ],
+      "reason": "The data states the missing-key rule only: the Context must keep dict behaviour, so a missing key raises a KeyError subclass. A likely motive is centralising validation and formatting helpers on the context object, because pypyr.validate.asserts was removed in the same change. The commits do not state this.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "3e84a2606f12520bf8f360556202dad7bad69e1d",
+          "quote": "add Context class plus assert and validator on new class",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "7a9cb02366d7f13983934110a67b000a2e63cb02",
+          "quote": "big breaking change: update runtime all steps to use new context class",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d5a12c2b665a34941eadfe4d1ecf79e0d895e28a",
+          "quote": "must raise exception inherited from base KeyError class.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "KeyError subclass rule quoted; dict behaviour, asserts removal and motive not in quotes"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D002",
+      "title": "Replace main()/main_with_context() with a single run() API built on Pipeline objects",
+      "decision": "Break the public API: main() and main_with_context() are replaced by run(). Pipeline, PipelineDefinition and PipelineInfo are introduced. The global pipeline cache is removed, and pipelines are now cached on each Loader.",
+      "alternatives": [
+        "Keep main()/main_with_context() entrypoints",
+        "Keep a single global pipelinecache"
+      ],
+      "reason": "The change was made to support relative pipeline paths and py_dir. The data does not explain why a breaking API change was chosen over an additive one.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "817154ba6ab7ccdf6f288620fdbe523a3aa6894b",
+          "quote": "Breaking API change from main()/main_with_context() to run().",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "817154ba6ab7ccdf6f288620fdbe523a3aa6894b",
+          "quote": "Relative pipelines & py_dir.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "817154ba6ab7ccdf6f288620fdbe523a3aa6894b",
+          "quote": "Pipelines now cached on Loader.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why was the API broken (run()) instead of keeping main() as a wrapper around the new Pipeline class?",
+      "support": {
+        "verdict": "implies",
+        "why": "Relative pipelines listed alongside the API change, not given as its cause"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D003",
+      "title": "Steps mutate context in place instead of returning it",
+      "decision": "Remove the 'return context' requirement from the step function signature. Steps now mutate the passed context in place.",
+      "alternatives": [
+        "Steps return the (possibly new) context object"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "abf21ee3c66e207549b5e515ec64097509bb8a7c",
+          "quote": "Remove return context signature from steps",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "9ba7d57de59c5e79be7ce8b5ffb6cd37e2051e85",
+          "quote": "Breaking Change: step signature change",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why was the step contract changed from returning the context to mutating it in place?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes describe the signature change only; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D004",
+      "title": "Pipeline name becomes a positional CLI argument",
+      "decision": "Drop the required --name flag. The pipeline name is now the first positional argument of the CLI.",
+      "alternatives": [
+        "Keep --name required flag"
+      ],
+      "reason": "The data states no reason. It was released as a breaking change.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "8a1c7b6d1a30e2ee4940f5fb5649cdf6f74f8b6b",
+          "quote": "Remove --name 1st arg",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "e8645b8b4482729979270e2444c4a88eca473d8b",
+          "quote": "Breaking change: What's my --name?",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What motivated removing --name (ergonomics/less typing?) and accepting the breaking change?",
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly labels it a breaking change; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D005",
+      "title": "Context input as positional nargs instead of --context string",
+      "decision": "First, make the context input positional while keeping --context for compatibility. Then remove --context entirely. Later, accept a sequence of positional args (nargs) instead of one string, so the parsers work per argument and shell quoting handles spaces instead of comma delimiting.",
+      "alternatives": [
+        "--context flag with a single comma-delimited string"
+      ],
+      "reason": "Comma-delimited single strings required users to avoid spaces. With nargs, literal spaces can be escaped with normal shell quotes. The reason for dropping --context is not stated.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "661d527c3e0b7e8b6e5430f43ac4a7574cbd930c",
+          "quote": "Positional context. Backwards compatible with --context. #63",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "1fda0e928b93dc0cfb455e573bdb3d26017299f7",
+          "quote": "Remove --context flag, no backwards compatibility. #63",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "bc56f4a6aa01f67f7ed4fe78a506ec9facdbedb3",
+          "quote": "cli context parser nargs rather than string. #94",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "bc56f4a6aa01f67f7ed4fe78a506ec9facdbedb3",
+          "quote": "Escape literal spaces with single or double",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Space escaping quoted; the comma-delimited limitation is inferred, not said"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D006",
+      "title": "Model each step as a pypyr.dsl.Step class",
+      "decision": "Move step execution logic out of stepsrunner functions into a Step class in pypyr.dsl. The class holds the decorator state (run, skip, swallow, and later foreach, while, retry).",
+      "alternatives": [
+        "Keep procedural step execution in stepsrunner"
+      ],
+      "reason": "The refactor was explicitly groundwork for adding further step decorators such as foreach.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "56b560056908c6641a1012c39a9091ad9e8e5d49",
+          "quote": "no functional change in this commit, just groundwork for further step decorators like foreach #53",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says groundwork for further step decorators like foreach"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D007",
+      "title": "Implement control-of-flow (call/jump/stop) as exceptions",
+      "decision": "Implement call, jump, stop, stoppipeline and stopstepgroup by raising special Error subclasses (ControlOfFlowInstruction, Stop). Runners catch these to change execution flow.",
+      "alternatives": [
+        "Return codes/flags from steps",
+        "Explicit scheduler state"
+      ],
+      "reason": "The data states no reason for using exceptions as the mechanism.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "fe63df317e022c77fd432744041293803ac47969",
+          "quote": "jump, call and stop core. ref #128 #127 #123",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "5ffecb76d24904cb60cfee67da9b1699734027c4",
+          "quote": "Control of flow. Stop all execution.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why were control-of-flow instructions implemented as raised exceptions rather than return values?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes name the features only; exception mechanism rationale absent"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D008",
+      "title": "Remove step 'in' parameters from context after the step completes",
+      "decision": "Values in a step's 'in' decorator now apply only to that step. They are removed from context afterwards. The change was first shipped behind the PYPYR_IN_CLEAN env switch as a preview, then became the default in the next major release, and the switch was removed.",
+      "alternatives": [
+        "Keep 'in' values in context for subsequent steps (old behaviour)"
+      ],
+      "reason": "The data does not state why scoping 'in' to the step was preferred. The staged rollout (env preview, then default at the major release) was a deliberate compatibility process.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "6f128bbe4c5035f28d464bb76877125ef279f756",
+          "quote": "env switch to preview this functionality",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "675ea4714ea69a08cb471eda6888c7bdc1477363",
+          "quote": "in decorator clean-up after step done now default functionality for next majhor release.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "675ea4714ea69a08cb471eda6888c7bdc1477363",
+          "quote": "Remove transitional env var to switch behavior.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What problem did leaking 'in' parameters into later steps cause that justified the breaking change?",
+      "support": {
+        "verdict": "implies",
+        "why": "Staged preview-then-default rollout quoted; 'deliberate compatibility process' is inferred"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D009",
+      "title": "Recursive formatter and get_formatted_value replace get_formatted_iterable/get_formatted_string",
+      "decision": "Introduce a RecursiveFormatter in pypyr.formatting and use get_formatted_value everywhere. The old get_formatted_x methods got deprecation warnings and were removed at the next major version, together with contextset.",
+      "alternatives": [
+        "Keep separate string/iterable formatting methods"
+      ],
+      "reason": "The data states no reason beyond the deprecation cycle.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "3e9d18c20cb5cc15b6bedaac9c73f4218a52175a",
+          "quote": "ff & rf formatting. ref #195.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "pypyr/context.py",
+          "quote": "formatter = RecursiveFormatter(special_types=SpecialTagDirective)",
+          "exists": false,
+          "rejected": "doc is not in the pack"
+        },
+        {
+          "kind": "commit",
+          "ref": "fb709f2f1a3ef029b09dcac4e5884cf2561e47be",
+          "quote": "final removal of deprecated get_formatted_iterable, get_formatted_string & steps.contextset.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What limitation of the old formatting (e.g. nested expressions, type preservation) drove the recursive formatter?",
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly calls it final removal of deprecated functions"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D010",
+      "title": "Custom YAML tags as special tag directives (!py, !sic, !jsonify)",
+      "decision": "Represent special values in pipeline YAML with custom tags implemented as SpecialTagDirective classes, instead of in-string markers.",
+      "alternatives": [
+        "In-string markers such as '[sic]\"...\"'"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "77b754a926e7934e2e59ff7ca0dd0e931d9edd85",
+          "quote": "big refactor to use special tag directives.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "85bed565d3a4fd28c9599ee9a309acf5bbf12872",
+          "quote": "!jsonify custom tag. closes #197",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why were YAML tags chosen over the previous [sic] string-prefix convention?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes describe the tag refactor only; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D011",
+      "title": "Pluggable pipeline loaders",
+      "decision": "Move pipeline file loading out of pipelinerunner into a loader module (pypyr.pypeloaders.fileloader, later pypyr.loaders.file). Callers can pass the absolute name of a custom loader module. A string loader was added later.",
+      "alternatives": [
+        "Hard-coded file-based pipeline loading"
+      ],
+      "reason": "The refactor makes it possible to load pipeline definitions from sources other than files, via an absolute loader module name. No motive is stated.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "47cb4f695c6f043f9a46069ec8aa6ff130f61970",
+          "quote": "Refactor the current get_pipeline_definition to a new pypyr.pipeloaders.fileloader",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "pypyr/pipelinerunner.py",
+          "quote": "loader (str): str. optional. Absolute name of pipeline loader module.",
+          "exists": false,
+          "rejected": "doc is not in the pack"
+        },
+        {
+          "kind": "commit",
+          "ref": "81e0dba03648d54585f92b17ec2a916f096becd4",
+          "quote": "Add String loader",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "String loader suggests non-file sources; absolute module name not quoted"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D012",
+      "title": "Rename package pypyr-cli/pypyrcli to pypyr",
+      "decision": "Rename the distribution and import package from pypyr-cli/pypyrcli to pypyr, so the libraries can be used as 'pypyr'. The repo was later renamed too, and the pypyr-cli entry point was dropped.",
+      "alternatives": [
+        "Keep pypyr-cli package name"
+      ],
+      "reason": "Rename so that the library is importable/usable as pypyr rather than pypyrcli.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "c4c7f43dc91368572f9b0d1143e82844dcdaae0b",
+          "quote": "rename pypyr-cli to pypyr",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "dd13663a64f0e84fa3f3f8160a503baffae2d7e1",
+          "quote": "add pypyr to setup.py as entrypoint so can use libs with pypyr. not pypyrcli.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "099791e0e1a65cf31caee92b46ee309757bf4aa9",
+          "quote": "update readme & setup with new repo name pypyr, not pypyr-cli.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote: so can use libs with pypyr, not pypyrcli"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D013",
+      "title": "cmdOut becomes a SubprocessResult object with dict-like backwards compatibility",
+      "decision": "Replace the dict saved to cmdOut with a SubprocessResult class that still supports item access. Add SubprocessError to carry the command plus returncode/stdout/stderr.",
+      "alternatives": [
+        "Keep returning a plain dict",
+        "Use subprocess.CalledProcessError"
+      ],
+      "reason": "The error should include the original command. The getitem accessor keeps existing pipelines working.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "5ffecb76d24904cb60cfee67da9b1699734027c4",
+          "quote": "Introduce a custom class SubprocessResult to hold result instead.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "5ffecb76d24904cb60cfee67da9b1699734027c4",
+          "quote": "This class still allows the __get_item__ accessor, so backwards compatible.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "5ffecb76d24904cb60cfee67da9b1699734027c4",
+          "quote": "This provides the original cmd in addition to the returncode + stdout/stderr.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Original cmd and backward compatibility quoted; 'error' framing is inferred"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D014",
+      "title": "Global pypyr.config singleton with cross-platform config file loading",
+      "decision": "Add a config singleton that models all pypyr settings and loads them from XDG/platform config files and pyproject.toml. Hardcoded constants throughout the code are replaced by config values. The config files were later renamed to config.yaml, with PYPYR_CONFIG_GLOBAL/LOCAL overrides.",
+      "alternatives": [
+        "Hardcoded constants",
+        "Single pypyr-config.yaml in cwd only"
+      ],
+      "reason": "The goal is to make previously hardcoded values configurable.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "c891e88e48fec88424c685a7a2f4b8ff324f9e01",
+          "quote": "Add pypyr.config configuration singleton t model all pypyr config.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c891e88e48fec88424c685a7a2f4b8ff324f9e01",
+          "quote": "Amend pypyr throughout to use new config values rather than hardcoded constants.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c891e88e48fec88424c685a7a2f4b8ff324f9e01",
+          "quote": "Cross-platform config file loading, with XDG Base Dir implementation.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote: use config values rather than hardcoded constants"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D015",
+      "title": "Pipeline lookup order: working dir, then ./pipelines, then built-ins",
+      "decision": "Look for pipelines first at {working dir}/{name}.yaml, then {working dir}/pipelines, then pypyr's install-dir pipelines. Later versions also check the parent pipeline's directory first and accept absolute paths.",
+      "alternatives": [
+        "Require pipelines in ./pipelines only"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "74dab9047a96cd04444743fb34779e545cf8e971",
+          "quote": "add cwd 1st lookup for pipeline.yaml.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": "README.rst",
+          "quote": "3. {pypyr install directory}/pipelines/{pipeline-name}.yaml",
+          "exists": false,
+          "rejected": "doc is not in the pack"
+        }
+      ],
+      "question": "Why was cwd given precedence over ./pipelines?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote describes the lookup change only; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D016",
+      "title": "py step exec namespace: plain dict plus shallow copy instead of ChainMap",
+      "decision": "First use a single custom global namespace for eval and exec based on a dictified ChainMap. Then switch pypyr.steps.py exec to a standard dict plus a shallow copy as its globals. The decision is documented in an ADR.",
+      "alternatives": [
+        "Dictified ChainMap namespace shared by eval and exec"
+      ],
+      "reason": "The rationale is recorded in docs/adr/0001-namespace-on-eval-and-exec.md, which is not in the provided data.",
+      "impact": 3,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "de46f5b39a498fca9784956359bdd7a9a0ff176d",
+          "quote": "custom single global namespace on eval AND exec using dictified chainmap.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2275cac29dec7786e20e076d9488e220926a1fe7",
+          "quote": "pypyr.steps.py exec uses standard dict + shallow copy as global namespace.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2275cac29dec7786e20e076d9488e220926a1fe7",
+          "quote": "See docs/adr/0001-namespace-on-eval-and-exec.md",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What does ADR 0001 give as the reason for abandoning the ChainMap namespace for exec?",
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly points to the ADR file for details"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D017",
+      "title": "Migrate packaging from setup.py to flit and pyproject.toml",
+      "decision": "Deprecate setup.py and build/publish with flit. Move configuration into pyproject.toml, including pypyr vars under [tool.pypyr.vars]. __version__ moves to pypyr/__init__.py.",
+      "alternatives": [
+        "setup.py + setuptools + twine"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0a251073dd258b142726e5968b696dc875f6dcc2",
+          "quote": "Deprecate setup.py, add flit.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "0a251073dd258b142726e5968b696dc875f6dcc2",
+          "quote": "Move all appropriate config to pyproject.toml",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why flit specifically (vs setuptools with pyproject or other PEP 517 backends)?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes describe the migration only; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D018",
+      "title": "setup.py reads version without importing the package",
+      "decision": "setup.py exec's pypyr/version.py instead of importing pypyr.version.",
+      "alternatives": [
+        "import pypyr.version in setup.py"
+      ],
+      "reason": "Importing pypyr ran __init__, which pulls in config and third-party toml/yaml dependencies that are not installed yet at setup time.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0dfc01239fadccbc1d449e31d1e22cfe10e2ce7d",
+          "quote": "setup.py should NOT import pypyr.version, because it executes pypyr package __init__.py",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Quote says __init__ executes; the toml/yaml dependency detail is not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D019",
+      "title": "Move CI/CD from Shippable to GitHub Actions",
+      "decision": "Remove Shippable CI and the shell release scripts. Run lint/test/build, tagging and publishing on GitHub Actions via pypyr/run-in-tox-action.",
+      "alternatives": [
+        "Shippable CI"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0fe2994765a715acf1650daf540c6421bfe46339",
+          "quote": "remove shippable. ci/cd from github actions. ref #169.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": ".github/workflows/lint-test-build.yaml",
+          "quote": "uses: pypyr/run-in-tox-action@master",
+          "exists": false,
+          "rejected": "doc is not in the pack"
+        }
+      ],
+      "question": "Why was Shippable abandoned?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote describes the CI move only; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D020",
+      "title": "Write build/ops automation as pypyr pipelines (dogfooding)",
+      "decision": "Replace ops/*.sh bash scripts with pypyr pipelines (ops/build.yaml, ops/tag.yaml, ops/bump.yaml) that CI invokes.",
+      "alternatives": [
+        "Bash scripts (bump.sh, deploy.sh, tag.sh)"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0fe2994765a715acf1650daf540c6421bfe46339",
+          "quote": "remove shippable. ci/cd from github actions. ref #169.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": ".github/workflows/publish.yaml",
+          "quote": "pipeline: ops/build package publish",
+          "exists": false,
+          "rejected": "doc is not in the pack"
+        }
+      ],
+      "question": "Was using pypyr for its own build pipeline a deliberate dogfooding decision?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote describes the CI move only; no motive given"
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D021",
+      "title": "Tag releases in CI after the full build matrix passes, not on developer bump",
+      "decision": "The client-side bump no longer creates or pushes tags. CI tags the release on main after the lint/test/build workflow completes.",
+      "alternatives": [
+        "Tag and push tags during local bump/deploy"
+      ],
+      "reason": "Tagging was moved to CI.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "3637bdd90fe322871ad8a751d74946476b4eb5e1",
+          "quote": "amend bump not to tag and push tags - this is happening in shippable now",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "doc",
+          "ref": ".github/workflows/tag-release.yaml",
+          "quote": "# only runs on master push AFTER full ci lint/test/build job matrix completes.",
+          "exists": false,
+          "rejected": "doc is not in the pack"
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says tagging now happens in Shippable, a CI service."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D022",
+      "title": "Default encoding for all file operations from config, overridable per step",
+      "decision": "All file open() calls use config.default_encoding (from $PYPYR_ENCODING, default None meaning the platform default). File steps accept encoding/encodingIn/encodingOut overrides.",
+      "alternatives": [
+        "Rely on implicit platform default everywhere"
+      ],
+      "reason": "The platform default is utf-8 everywhere except Windows, so users need a way to control encoding, which matters for cross-platform behaviour.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "643dbbec1dc6c1eda7d20a3b632ea9f1dfe14f21",
+          "quote": "Default encoding for all file open() operations from config.default_encoding.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "643dbbec1dc6c1eda7d20a3b632ea9f1dfe14f21",
+          "quote": "If you do not set encoding, will use the system default, which is utf-8",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "643dbbec1dc6c1eda7d20a3b632ea9f1dfe14f21",
+          "quote": "for everything except windows.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Default-encoding facts stated; the need for user control is inferred."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D023",
+      "title": "Add Windows to CI, but only on the latest Python",
+      "decision": "Add windows-latest to the CI matrix for the latest Python only. Ubuntu covers all Python versions plus lint/build.",
+      "alternatives": [
+        "Full matrix on Windows",
+        "No Windows CI"
+      ],
+      "reason": "The goal is to conserve compute minutes, because the full Ubuntu build already covers the other checks.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "176c4a5ac2f9116e66932db0a4fae58099a889e2",
+          "quote": "To conserve compute minutes, only test Windows on latest Python.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "176c4a5ac2f9116e66932db0a4fae58099a889e2",
+          "quote": "Add windows to CI build matrix.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Conserving minutes is stated; the Ubuntu coverage rationale is not."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D024",
+      "title": "Asynchronous/concurrent command steps in a pypyr.aio namespace",
+      "decision": "Add pypyr.steps.cmds and pypyr.steps.shells, which run subprocesses concurrently via asyncio in a new pypyr.aio namespace. Add a MultiError exception that aggregates the failures.",
+      "alternatives": [
+        "Only serial cmd/shell steps"
+      ],
+      "reason": "The steps let executables run concurrently. MultiError is needed to report several failures at once. The data states no user motive.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "829189570b660bc8682d5c66920f6b01c58efc1a",
+          "quote": "Run executables/cmds as asynchronous/concurrent subprocesses.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "829189570b660bc8682d5c66920f6b01c58efc1a",
+          "quote": "pypyr.aio namespace for asyncio code.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "829189570b660bc8682d5c66920f6b01c58efc1a",
+          "quote": "MultiError exception to aggregate multiple exceptions into one.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes describe concurrent subprocesses and MultiError aggregating exceptions."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D025",
+      "title": "venv step creates environments in parallel but installs pip deps serially",
+      "decision": "pypyr.steps.venv creates venvs concurrently in a ThreadPoolExecutor. pip upgrades and extra installs run serially afterwards.",
+      "alternatives": [
+        "Fully serial creation",
+        "Parallel pip installs"
+      ],
+      "reason": "pip is not safe to run in parallel.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a7d4b7df6b1a64fcbfd7771c51c57e6a72e4869d",
+          "quote": "# pip shouldn't run in parallel, there be dragons.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "a7d4b7df6b1a64fcbfd7771c51c57e6a72e4869d",
+          "quote": "Handling of venvs encapsulated in pypyr.venv.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Comment explicitly says pip shouldn't run in parallel."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D026",
+      "title": "Custom NOTIFY log level (25) as the CLI default",
+      "decision": "Add a NOTIFY level between INFO and WARNING and make it the default CLI log level. Setup moved to package __init__ so that importing pypyr registers it.",
+      "alternatives": [
+        "Default INFO level",
+        "Standard levels only"
+      ],
+      "reason": "At the default level, output should show only echo output and step descriptions.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "2b217511c9d19cbc9bd844958f2377d25cfc6d82",
+          "quote": "NOTIFY default cli logging level. ref #132",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "af6a6cd9211c705ebacd493606a2bccb748d73ab",
+          "quote": "By default it outputs only echo step and step name",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "af6a6cd9211c705ebacd493606a2bccb748d73ab",
+          "quote": "set up notify log level move to package __init__. closes #219.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says default outputs only echo step and step name."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D027",
+      "title": "Use standard logging.getLogger instead of a custom get_logger",
+      "decision": "Retire pypyr.log.logger.get_logger. Modules use logging.getLogger(__name__) and inherit the level from the root 'pypyr' logger.",
+      "alternatives": [
+        "Custom get_logger that sets level per logger"
+      ],
+      "reason": "getLogger inherits the parent logger's level and formatting automatically.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b006bdb7e3fe906cb3341f4370c9a456b7bfad09",
+          "quote": "pypyr.log.logger.get_logger retire. use logging.getLogger instead.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "330a71eb25b12c95205e13ddcf3854aef16d54f7",
+          "quote": "# getLogger will grab the parent logger context, so your loglevel and",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Comment says getLogger grabs parent context including loglevel."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D028",
+      "title": "Split log output: NOTIFY and below to stdout, WARNING and above to stderr",
+      "decision": "Use two StreamHandlers with a level filter instead of the default single stderr handler.",
+      "alternatives": [
+        "All log output to stderr"
+      ],
+      "reason": "Previously all output, including normal NOTIFY output, went to stderr.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "d7b94685996650f4035e298110b106aa25b96185",
+          "quote": "pypyr previously would output all log entries to stderr.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d7b94685996650f4035e298110b106aa25b96185",
+          "quote": "Add separate StreamHandlers for stdout and stderr.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d7b94685996650f4035e298110b106aa25b96185",
+          "quote": "Now log-levels <= NOTIFY go to stdout, higher than t stderr.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says all log entries previously went to stderr."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D029",
+      "title": "Deprecation cycle for step input formats",
+      "decision": "When step inputs changed to a single dict key (e.g. fileReplace, fetchJson, env, assert), the old keys were translated with a warning and removed at the next major release.",
+      "alternatives": [
+        "Break old inputs immediately"
+      ],
+      "reason": "The goal is to give users a migration window before removal at the next major release.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "e871f85dad0654cbd62d73a7d405cef33c20c8e2",
+          "quote": "pypyr.steps.filereplace new in arg format with deprecation support.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "437942247d904ed4bc4f1f22859bf9f7b7800734",
+          "quote": "stop working upon the next major release.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "437942247d904ed4bc4f1f22859bf9f7b7800734",
+          "quote": "remove deprecated step inputs for assert, env, fetchjson",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Deprecation and next-major removal stated; migration window is inferred."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D030",
+      "title": "Pipeline shortcuts in config, resolved via a Pipeline.new factory",
+      "decision": "config.shortcuts map a name to preconfigured pipeline name/args/groups. Resolution was moved into a Pipeline classmethod factory so that both the runner and pypyr.steps.pype honour shortcuts.",
+      "alternatives": [
+        "Resolve shortcuts only in pipelinerunner.run()"
+      ],
+      "reason": "The factory lets both entry points (run() and the pype step) share shortcut resolution.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f14e40ab502421dcf0641174a50c78f5980425f1",
+          "quote": "shortcuts. closes #267",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "18ad74b378e832e8d7c7d5f4b48a1867dbd1b978",
+          "quote": "Add new classmethod factory ctor to Pipeline to instantiate from config.shortcuts,",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "18ad74b378e832e8d7c7d5f4b48a1867dbd1b978",
+          "quote": "Initialize new pipeline from shortcut on pypyr.steps.pype, if matching found.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Factory and pype use shown; shared resolution with run() not said."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D031",
+      "title": "Pluggable retry back-off strategies",
+      "decision": "The retry decorator accepts a back-off strategy: built-ins (fixed, linear, jitter...) or a custom callable class that derives from BackoffBase, resolved through a backoff cache.",
+      "alternatives": [
+        "Fixed sleep interval only"
+      ],
+      "reason": "No reason is stated beyond enabling custom back-off.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "169d95329b8ffd2c8de73608d468d78335b2de6d",
+          "quote": "retry backoff. closes #216",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "169d95329b8ffd2c8de73608d468d78335b2de6d",
+          "quote": "Derive from me for a custom back-off strategy.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote only says derive for a custom back-off strategy."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D032",
+      "title": "while decorator checks stop condition only after each iteration",
+      "decision": "The while loop evaluates stop at the end of each iteration, not before. max=0 means the loop never runs.",
+      "alternatives": [
+        "Check stop before and after each iteration"
+      ],
+      "reason": "This makes infinite loops easier to express by setting stop to False.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "77b468b636fa23da86b25ae00025992535c37980",
+          "quote": "while loop now only checks stop condition at end of loop iteration, not beforehand also.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "77b468b636fa23da86b25ae00025992535c37980",
+          "quote": "allow easier infinite loop with setting stop False.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says easier infinite loop by setting stop False."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D033",
+      "title": "Stop instructions honoured inside failure handlers",
+      "decision": "Failure handlers swallow errors, except Stop instructions, which propagate. StopStepGroup in on_failure prevents the original error from being re-raised.",
+      "alternatives": [
+        "Failure handler swallows everything including Stop"
+      ],
+      "reason": "A pipeline should be able to exit its failure handler via stop without raising an error.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4cbde775ffaae06a1aad3c79f76f80518d9070a9",
+          "quote": "Stop control flow in failure groups. closes #175.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4cbde775ffaae06a1aad3c79f76f80518d9070a9",
+          "quote": "# Stop. This so that pipeline can quit failure_handler",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Quitting failure_handler stated; 'without raising an error' is not."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D034",
+      "title": "assert step raises AssertionError instead of ContextError",
+      "decision": "pypyr.steps.assert raises the builtin AssertionError on failure.",
+      "alternatives": [
+        "pypyr ContextError"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ba71520c24def8133102d0e8145eb6e6b459104d",
+          "quote": "assert raise AssertionError. closes #188.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why switch to AssertionError (semantic clarity for runErrors / retryOn matching?)",
+      "support": {
+        "verdict": "implies",
+        "why": "Quote gives no rationale; absence of reason is inferred."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D035",
+      "title": "Replace contextset/contextsetf with contextcopy and set",
+      "decision": "Deprecate and remove contextset in favour of contextcopy. Add pypyr.steps.set as an alternative to contextsetf.",
+      "alternatives": [
+        "Keep contextset/contextsetf naming"
+      ],
+      "reason": "The data states no reason for the renames.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "5a08749165a96e9364b78e9c24d5cbd89627f5f1",
+          "quote": "pypyr.steps.contextcopy. deprecate pypyr.steps.contextset. closes #184.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "559b1f8a3a77f407308a87ef76f7cf0b2183dc07",
+          "quote": "pypyr.steps.set alternative to contextsetf. closes #236.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was the rename to contextcopy/set for clearer semantics?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quotes list renames without rationale; absence of reason is inferred."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D036",
+      "title": "py step 'py' input exposes context keys as variables",
+      "decision": "Add a 'py' input whose code runs with the context contents available directly as variables, alongside the legacy 'pycode' where only the context object is available.",
+      "alternatives": [
+        "Only pycode with context['key'] access"
+      ],
+      "reason": "pycode forces code to use context['myvar'] instead of myvar. The py form removes that friction.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4adae39ae1b98f1c14a0951638078b0841f6082a",
+          "quote": "pypyr.steps.py add py form input on top of pycode. closes #204.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4adae39ae1b98f1c14a0951638078b0841f6082a",
+          "quote": "This form of execute means pycode does not have the contents of context in",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Quote notes pycode lacks context contents; friction removal inferred."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D037",
+      "title": "pyimport step parses import statements via AST, per context instance",
+      "decision": "Add pypyr.steps.pyimport, which parses Python import syntax with an AST visitor and adds the imports to a per-context namespace for !py expressions. Only absolute imports are supported.",
+      "alternatives": [
+        "Import via exec",
+        "Global shared namespace"
+      ],
+      "reason": "The data states no reason for the AST/per-context design.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "dc9505334131eb9ee335efd229f94e1c05b25b31",
+          "quote": "pypyr.steps.pyimport. includes all plumbing to make it work per context instance.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "dc9505334131eb9ee335efd229f94e1c05b25b31",
+          "quote": "Only supports absolute imports, not relative.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why parse imports via AST rather than exec'ing the import statements?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quotes describe per-context plumbing without stating a reason."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D038",
+      "title": "Cache for loaders, parsers, steps and pipelines",
+      "decision": "Introduce a pypyr.cache package with thread-locked caches for dynamically loaded steps, context parsers, loaders and pipelines.",
+      "alternatives": [
+        "Reload modules/pipelines on each use"
+      ],
+      "reason": "The data states no reason. The commit references #126 (custom step groups).",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "bf3d7d79fc7034a70533d3ed0e74f4025b5432e1",
+          "quote": "Caching. ref 126.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was caching introduced for performance in custom step-group/call scenarios?",
+      "support": {
+        "verdict": "implies",
+        "why": "Ref 126 stated; its meaning as custom step groups is not."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D039",
+      "title": "Ship built-in pipelines inside the package",
+      "decision": "Move the pipelines/ folder into the pypyr package and include it as package data.",
+      "alternatives": [
+        "Top-level pipelines folder outside the package"
+      ],
+      "reason": "The goal is to deploy built-in pipelines (echo, donothing, and so on) with the installed package.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "e02bd488edf73327304b501c8d57f28a967f3016",
+          "quote": "move pipelines folder into package. add pipelines as part of the setup.py deploy",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Pipelines added to setup.py deploy; goal and examples inferred."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D040",
+      "title": "Rename pypyr.context module to pypyr.parser",
+      "decision": "The context-parser modules move to pypyr.parser, which frees the name pypyr.context for the new Context class.",
+      "alternatives": [
+        "Keep parsers under pypyr.context"
+      ],
+      "reason": "The rename was followed immediately by adding a Context class, so it likely freed the name. The commits do not say so.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "2476ac8ab2eb9ea99ffcf866cfe1a3a8c5529b29",
+          "quote": "rename pypyr.context to pypyr.parser",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "3e84a2606f12520bf8f360556202dad7bad69e1d",
+          "quote": "add Context class plus assert and validator on new class",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Sequence of commits suggests freeing the name; not stated."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D041",
+      "title": "Stay compatible with older minimum Python via shims",
+      "decision": "Retire 3.6 and support 3.7+. Use 'from __future__ import annotations' and avoid 3.8+ only APIs until the minimum version rises.",
+      "alternatives": [
+        "Require newest Python and use new syntax directly"
+      ],
+      "reason": "Compatibility is kept with the minimum supported Python version.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "58f665ec5140cc0ef4575c26180f5eb0c738bbbf",
+          "quote": "py3.10. retire 3.6. closes #237",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "3441a4a232a0e8a650887327d49eda518eb29e81",
+          "quote": "typings compatibility with py 3.7-3.8, with futures annotations import.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "5f226d97b09c811f9565432e741d8615460853eb",
+          "quote": "Revert to using try/catch on FileNotFoundException until pypyr min supported py version is py3.8.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote ties the revert to the minimum supported Python version."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D042",
+      "title": "TOML support encapsulated in pypyr.toml using tomli/tomli-w",
+      "decision": "Add tomli and tomli-w as dependencies and hide them behind a pypyr.toml module that is used by the toml parser and steps.",
+      "alternatives": [
+        "toml package",
+        "Call tomli directly from steps"
+      ],
+      "reason": "The data states no reason for the library choice.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "7305c720311614bb8271e6072ab11ef3beee2946",
+          "quote": "create pypyr.toml module to encapsulate all toml parsing functions.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why tomli/tomli-w over other toml libraries?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quote describes encapsulation only; gives no reason for the library choice."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D043",
+      "title": "Use stdlib tomllib on Python 3.11+, tomli only for older versions",
+      "decision": "Import tomllib conditionally and install tomli only when python_version < 3.11.",
+      "alternatives": [
+        "Always depend on tomli"
+      ],
+      "reason": "Python 3.11 includes tomli in the stdlib as tomllib.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "2078fe544f55697688540883de288d935978343a",
+          "quote": "# reason is py 3.11 includes tomli in stdlib",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2078fe544f55697688540883de288d935978343a",
+          "quote": "Only install tomli when python_version < 3.11.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says py 3.11 includes tomli in stdlib."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D044",
+      "title": "Track ruamel.yaml versions: pin, then upgrade, then require >= 0.17.32",
+      "decision": "Temporarily pin ruamel.yaml < 0.15, later upgrade to the new YAML() API, and finally require >= 0.17.32 after switching to construct_unknown.",
+      "alternatives": [
+        "Leave ruamel.yaml unpinned"
+      ],
+      "reason": "ruamel made breaking changes. construct_undefined stopped working, and the code now depends on construct_unknown in newer versions.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "8d63aa54b037409d2ebbe61ab5e8c152446853f3",
+          "quote": "fix ruamel.yaml on 0.14.X for now",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "362e29addeaf87fa43ff813640d84fd9cfa3a322",
+          "quote": "ruamel has had a breaking change where construct_undefined",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "98080569317fefc2f6d20eb0cd97c73b3c2b18cb",
+          "quote": "the code now depends on the newer 'RoundTripConstructor'",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Breaking change is stated; construct_unknown isn't, quotes cite RoundTripConstructor."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D045",
+      "title": "switch step with no fallthrough",
+      "decision": "Add pypyr.steps.switch, which calls the groups of the first matching case (or the default) and does not evaluate later cases. It is built on the refactored cof DSL.",
+      "alternatives": [
+        "Fallthrough semantics",
+        "Only run/skip decorators for branching"
+      ],
+      "reason": "The data states no reason for the no-fallthrough semantics.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "659f024ad2cc282d67325ea55506465a42be3363",
+          "quote": "Add pypyr.steps.switch",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "659f024ad2cc282d67325ea55506465a42be3363",
+          "quote": "No fallthrough - will run the first matching group and not evaluate any",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why no fallthrough?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quotes describe no-fallthrough behavior but give no rationale."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D046",
+      "title": "Standardize pype useParentContext/pipeArg handling",
+      "decision": "When pype has args or pipeArg and useParentContext is not set, default to a new context. pipeArg is shlex-split and parsed by default. The child's pipeline_name is set temporarily when sharing context.",
+      "alternatives": [
+        "Always share parent context by default"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a56152127ad420fd7d9f68def29804b3a77ad4c3",
+          "quote": "Standardize use of useParentContext and pipeArgs with pype. ref #201.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "7b0b60a2ecbc3f60ab197d96a34898ab9921671a",
+          "quote": "pype set pipeline_name to child when useParentContext true.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What confusion prompted changing the useParentContext defaults when args are passed?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quotes describe the change only; no reason is given."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D047",
+      "title": "Package distribution typed, tests excluded",
+      "decision": "Add py.typed to the package data and exclude tests.* from the distributed package.",
+      "alternatives": [
+        "Untyped distribution"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0bf503486f25e646039d24da721b1d2945e60fe7",
+          "quote": "remove test.common from sdist/whl distributable. add py.typed to package_data for inclusion on deploys.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was py.typed added to expose type hints to API consumers?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quote only describes the packaging change; no substantive reason."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D048",
+      "title": "Windows commands are not shlex-split",
+      "decision": "On Windows, pass cmd as a string to subprocess instead of a shlex-split sequence.",
+      "alternatives": [
+        "Always shlex-split cmd"
+      ],
+      "reason": "Windows wants strings. Shlexing caused surprises with spaces and quotes.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "176c4a5ac2f9116e66932db0a4fae58099a889e2",
+          "quote": "Bug in cmd/shell step where windows command was getting shlexed.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "176c4a5ac2f9116e66932db0a4fae58099a889e2",
+          "quote": "# But not on windows, because windows wants strings, not sequences.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Windows wanting strings is stated; spaces/quotes surprises are not."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D049",
+      "title": "Use the full sys.executable path; add pypyr.steps.python",
+      "decision": "The build pipeline invokes Python via the full sys.executable path, exposed by a new pypyr.steps.python step.",
+      "alternatives": [
+        "Invoke 'python' via PATH"
+      ],
+      "reason": "On Windows, a subprocess 'python' did not pick up the venv's site-packages.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "176c4a5ac2f9116e66932db0a4fae58099a889e2",
+          "quote": "To resolve, add sys.executable to the build pipeline and use the full path",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "e526d2fc469359f53c86f65834a41ddbe6b0920a",
+          "quote": "This is useful in the cmd step where on Windows Python.exe doesn't resolve",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Quote says Python.exe doesn't resolve; venv site-packages is not mentioned."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D050",
+      "title": "Use pyfakefs for filesystem unit tests",
+      "decision": "Introduce pyfakefs so that unit tests do not touch the real filesystem, and remove redundant test files.",
+      "alternatives": [
+        "Real test files on disk",
+        "Hand-rolled Path mocks"
+      ],
+      "reason": "Unit tests should not touch the real filesystem.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "643dbbec1dc6c1eda7d20a3b632ea9f1dfe14f21",
+          "quote": "Introduce pyfakefs for actual unit tests that do not touch real filesystem.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says unit tests should not touch the real filesystem."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D051",
+      "title": "Integration tests assert on in-code lists instead of expected-output files",
+      "decision": "Nested call tests append to a context list and assert against literal lists, instead of comparing NOTIFY output to expected-output files.",
+      "alternatives": [
+        "assert_pipeline_notify_match_file with expected text files"
+      ],
+      "reason": "The file-matching helper was slow.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b699e8fbcdbbd489b56dea31e74ec3ac95e9ca5e",
+          "quote": "integration tests that use slow assert_pipeline_raises_match_file update to use assert against list in code instead.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote calls assert_pipeline_raises_match_file slow."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D052",
+      "title": "Global no_cache flag to bypass all caches",
+      "decision": "Add a no_cache config flag (PYPYR_NO_CACHE). When set, Cache.get always calls the creator and stores nothing.",
+      "alternatives": [
+        "Only manual cache clearing"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b3a039327f42d8f878bf471fa59c930db92bc725",
+          "quote": "When no_cache=True, pypyr will bypass the internal caches entirely.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What use case (e.g. long-running API hosts, dev reloading) motivated no_cache?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quote describes no_cache behavior without a rationale."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D053",
+      "title": "Move file loader cache to pypyr.cache.filecache and add clear_all",
+      "decision": "Move the private file cache out of pypyr.loaders.file into pypyr.cache.filecache, and add pypyr.cache.admin.clear_all().",
+      "alternatives": [
+        "Keep private _file_cache inside the loader"
+      ],
+      "reason": "The move avoids a recursive reference between pypyr.cache and pypyr.loaders.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b45488b69133485b4c808a23ff207d2691be9cff",
+          "quote": "Moving pypyr.loaders.file private _file_cache to",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "b45488b69133485b4c808a23ff207d2691be9cff",
+          "quote": "This avoids recursive reference between",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says the move avoids a recursive reference."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D054",
+      "title": "File loader cache uses str keys",
+      "decision": "Key the file loader cache by str(path) instead of Path objects.",
+      "alternatives": [
+        "Path keys"
+      ],
+      "reason": "Python optimizes str keys in dict lookups.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "d5ba9d88bebd943ede67621290b0783f8c7af35a",
+          "quote": "python optimizes str keys on dict lookups.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote states Python optimizes str keys on dict lookups."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D055",
+      "title": "Friendly error when a pipeline is not a mapping at top level",
+      "decision": "The loader cache rejects pipelines whose top-level YAML is not a Mapping, with a helpful message, before caching them.",
+      "alternatives": [
+        "Let downstream failures surface"
+      ],
+      "reason": "Otherwise downstream failures are mysterious, and the check keeps malformed pipelines out of the cache.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "fcabdbeabc67dc11aca5585bb90c9dfa0088e946",
+          "quote": "Friendlier err msg when top-level yaml is not a Mapping",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "fcabdbeabc67dc11aca5585bb90c9dfa0088e946",
+          "quote": "# if the pipeline is not a dict at top level, failures down-stream get",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Downstream failures are hinted; the cache part is not stated."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D056",
+      "title": "Check loaded data against Mapping, not MutableMapping",
+      "decision": "Top-level checks on context loads (fetchjson, fetchyaml, parsers) use Mapping consistently.",
+      "alternatives": [
+        "MutableMapping check"
+      ],
+      "reason": "The value is merged via context.update(), so it ends up mutable in the Context anyway.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "96ea9d96bfebcb65aa5f0fc3e4dc7c223683c658",
+          "quote": "This Mapping type goes into a context.update() operation, guaranteeing it will be mutable in the Context itself.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says context.update() guarantees mutability in Context."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D057",
+      "title": "Exclude transient runtime refs from Context pickling",
+      "decision": "__getstate__ drops the call stack and current_pipeline, and they are reset on unpickle.",
+      "alternatives": [
+        "Pickle full Context state"
+      ],
+      "reason": "These attributes reference transient objects.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "66411677017d4218e48df9f2fde4aea254661580",
+          "quote": "Remove callstack and current_pipeline from Context pickle since it references objs which are transient.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says they reference transient objects."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D058",
+      "title": "Step gets its StepsRunner from context.current_pipeline",
+      "decision": "Remove the StepsRunner argument from the Step constructor. call looks up the runner through context.current_pipeline.",
+      "alternatives": [
+        "Pass StepsRunner into every Step"
+      ],
+      "reason": "The constructor reference was unnecessary.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "cc432ed1d55db1ce9f473bc998c20cda9d7f8c8f",
+          "quote": "this refactor just removes unnecessary reference to StepsRunner from the Step ctor.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote calls the StepsRunner reference unnecessary."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D059",
+      "title": "Parsers use partition instead of split for key=value",
+      "decision": "The dict and keyvaluepairs parsers split on the first '='. Args without '=' become key:''.",
+      "alternatives": [
+        "str.split('=') raising on extra '='"
+      ],
+      "reason": "Values can then contain further '=' characters without parse errors.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "563bdf798c9bd0d260c814d8b059380a818d90ab",
+          "quote": "This allows values to contain subsequent equals without parsing errors.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says values can contain subsequent equals without errors."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D060",
+      "title": "Context parsers return empty values rather than None",
+      "decision": "With no args, the list/dict/string parsers return [], {} or '' instead of None.",
+      "alternatives": [
+        "Return None"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "37c506d19c3e1116ccc8a5cb56dbebb2530c9039",
+          "quote": "context parsers initialize empty rather than None. closes #214.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was this to avoid None checks in pipelines using argList/argDict?",
+      "support": {
+        "verdict": "implies",
+        "why": "Quote states the change and issue number only, no reason."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D061",
+      "title": "Save shlex-split args in SubprocessResult",
+      "decision": "Async non-shell commands record the split argument list in results. Shell commands keep the string.",
+      "alternatives": [
+        "Record raw input string"
+      ],
+      "reason": "Operators can see the exact argument split in error results.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "576bfd26b259cea9f28cc2996648f2a8512e80b5",
+          "quote": "This lets operator see the exact arg split in error results.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says operator sees exact arg split in error results."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D062",
+      "title": "DEFAULT_CMD_ENCODING applies to serial cmds too; default None",
+      "decision": "PYPYR_CMD_ENCODING applies to both serial and async commands. The default is None, and async decodes with locale.getpreferredencoding(False).",
+      "alternatives": [
+        "Async-only override with locale default baked into config"
+      ],
+      "reason": "It previously applied only to async commands. locale.getpreferredencoding already honours UTF-8 mode.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "7484fbb9de608b010abe761df8020568feb28824",
+          "quote": "Use the DEFAULT_CMD_ENCODING $env for both the serial and async cmds.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "7484fbb9de608b010abe761df8020568feb28824",
+          "quote": "Previously it only applied to async.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "Async-only history stated; locale.getpreferredencoding/UTF-8 mode has no support."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D063",
+      "title": "Verify PyPI publish in a temporary venv",
+      "decision": "The publish smoke test installs the released package into a throwaway venv. The version is read via a subprocess instead of importlib reload.",
+      "alternatives": [
+        "pip uninstall/install into the active tox env"
+      ],
+      "reason": "Installing into the tox env replaced the -e dev install and caused surprises.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0ae7d9c94a090a28567798c4a70ea8420cd6957d",
+          "quote": "Use new venv step to smoke-test pypi publish in temp venv,",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "0ae7d9c94a090a28567798c4a70ea8420cd6957d",
+          "quote": "instead of installing/uninstalling to the active tox env.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c4a08acd0932072a130321abc6846a565434f554",
+          "quote": "at this point, tox contains the pip compiled pypyr, rather than the -e dev install.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Replacement of -e install stated; 'surprises' is inferred, not said."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D064",
+      "title": "Run coverage directly instead of pytest-cov",
+      "decision": "Drop the pytest-cov dependency and run 'coverage run -m pytest' plus report/xml.",
+      "alternatives": [
+        "pytest-cov plugin"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0ae7d9c94a090a28567798c4a70ea8420cd6957d",
+          "quote": "Get rid of pytest-cov dep, run coverage directly instead.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why drop pytest-cov?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote gives action only, no reason; consistent with no-reason claim."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D065",
+      "title": "Upload coverage via the codecov GitHub action",
+      "decision": "Retire the codecov pip uploader step in ops/build and use codecov/codecov-action, later with a token.",
+      "alternatives": [
+        "codecov pip package in build pipeline"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "bb9f7d5696b2724d416752e2a2a713d48534eecc",
+          "quote": "Retire previous codecov pip package uploader.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "bb9f7d5696b2724d416752e2a2a713d48534eecc",
+          "quote": "Migrate to new github action.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was the pip uploader deprecated upstream?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes describe migration only, no reason given."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D066",
+      "title": "CI caching: setup-python pip cache with cache-busting, then drop tox cache",
+      "decision": "Replace the manual pip cache with setup-python's cache, and key the tox cache on a CACHE_VERSION secret. Later remove the tox cache entirely.",
+      "alternatives": [
+        "Manual actions/cache for pip and tox"
+      ],
+      "reason": "GitHub Actions caches cannot be deleted, which broke builds after dependency updates. The reason for later removing the tox cache is not stated.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a095209e5ed238044bb0a196a2a6905deb12c244",
+          "quote": "github actions don't allow you to delete cache.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "a095209e5ed238044bb0a196a2a6905deb12c244",
+          "quote": "Updating this property will bust the cache.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "266ed35ef6f1f31c99d21cd4ed0321237a1e0a53",
+          "quote": "remove tox cache on gh action",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Undeletable cache stated; broken builds after updates is inferred."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D067",
+      "title": "Adapt tox.ini to tox 4",
+      "decision": "Use a comma-delimited passenv. CLI args to the test command now require '--'.",
+      "alternatives": [
+        "Pin tox 3"
+      ],
+      "reason": "tox 4 introduced breaking changes.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "6b6355be4583e4933d127074844e29d37944a079",
+          "quote": "change tox.ini to work with tox 3->4 breaking changes.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "6b6355be4583e4933d127074844e29d37944a079",
+          "quote": "`passenv` now takes comma delimited,",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly cites tox 3->4 breaking changes."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D068",
+      "title": "Ignore mypy on the ChainMapPretendDict class",
+      "decision": "Add a type: ignore pragma instead of making mypy understand the multiple inheritance.",
+      "alternatives": [
+        "Refactor to satisfy mypy"
+      ],
+      "reason": "The class is internal and unusual, so fixing it is not worth the time.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4f13b699ee6074c63ef6403e49f153294e374992",
+          "quote": "I don't really see the point in",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4f13b699ee6074c63ef6403e49f153294e374992",
+          "quote": "just add ignore pragma.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "'Internal and unusual' appears nowhere; quotes only dismiss the fix."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D069",
+      "title": "1-based line/column numbers in user-facing errors",
+      "decision": "Add 1 to ruamel's 0-based line and column in error messages and runErrors.",
+      "alternatives": [
+        "Report 0-based positions"
+      ],
+      "reason": "ruamel positions are 0-based. Friendly errors should match editors.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "be117e9ebd34cabc5646a9564905e2bee958951a",
+          "quote": "line + col number 0 based. Friendly errs +1. closes #151",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "0-based stated; matching editors inferred from +1."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D070",
+      "title": "Prevent duplicate sys.path entries under a lock",
+      "decision": "Add paths to sys.path only if they exist and are not already present, guarded by a shared lock and a set of known dirs.",
+      "alternatives": [
+        "Blind sys.path.append"
+      ],
+      "reason": "Duplicate sys.path entries accumulated. The lock guards concurrent additions.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "28f67ced3667da5d6ca4d7cba10a3668ea5911d0",
+          "quote": "prevent duplicates in sys.path. closes #218.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "28f67ced3667da5d6ca4d7cba10a3668ea5911d0",
+          "quote": "Do this under a shared lock to prevent duplicates in sys.path.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes say lock prevents duplicates in sys.path."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D071",
+      "title": "foreach iterates generators without len()",
+      "decision": "foreach counts iterations as it goes instead of calling len(), so it accepts generators and iterators.",
+      "alternatives": [
+        "Require sized sequences"
+      ],
+      "reason": "The change enables generator support.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "5300fb7b402f14accdbe4c98bfbdc674ee41c4e6",
+          "quote": "foreach support generators. closes #209",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says foreach supports generators."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D072",
+      "title": "Evaluate skip/swallow lazily",
+      "decision": "skip is evaluated only if run is true, and swallow only when an error occurs. 'in' is applied before the description/run evaluation.",
+      "alternatives": [
+        "Evaluate all decorators up front"
+      ],
+      "reason": "Invalid or expensive expressions are not evaluated unnecessarily. Tests show that an invalid skip must not break a run:false step.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "8a0959fcac3203a4404c2fcf58917259ea340f00",
+          "quote": "Evaluate step skip only if the run check returned true",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Ordering implies avoiding needless evaluation; tests not quoted."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D073",
+      "title": "debug step uses pprint instead of json.dumps",
+      "decision": "Log context with pprint.pformat, and only when INFO logging is enabled.",
+      "alternatives": [
+        "json.dumps with indent"
+      ],
+      "reason": "pprint can handle recursive and non-JSON-serializable objects.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "aa2b6123bf9ae7c8773e9fe966cb25374aecedad",
+          "quote": "Debug-step use pformat instead of json",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "aa2b6123bf9ae7c8773e9fe966cb25374aecedad",
+          "quote": "Dump of the recursive objects must not fail.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Recursive dump stated; non-JSON-serializable handling not said."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D074",
+      "title": "Documentation moved from README to pypyr.io website",
+      "decision": "Strip the large README/CONTRIBUTING docs and point to pypyr.io.",
+      "alternatives": [
+        "Keep full docs in README.rst"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "143d2676e316820e973e30115339e57511814d1c",
+          "quote": "update README & CONTRIBUTING to point to new website",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "143d2676e316820e973e30115339e57511814d1c",
+          "quote": "All documentation is here: https://pypyr.io/",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why move docs off the README?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quotes describe doc relocation, no reason given."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D075",
+      "title": "Rename default branch master to main",
+      "decision": "Rename the default branch and update workflows and badges.",
+      "alternatives": [
+        "Keep master"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "e169f0f9cfa3e2bb2991883df7bae19f1f0c11a9",
+          "quote": "rename master branch to main. closes #240.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote states rename only, no reason given."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D076",
+      "title": "Strip trailing newlines from saved cmd output",
+      "decision": "cmd/shell steps rstrip stdout and stderr when saving output.",
+      "alternatives": [
+        "Keep raw output"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "2929ecaef41f0e47d5b3c6574ce42a03772deefc",
+          "quote": "rstrip on cmd/shell. closes #192",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was this to simplify comparisons like the tag-exists check in ops/tag?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote states change only, no reason given."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D077",
+      "title": "Binary-mode object representers for TOML",
+      "decision": "ObjectRepresenter gets read/write modes. The TOML representer is binary and rejects an encoding argument.",
+      "alternatives": [
+        "Text-mode only representers"
+      ],
+      "reason": "TOML is always utf-8, and tomli reads bytes.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a84f89cabfb66ac0dbc169b7dce0afb369704502",
+          "quote": "ObjectRepresenter: add read_mode + write_mode properties, initialized with is_binary on ctor.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c0dc0997c4d39df309bfbc4a37dd8ac2f7c1d974",
+          "quote": "Toml is always utf-8.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "UTF-8 stated; tomli reading bytes not in quotes."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D078",
+      "title": "JSON output indent/ascii configurable",
+      "decision": "filewritejson and fileformatjson read indent and ensure_ascii from config.",
+      "alternatives": [
+        "Hard-coded indent=2, ensure_ascii=False"
+      ],
+      "reason": "The data states no reason beyond the config effort (#251).",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ed91c8132ba0f0a5f321ca43a53131ced807b626",
+          "quote": "Set json output indent & ascii handling from config.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote gives no reason; #251 not present in quotes."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D079",
+      "title": "argskwargs parser for makefile-style args",
+      "decision": "Add a parser that puts bare args into argList and key=value args at the context root.",
+      "alternatives": [
+        "Only list or kvp parsers"
+      ],
+      "reason": "It supports makefile-style CLI arguments.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "463b2359ae743746b8d18a7f9b0557ebe9625c6f",
+          "quote": "Add argskwargs parser for makefile style cli args.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says parser is for makefile style CLI args."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D080",
+      "title": "add and append steps for sets and lists",
+      "decision": "Add dedicated steps for adding to sets and appending to lists, with an unpack option.",
+      "alternatives": [
+        "Use py step for collection mutation"
+      ],
+      "reason": "The data states no reason.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "bef5b38efb0b26290e9b894fd32309a800fc0a58",
+          "quote": "pypyr.steps.add & pypyr.steps.append. closes #121.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote names steps only, no reason given."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D081",
+      "title": "README claims cross-platform support instead of the Docker workaround",
+      "decision": "Replace the Docker-image suggestion with an explicit statement that pypyr runs on Linux, MacOS and Windows.",
+      "alternatives": [
+        "Recommend official Docker image"
+      ],
+      "reason": "The README should make cross-platform compatibility clear.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ef32c7b3059d8abca441ec858b90c1d2e539364b",
+          "quote": "Add line to README explicitly to make clear cross-platform compatibility.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says README line makes cross-platform compatibility clear."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D082",
+      "title": "pypyrversion step output matches pypyr --version",
+      "decision": "The pypyrversion step logs exactly the same string as --version.",
+      "alternatives": [
+        "Prefixed 'pypyr version is:' output"
+      ],
+      "reason": "The two outputs are normalized to match.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "369aaa6f09cc64bb559553c23544ffbc98ea8b98",
+          "quote": "Make pypyrversion step output the same as pypyr --version.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says make step output same as pypyr --version."
+      },
+      "model_confidence": "explicit"
+    }
+  ]
+}

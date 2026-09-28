@@ -1,0 +1,113 @@
+[
+  {
+    "repo": "adrs",
+    "track": "T2",
+    "pre_decisions": 65,
+    "pre_nonguess": 61,
+    "pre_recall": 0.5556,
+    "pre_reasoned_recall": 0.3333,
+    "pre_precision": 0.082,
+    "pre_contradiction_rate": 0.0,
+    "pre_unsupported_rate": 0.0,
+    "pre_unsupported_rate_model_claimed": 0.0161,
+    "post_recall": null,
+    "post_reasoned_recall": null,
+    "question_efficiency": null,
+    "questions_queued": 42,
+    "mock": null,
+    "leak": {
+      "overlap_8grams": 78,
+      "residual_leak_8grams": 0,
+      "gold_overlap_8grams": 29
+    },
+    "pipeline": {
+      "calls": 5,
+      "input_tokens": 616783,
+      "output_tokens": 35062,
+      "cost_usd": 5.59,
+      "seconds": 316.9
+    },
+    "eval": {
+      "calls": 2,
+      "input_tokens": 14143,
+      "output_tokens": 1305,
+      "cost_usd": 0.13,
+      "seconds": 15.2
+    },
+    "reconstruct_wall_seconds": 319.0
+  },
+  {
+    "repo": "educational-platform",
+    "track": "T2",
+    "pre_decisions": 38,
+    "pre_nonguess": 20,
+    "pre_recall": 0.8462,
+    "pre_reasoned_recall": 0.6154,
+    "pre_precision": 0.45,
+    "pre_contradiction_rate": 0.0,
+    "pre_unsupported_rate": 0.0,
+    "pre_unsupported_rate_model_claimed": 0.0476,
+    "post_recall": null,
+    "post_reasoned_recall": null,
+    "question_efficiency": null,
+    "questions_queued": 30,
+    "mock": null,
+    "leak": {
+      "overlap_8grams": 253,
+      "residual_leak_8grams": 180,
+      "gold_overlap_8grams": 214
+    },
+    "pipeline": {
+      "calls": 3,
+      "input_tokens": 546218,
+      "output_tokens": 21617,
+      "cost_usd": 4.77,
+      "seconds": 192.1
+    },
+    "eval": {
+      "calls": 2,
+      "input_tokens": 12843,
+      "output_tokens": 2869,
+      "cost_usd": 0.15,
+      "seconds": 29.5
+    },
+    "reconstruct_wall_seconds": 193.7
+  },
+  {
+    "repo": "pypyr",
+    "track": "T2",
+    "pre_decisions": 82,
+    "pre_nonguess": 52,
+    "pre_recall": 1.0,
+    "pre_reasoned_recall": 0.4,
+    "pre_precision": 0.0385,
+    "pre_contradiction_rate": 0.0,
+    "pre_unsupported_rate": 0.0,
+    "pre_unsupported_rate_model_claimed": 0.037,
+    "post_recall": null,
+    "post_reasoned_recall": null,
+    "question_efficiency": null,
+    "questions_queued": 63,
+    "mock": null,
+    "leak": {
+      "overlap_8grams": 10,
+      "residual_leak_8grams": 0,
+      "gold_overlap_8grams": 0
+    },
+    "pipeline": {
+      "calls": 6,
+      "input_tokens": 596601,
+      "output_tokens": 43915,
+      "cost_usd": 5.59,
+      "seconds": 392.0
+    },
+    "eval": {
+      "calls": 2,
+      "input_tokens": 15720,
+      "output_tokens": 1160,
+      "cost_usd": 0.14,
+      "seconds": 15.6
+    },
+    "reconstruct_wall_seconds": 395.3
+  }
+]

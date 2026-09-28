@@ -1,0 +1,2310 @@
+{
+  "summary": {
+    "run_id": "eval",
+    "head": "d3b08eaccc6c4d1eee1c7a216694e2ad6d6b7030",
+    "decisions": 65,
+    "confidence": {
+      "explicit": 23,
+      "inferred": 38,
+      "guess": 4
+    },
+    "questions_queued": 42,
+    "abstain": false,
+    "files": [
+      "0001-rewrite-as-a-library-first-workspace-adrs-core-thi.md",
+      "0002-dual-modes-adr-tools-compatible-vs-nextgen-yaml-fr.md",
+      "0003-config-discovery-walks-upward-stops-at-git-root-wi.md",
+      "0004-edit-metadata-surgically-instead-of-re-rendering-t.md",
+      "0005-bodysectionpatch-patch-only-the-changed-body-secti.md",
+      "0006-rewrite-frontmatter-through-a-yaml-mapping-instead.md",
+      "0007-unicode-preserving-filename-slugs-replacing-deunic.md",
+      "0008-mark-discoveredconfig-non-exhaustive.md",
+      "0009-json-adr-interchange-format-with-federation-source.md",
+      "0010-add-an-mcp-server-then-enable-it-by-default.md",
+      "0011-migrate-mcp-server-from-rmcp-to-tower-mcp.md",
+      "0012-mcp---read-only-mode-that-does-not-register-write-.md",
+      "0013-mcp-server-starts-at-uninitialized-paths-add-init-.md",
+      "0014-mcp-write-tools-human-review-safeguards.md",
+      "0015-http-transport-for-the-mcp-server.md",
+      "0016-adopt-mdbook-lint-adr-rules-fold-lint-into-doctor.md",
+      "0017-detect-adr-format-from-headings-rather-than-frontm.md",
+      "0018-frontmatter-broken-links-reported-as-error-nextgen.md",
+      "0019-asymmetric-link-doctor-rule-warning-target-only-ma.md",
+      "0020-warn-on-unknown-config-keys-instead-of-rejecting-t.md",
+      "0021-configurable-doctor-rules-and-path-scoped-ignores.md",
+      "0023-init-reuses-a-matching-existing-config-and-respect.md",
+      "0024-mcp-init-repository-resolves-an-omitted-adr-dir-fr.md",
+      "0025-preserve-line-endings-on-write-normalize-crlf-only.md",
+      "0026-status-from-first-keyword-line-superseded-by-link-.md",
+      "0027-links-use-on-disk-filenames-not-title-derived-ones.md",
+      "0028-read-madr-h3-consequences-under-decision-outcome-a.md",
+      "0029-renumber-command-all-or-nothing-leaves-ambiguous-r.md",
+      "0030-configurable-default-status.md",
+      "0031-corpus-round-trip-harness-with-known-lossy-pins.md",
+      "0032-cargo-semver-checks-gate-on-every-pr.md",
+      "0034-create-the-github-release-once-in-host-plus-verify.md",
+      "0035-move-homebrew-distribution-to-homebrew-core.md",
+      "0036-per-crate-msrv-with-a-ci-guard.md",
+      "0037-replace-serde-yaml-with-serde-yaml-neo.md",
+      "0038-switch-template-engine-tinytemplate---handlebars--.md",
+      "0039-library-functions-return-warnings-instead-of-print.md",
+      "0040-relative-cli-paths-resolve-against--c.md",
+      "0041-normalize-rendered-templates-to-exactly-one-traili.md",
+      "0042-enable-minijinja-json-feature-for-tojson.md",
+      "0044-unicode-heavy-property-test-alphabet.md",
+      "0045-one-broad-non-default-adr-dir-mcp-test.md",
+      "0046-ci-runs-on-every-pr-no-paths-ignore.md",
+      "0047-only-v-tags-trigger-cargo-dist.md",
+      "0048-doctor---ng-becomes-an-explicit-no-op.md",
+      "0049-reject-empty-status-at-both-cli-and-core.md",
+      "0050-adrs-config-prints-load-errors-but-keeps-exit-code.md",
+      "0051-update-init-adr-0001-in-place-rather-than-supersed.md",
+      "0052-only-inject-madr-consequences-under-decision-outco.md",
+      "0053-commonmark-accurate-fence-tracking.md",
+      "0054-defer-kebab-case-linkkind-mapping.md",
+      "0055-frontmatter-title-falls-back-to-body-h1.md",
+      "0056-open-the-real-file-in-editor.md",
+      "0057-auto-derive-the-reverse-link-kind.md",
+      "0058-correct-spelling-superseded-with-a-hidden-alias.md",
+      "0059-ordered-toc-option.md",
+      "0060-docker-image-with-a-non-root-runtime.md",
+      "0061-audit-ignore-unmaintained-transitive-deps-use-the-.md",
+      "0062-remove-dead-pulldown-cmark-to-cmark.md",
+      "0063-update-generated-releaseyml-by-regenerating-not-ha.md",
+      "0064-safe-filename-prefix-check-with-strget.md",
+      "README.md",
+      "unknowns.md"
+    ],
+    "schema_rejected": 0,
+    "judge_malformed": 0,
+    "head_moved_to": null
+  },
+  "dry_run": {
+    "dry_run": true,
+    "run_id": "eval",
+    "windows": 1,
+    "tokens": 599952,
+    "docs": [
+      "CHANGELOG.md",
+      "README.md"
+    ]
+  },
+  "wall_seconds": 319.0,
+  "bodies_left": 187,
+  "pipeline_calls": [
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 597981,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 28805,
+        "output_tokens_details": {
+          "thinking_tokens": 13197
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 597981,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 28805,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 597981,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 597981
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 5.3602478,
+      "seconds": 251.0,
+      "model": "claude-opus-5-5[1m]",
+      "purpose": "reconstruct"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3583,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2178,
+        "output_tokens_details": {
+          "thinking_tokens": 1271
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3583,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2178,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3583,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3583
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0754408,
+      "seconds": 21.4,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3431,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1941,
+        "output_tokens_details": {
+          "thinking_tokens": 1021
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3431,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1941,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3431,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3431
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.06942980000000001,
+      "seconds": 20.6,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2857,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1797,
+        "output_tokens_details": {
+          "thinking_tokens": 923
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2857,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1797,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 2857,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2857
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0615228,
+      "seconds": 18.3,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1626,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 341,
+        "output_tokens_details": {
+          "thinking_tokens": 117
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1626,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 341,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 1626,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1626
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0216008,
+      "seconds": 5.6,
+      "purpose": "support"
+    }
+  ],
+  "schema": "why-log-decisions/1",
+  "head": "d3b08eaccc6c4d1eee1c7a216694e2ad6d6b7030",
+  "run_id": "eval",
+  "hidden": [
+    "doc/adr"
+  ],
+  "decisions": [
+    {
+      "id": "D001",
+      "title": "Rewrite as a library-first workspace (adrs-core + thin CLI)",
+      "decision": "Split the project into a Cargo workspace. adrs-core holds all business logic (domain types, Repository pattern, parsing, templates) and adrs is a thin CLI wrapper.",
+      "alternatives": [
+        "Keep the single-crate CLI with logic in src/cmd/*"
+      ],
+      "reason": "The commit calls this a clean library-first design, and a later commit makes adrs-core usable as a standalone dependency. The data never states why the rewrite happened.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f5e355e2dbbc2e9a87b2aaa9c16cb3147df0d463",
+          "quote": "Complete rewrite of adrs with a clean library-first design:",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "3f10a234d2bacc09fdd8eda8eca283d487c93fd0",
+          "quote": "Makes adrs-core comfortable to depend on directly (not just as the CLI's backing crate):",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What motivated the v2 rewrite: embedding in other tools, the MCP server, or maintainability of the old code?",
+      "support": {
+        "verdict": "states",
+        "why": "Both quotes directly state library-first design and standalone adrs-core use"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D002",
+      "title": "Dual modes: adr-tools-compatible vs NextGen YAML frontmatter",
+      "decision": "Support both legacy .adr-dir with plain markdown and adrs.toml with YAML frontmatter (NextGen, via --ng or mode=\"ng\").",
+      "alternatives": [
+        "Only adr-tools format",
+        "Only frontmatter format"
+      ],
+      "reason": "Existing adr-tools repositories must keep working, while NextGen adds structured metadata such as MADR fields and tags.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f5e355e2dbbc2e9a87b2aaa9c16cb3147df0d463",
+          "quote": "Dual config support: .adr-dir (legacy) + adrs.toml (new)",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "f5e355e2dbbc2e9a87b2aaa9c16cb3147df0d463",
+          "quote": "Existing .adr-dir repositories work unchanged",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Legacy compatibility stated; MADR fields and tags not mentioned"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D003",
+      "title": "Config discovery walks upward, stops at git root, with layered priority",
+      "decision": "Search parent directories for .adr-dir/adrs.toml, stop at the git root, and support a global config and env overrides.",
+      "alternatives": [
+        "Only read config from the current directory",
+        "Walk to the filesystem root"
+      ],
+      "reason": "Stopping at the git root avoids scanning system directories. Priority is CLI > env > project > global > defaults.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "79634072b5b03c4989d112860ea0c9c8a1c156fe",
+          "quote": "Stop at git root to avoid searching system directories",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "79634072b5b03c4989d112860ea0c9c8a1c156fe",
+          "quote": "Priority: CLI flags > env vars > project config > global config > defaults",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Both git-root stop and priority order quoted explicitly"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D004",
+      "title": "Edit metadata surgically instead of re-rendering the whole file",
+      "decision": "Add update_metadata() so that set_status/link/supersede change only the status, links and tags fields in place.",
+      "alternatives": [
+        "Re-render the entire ADR through the template engine"
+      ],
+      "reason": "Re-rendering destroyed custom sections, links, YAML comments and MADR structure.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "6aaac8b077376cc69dcc8de731e9b4c67681ca6c",
+          "quote": "entire file through the template engine, destroying custom sections,",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Custom sections stated; links, YAML comments, MADR structure not quoted"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D005",
+      "title": "BodySectionPatch: patch only the changed body sections",
+      "decision": "Repository::update takes a BodySectionPatch and rewrites only the listed sections, leaving all other bytes unchanged (a breaking public API change).",
+      "alternatives": [
+        "Re-render body from adr.context/decision/consequences"
+      ],
+      "reason": "Full re-render dropped MADR 4.0.0 decision text and rewrote headings.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "77db33a36e60e761b93dca4a24b88e2b1426294a",
+          "quote": "Introduce BodySectionPatch so Repository::update rewrites only fields",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "77db33a36e60e761b93dca4a24b88e2b1426294a",
+          "quote": "the caller changed, preserving on-disk bytes for everything else.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Quotes describe partial rewrite fix; MADR decision text and headings unmentioned"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D006",
+      "title": "Rewrite frontmatter through a YAML Mapping instead of regex splicing",
+      "decision": "Parse frontmatter into a serde_yaml Mapping, mutate the managed keys and re-emit. The original bytes are kept when nothing changes.",
+      "alternatives": [
+        "Regex replacement of status/links/tags/people blocks"
+      ],
+      "reason": "Regex splicing corrupted non-canonical people YAML. The accepted trade-off is that YAML comments may be dropped when a field changes.",
+      "impact": 3,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0bdd5021dfbe13d27689c36dd01c14c6ffa4b5cc",
+          "quote": "Stop regex-splicing status/links/tags/people fields. Parse the",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "0bdd5021dfbe13d27689c36dd01c14c6ffa4b5cc",
+          "quote": "so non-canonical people YAML stays valid after adrs status and link.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "0bdd5021dfbe13d27689c36dd01c14c6ffa4b5cc",
+          "quote": "Re-emitting via a standard YAML parser may drop YAML comments (e.g. SPDX",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Regex-splicing stop, people YAML validity, and comment loss all quoted"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D007",
+      "title": "Unicode-preserving filename slugs (replacing deunicode transliteration)",
+      "decision": "slug() keeps Unicode alphanumerics with Unicode-aware lowercasing, removes deunicode, and falls back to 'untitled' when the slug is empty.",
+      "alternatives": [
+        "Transliterate to ASCII with deunicode (v0.11.0)",
+        "ASCII-only filtering producing empty slugs"
+      ],
+      "reason": "Transliteration made Japanese titles unreadable (kanji rendered via pinyin). ASCII titles keep byte-identical slugs.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "6c221a15112f826b47f0c6f90f08cbeeb6d8e52c",
+          "quote": "deunicode, whose one-size-fits-all mapping renders Japanese kanji via",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "6c221a15112f826b47f0c6f90f08cbeeb6d8e52c",
+          "quote": "slug() now keeps Unicode alphanumeric characters (with Unicode-aware",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "6c221a15112f826b47f0c6f90f08cbeeb6d8e52c",
+          "quote": "byte-identical slugs to every previous version. The untitled fallback",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "b2a5ded2cba8c8e5fb71c305b7a0028f2ab4e508",
+          "quote": "Titles with no ASCII alphanumeric characters (CJK, Cyrillic, accented",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Kanji mapping issue and ASCII stability quoted; pinyin and unreadability truncated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D008",
+      "title": "Mark DiscoveredConfig #[non_exhaustive]",
+      "decision": "Make DiscoveredConfig non_exhaustive so that adding fields is no longer a breaking change.",
+      "alternatives": [
+        "Keep a plain public struct and bump minor on each field addition"
+      ],
+      "reason": "Two consecutive releases added fields, and 0.11.1 broke downstream struct literals in a patch release.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ec36b76be1192075d91a035b712fdeb4199f7614",
+          "quote": "Marking it non_exhaustive makes future additions non-breaking. Reading",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Non-breaking future additions quoted; 0.11.1 breakage history not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D009",
+      "title": "JSON-ADR interchange format with federation (source_uri)",
+      "decision": "Define a JSON Schema (schema/json-adr/v1.json) and export/import commands, with an optional source_uri field.",
+      "alternatives": [
+        "Markdown-only data exchange"
+      ],
+      "reason": "Provides a machine-readable interchange format. source_uri enables federation across repositories.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "70a93379b1f21abb1c4788bdb8f70f5e2ea410fb",
+          "quote": "Add JSON-ADR, a machine-readable interchange format for ADRs:",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4ff891b34d7b291bc83aed56250a1b2bca3754c9",
+          "quote": "Federation of ADRs across multiple repositories",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Which external consumers or tools was JSON-ADR designed for?",
+      "support": {
+        "verdict": "implies",
+        "why": "Interchange format and federation stated; source_uri not mentioned"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D010",
+      "title": "Add an MCP server, then enable it by default",
+      "decision": "Add an MCP server for AI agents, first behind --features mcp, later in the default features.",
+      "alternatives": [
+        "Optional feature only",
+        "No AI integration"
+      ],
+      "reason": "Lets agents use ADR repositories out of the box. The accepted cost is about 2.5MB of binary size and around 200 extra dependencies.",
+      "impact": 3,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "334bfedfdc75a79050ea97cd094fc55b7a8fbd9f",
+          "quote": "Add Model Context Protocol (MCP) server as an optional feature (--features mcp)",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2dc511fa8b23d3876e3224d2875febce22794579",
+          "quote": "allows AI agents to interact with ADR repositories out of the box without",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2dc511fa8b23d3876e3224d2875febce22794579",
+          "quote": "Binary size impact: +2.5MB (6.4MB -> 8.9MB)",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Agent use and 2.5MB stated; ~200 dependencies not quoted"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D011",
+      "title": "Migrate MCP server from rmcp to tower-mcp",
+      "decision": "Replace the rmcp ServerHandler implementation with tower-mcp's McpRouter/ToolBuilder.",
+      "alternatives": [
+        "Keep rmcp"
+      ],
+      "reason": "Less boilerplate, simpler stdio/HTTP transport setup, and declarative tool registration.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "66757aaeac014b7a6f6ef72fe92ad23b310a0290",
+          "quote": "This reduces boilerplate for the 15 MCP",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "66757aaeac014b7a6f6ef72fe92ad23b310a0290",
+          "quote": "tools, simplifies transport setup (stdio and HTTP), and makes adding new",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Boilerplate and transport stated; declarative registration cut off"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D012",
+      "title": "MCP --read-only mode that does not register write tools",
+      "decision": "`mcp serve --read-only` registers only the 11 read tools. The ro/rw macro token drives both the readOnlyHint annotation and registration.",
+      "alternatives": [
+        "Rely on readOnlyHint annotations",
+        "Keep a separate hand-maintained list of read tools"
+      ],
+      "reason": "Annotations are hints, not access control, and not every client can deny individual tools. Using a single list prevents the classification from drifting.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a0dd69f1bd2944a357282833faa54b87187debe1",
+          "quote": "the rest the only way to make the server safe is to not register the write",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "a0dd69f1bd2944a357282833faa54b87187debe1",
+          "quote": "flat list, so the classification cannot drift from a second hand-maintained",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Drift prevention stated; annotations-as-hints point only inferred"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D013",
+      "title": "MCP server starts at uninitialized paths; add init_repository tool",
+      "decision": "`mcp serve` binds the start directory when no repository exists, and exposes an init_repository write tool.",
+      "alternatives": [
+        "Exit when no repository is found"
+      ],
+      "reason": "There was no first-run workflow for agents.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "00d4130fe05c22d291350857651fbb78eb1d8617",
+          "quote": "The MCP server could not provide a first-run workflow: `adrs mcp serve` exited",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says no first-run workflow was possible"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D014",
+      "title": "MCP write tools: human-review safeguards",
+      "decision": "create_adr always created 'proposed' ADRs and response messages asked for human review. It later switched to the configured default status.",
+      "alternatives": [
+        "Let agents set arbitrary status on creation"
+      ],
+      "reason": "New ADRs should go through human review.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "419d0c7330f73c82457d737a9f13969c87133280",
+          "quote": "Create new ADRs (always as 'proposed' for human review)",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "When default_status was adopted, was dropping the forced 'proposed' for MCP a deliberate choice?",
+      "support": {
+        "verdict": "states",
+        "why": "Quote says ADRs created as proposed for human review"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D015",
+      "title": "HTTP transport for the MCP server",
+      "decision": "Add an optional mcp-http feature for serving over HTTP alongside stdio.",
+      "alternatives": [
+        "stdio only"
+      ],
+      "reason": "The server can be restarted independently of client sessions, supports multiple clients, and is easier to debug.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "44eb4024e3c9decf5956d2df8978759b0afc608e",
+          "quote": "Restart server without restarting Claude sessions",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Restart independence stated; multiple clients and debugging not quoted"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D016",
+      "title": "Adopt mdbook-lint ADR rules; fold lint into doctor",
+      "decision": "Integrate mdbook-lint-rulesets for ADR checks and remove the separate `lint` command, so doctor runs all rules.",
+      "alternatives": [
+        "Keep a separate lint command",
+        "Keep the custom doctor module"
+      ],
+      "reason": "Doctor runs all rules in about 6ms, so a separate lint command added complexity with no benefit.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4a0385c5471fb6156bc108ea022826781e6d45d8",
+          "quote": "Add comprehensive ADR linting using mdbook-lint-rulesets:",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "045ddefea323db85cfb11e4892d8915c98d43f8e",
+          "quote": "Doctor runs in ~6ms for all rules, so a separate lint command",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "045ddefea323db85cfb11e4892d8915c98d43f8e",
+          "quote": "adds complexity without benefit.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why reuse mdbook-lint rulesets rather than extend the in-house doctor module?",
+      "support": {
+        "verdict": "states",
+        "why": "Quotes state 6ms runtime and separate command adds complexity"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D017",
+      "title": "Detect ADR format from headings rather than frontmatter presence",
+      "decision": "Pin format-sensitive lint rules to the format detected from H2 headings.",
+      "alternatives": [
+        "Use mdbook-lint's AdrFormat::Auto (treats any frontmatter as MADR)"
+      ],
+      "reason": "A freshly `--ng init`ed repository failed doctor.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "cb1d341ac9333f09f63263f3296643224dedaeba",
+          "quote": "Detect each ADR's format from its actual section headings and pin the",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "cb1d341ac9333f09f63263f3296643224dedaeba",
+          "quote": "repository was therefore unhealthy with no user changes.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Unhealthy with no user changes quoted; --ng init not mentioned"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D018",
+      "title": "Frontmatter broken links reported as Error, NextGen only",
+      "decision": "Add a frontmatter-aware ADR013 check at Error severity, gated to NextGen, and deduplicate the upstream warning.",
+      "alternatives": [
+        "Reuse the upstream Warning-level markdown check",
+        "Apply in both modes"
+      ],
+      "reason": "A structured numeric target is unambiguous. Compatible-mode behavior stays unchanged.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "2d05a715a2a1767ff3e65b81a6a8df9f26ba50e4",
+          "quote": "an unresolvable frontmatter target is unambiguous, so it reports at",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2d05a715a2a1767ff3e65b81a6a8df9f26ba50e4",
+          "quote": "nextgen mode so compatible-mode behavior is unchanged (adr.links in",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Unambiguity and unchanged compatible mode quoted; numeric target not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D019",
+      "title": "Asymmetric-link doctor rule: Warning, target-only match",
+      "decision": "Warn when link A->B has no back-link from B to A, matching on target only.",
+      "alternatives": [
+        "Require the exact LinkKind::reverse() kind",
+        "Error severity"
+      ],
+      "reason": "`adrs link` allows overriding the reverse kind, and one-way links can be deliberate.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "fd6a6ec6e8bfb7585d1121d2527d3fa95f79cd4c",
+          "quote": "is matched by target only, not by LinkKind::reverse()'s exact kind,",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "fd6a6ec6e8bfb7585d1121d2527d3fa95f79cd4c",
+          "quote": "Severity is Warning, since a deliberately one-way link is",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Target-only matching implies override; deliberate one-way link stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D020",
+      "title": "Warn on unknown config keys instead of rejecting them",
+      "decision": "Deserialize config via serde_ignored and report unknown dotted keys on stderr without changing the exit code.",
+      "alternatives": [
+        "deny_unknown_fields",
+        "Silently ignore unknown keys"
+      ],
+      "reason": "Typos silently did nothing, but existing configs with stray keys must keep loading.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4238275a54e93c53eab6d960bfb9b8c3a2874a73",
+          "quote": "adrs.toml was parsed with bare toml::from_str and no config struct set",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4238275a54e93c53eab6d960bfb9b8c3a2874a73",
+          "quote": "No deny_unknown_fields anywhere -- an existing config with a stray key",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "No deny_unknown_fields and stray key quoted; silent typo effect inferred"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D021",
+      "title": "Configurable doctor rules and path-scoped ignores",
+      "decision": "Add [doctor] ignore/warnings_as_errors and [[doctor.ignore_path]] glob-scoped exemptions. Invalid globs produce a warning.",
+      "alternatives": [
+        "Repository-wide ignore only"
+      ],
+      "reason": "Suppress a false positive on one record without disabling the rule everywhere.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "40196bfb447f4773ab7deba9bd19ec98e85ce975",
+          "quote": "one record can be suppressed there without disabling it repository-wide.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "40196bfb447f4773ab7deba9bd19ec98e85ce975",
+          "quote": "An invalid glob is reported as a warning rather than silently dropped,",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "First quote says one record suppressed without repository-wide disabling."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D022",
+      "title": "Accept .adrs.toml as a hidden fallback config",
+      "decision": "Read .adrs.toml when adrs.toml is absent. If both exist, prefer adrs.toml and warn. init never writes .adrs.toml.",
+      "alternatives": [
+        "Only adrs.toml"
+      ],
+      "reason": "Not stated in the data.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "1ab1c5fcf9304a07ed83b5bde36abad85d22cde2",
+          "quote": "Discover .adrs.toml when adrs.toml is absent. If both exist, keep",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What use case (issue #377?) motivated supporting a hidden config filename?",
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote describes discovery behavior only; there is no reason to check."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D023",
+      "title": "init reuses a matching existing config and respects the configured adr_dir",
+      "decision": "init resolves adr_dir through discovery, and leaves an existing config untouched when it already points at the same directory. init is idempotent and skips the seed ADR when ADRs already exist.",
+      "alternatives": [
+        "Always write a fresh config for doc/adr",
+        "Error when already initialized"
+      ],
+      "reason": "Avoid discarding config settings, and support adopting adrs on existing ADR directories.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "e24abe5a957be78c72805858608a93ff6099b47b",
+          "quote": "so we don't silently discard settings it carries.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "927f5955a0a12c363423ca3b563453f112e2f89b",
+          "quote": "This supports migration scenarios where users want to adopt adrs tooling",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes state both: not discarding settings, and adoption on existing directories."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D024",
+      "title": "MCP init_repository resolves an omitted adr_dir from the existing config",
+      "decision": "When adr_dir is omitted, load the config at the bound root (no upward walk) the way the CLI does.",
+      "alternatives": [
+        "Default to doc/adr"
+      ],
+      "reason": "Defaulting to doc/adr failed the reuse check and deleted or re-pointed existing configs.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "c7b3ebd89ccb8218be9ddc163de613451d29dce9",
+          "quote": "Resolve an omitted `adr_dir` from the config at the root, the way the CLI",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "c7b3ebd89ccb8218be9ddc163de613451d29dce9",
+          "quote": "init takes the branch that deletes",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Deletion is mentioned; doc/adr default and reuse check are not quoted."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D025",
+      "title": "Preserve line endings on write; normalize CRLF only on read",
+      "decision": "Writers detect the dominant line ending and re-emit with it. The parser normalizes CRLF to LF in an in-memory copy only.",
+      "alternatives": [
+        "Always write LF",
+        "Leave CRLF unhandled in parser"
+      ],
+      "reason": "Writers converted CRLF files to LF. The parser ignored CRLF frontmatter.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "8d42ec86f9ec110400c173f2f44153548e83cf67",
+          "quote": "Both writers now detect the file's dominant line ending (CRLF if the",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "8d42ec86f9ec110400c173f2f44153548e83cf67",
+          "quote": "so any CRLF file came out all-LF after a body patch,",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "7244938f3993f74d67d5ea1fdf232782bee68fd2",
+          "quote": "call only: no file is rewritten and no write path (update_metadata,",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "CRLF-to-LF conversion is stated; the parser ignoring CRLF frontmatter is not."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D026",
+      "title": "Status from first keyword line; Superseded-by link still wins",
+      "decision": "Take the status from the first line that opens with a keyword (tolerating trailing punctuation). A Superseded-by link still forces Superseded.",
+      "alternatives": [
+        "Last matching line wins"
+      ],
+      "reason": "Status depended on where paragraphs wrapped. adr-tools doesn't always update the keyword when it adds a Superseded-by link.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "732907a24219f48862f4f2d1304a2b280d591a75",
+          "quote": "Read the keyword from the first line that opens with one, tolerate trailing",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "732907a24219f48862f4f2d1304a2b280d591a75",
+          "quote": "disagreed on status depending only on where the paragraph broke.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "732907a24219f48862f4f2d1304a2b280d591a75",
+          "quote": "adr-tools appends that link without always updating the keyword, so",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes state both the paragraph-break dependence and adr-tools not updating keywords."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D027",
+      "title": "Links use on-disk filenames, not title-derived ones",
+      "decision": "Add Adr::link_filename() and use it for TOC, graph, book and link hrefs.",
+      "alternatives": [
+        "Recompute from title via Adr::filename()"
+      ],
+      "reason": "The slug scheme changed across releases and files can be renamed by hand, so title-derived names can point at files that don't exist.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "655552fabfe228abcbae263006be6dfcf69b3b51",
+          "quote": "Add Adr::link_filename(), which returns the file name of adr.path",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "655552fabfe228abcbae263006be6dfcf69b3b51",
+          "quote": "slug scheme has changed across releases",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Slug change is stated; manual renames and missing files are not."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D028",
+      "title": "Read MADR H3 Consequences under Decision Outcome as consequences",
+      "decision": "Narrow exception in both section parsers: only a literal Consequences H3 under the decision H2 is diverted.",
+      "alternatives": [
+        "Recognize H2 headings only"
+      ],
+      "reason": "Makes the read path match the write path that already targets ### Consequences.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "55f69d0a74436732a3de5303b4fc40d1de90a01b",
+          "quote": "Only a literal \"Consequences\" H3 under a \"decision\"-mapped H2 is",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "55f69d0a74436732a3de5303b4fc40d1de90a01b",
+          "quote": "The read path did not match it: both",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says the read path did not match the write path."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D029",
+      "title": "renumber command: all-or-nothing, leaves ambiguous references alone",
+      "decision": "Validate everything before writing, resolve the source via list(), and when the source number was duplicated, report number-based inbound links instead of rewriting them.",
+      "alternatives": [
+        "Rewrite every reference to `from`",
+        "Resolve via get()"
+      ],
+      "reason": "get() silently picks one of several matches. Rewriting ambiguous references would silently repoint correct relationships.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "7d97f73a0d239b267538f63a757d63322e3f649e",
+          "quote": "Nothing is written until every precondition and rewrite has been",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "7d97f73a0d239b267538f63a757d63322e3f649e",
+          "quote": "(which silently picks one of several matches",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "8ef53d935e10de49496868627d84d11b7e295865",
+          "quote": "number is the reading that stays valid, so rewriting silently repointed",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes state silent picking by get() and silent repointing."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D030",
+      "title": "Configurable default_status",
+      "decision": "Add default_status to adrs.toml, later also honored by supersede. Precedence is --status > default_status > proposed.",
+      "alternatives": [
+        "Always proposed"
+      ],
+      "reason": "Supports workflows where merging the PR means approving the ADR.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a8f4df60d3d231c30d10877365062e54d6de10e8",
+          "quote": "Allows a user flow where PR merging means approving an ADR, so the ADR itself should be created as accepted.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "2bf9da2baf76420b9614f81d81346440899df000",
+          "quote": "--status > default_status > proposed.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says PR merging means approving the ADR."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D031",
+      "title": "Corpus round-trip harness with KNOWN-LOSSY pins",
+      "decision": "Add realistic fixture ADRs with byte-identity tests. Known lossy behaviors are pinned with issue numbers, and fixtures are forced to LF via .gitattributes.",
+      "alternatives": [
+        "Ad-hoc unit tests only"
+      ],
+      "reason": "So fixes show up deliberately when a pin starts failing.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "249b9b01495e081ae342e6b4a839a162aa56cd17",
+          "quote": "with tracking issues (#310, #323, #324, #325) so fixes surface deliberately.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "29fc013a491d6108ee7d292da64ee96f3b30409a",
+          "quote": "Add a .gitattributes rule so the byte-exact",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says tracking issues exist so fixes surface deliberately."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D032",
+      "title": "cargo-semver-checks gate on every PR",
+      "decision": "Run cargo-semver-checks against adrs-core in CI for each PR.",
+      "alternatives": [
+        "Rely on release-plz semver_check at release time only"
+      ],
+      "reason": "0.11.1 shipped a breaking change as a patch, and release-plz's check wasn't visible on the PR that introduced it.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "d19830a6125a60ca8d3369bd3e3870b9c7bb0661",
+          "quote": "Run cargo-semver-checks against adrs-core on every PR instead, where the",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "d19830a6125a60ca8d3369bd3e3870b9c7bb0661",
+          "quote": "0.11.1 shipped a breaking change as a patch release -- DiscoveredConfig",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Breaking patch is stated; release-plz visibility is only suggested by a truncated quote."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D033",
+      "title": "Release via cargo-dist + release-plz",
+      "decision": "Replace the hand-written release workflow with cargo-dist, use release-plz for versioning and changelogs, and give adrs-core no GitHub release.",
+      "alternatives": [
+        "Manual cross-compile workflow"
+      ],
+      "reason": "Not stated beyond adding cross-platform builds and Windows support. A PAT is used because GITHUB_TOKEN actions don't trigger other workflows.",
+      "impact": 2,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "94d4c417091457927b4473e9c2a74eb1f8ead446",
+          "quote": "Add cargo-dist for cross-platform release builds",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4d03b5bb23bdff206855e7ef327cf161a9ee71a9",
+          "quote": "adrs-core: Publish to crates.io, no GitHub release (library)",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "4d03b5bb23bdff206855e7ef327cf161a9ee71a9",
+          "quote": "GITHUB_TOKEN actions don't trigger other workflows (security feature)",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What problems with the previous release workflow drove adopting cargo-dist and release-plz?",
+      "support": {
+        "verdict": "implies",
+        "why": "Cross-platform and GITHUB_TOKEN limits are stated; Windows and PAT are not quoted."
+      },
+      "model_confidence": "guess"
+    },
+    {
+      "id": "D034",
+      "title": "Create the GitHub release once in host, plus verify-release",
+      "decision": "The plan job only runs `dist plan`. The host job creates the release atomically with artifacts and is idempotent. verify-release re-drafts incomplete releases.",
+      "alternatives": [
+        "Pre-create the release in plan"
+      ],
+      "reason": "v0.7.5 shipped empty. Broken releases should recover automatically and never pass silently.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "6c0e581e0dc53b52150115d5601e34dc88ee03f6",
+          "quote": "v0.7.5's release shipped empty: the plan job pre-created the release via",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "1dde1ce9f49169fb2ac200354928324ff979cdfe",
+          "quote": "From the release-pipeline audit. Makes broken releases recover automatically",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Empty release and auto-recovery are stated; 'never pass silently' is not quoted."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D035",
+      "title": "Move Homebrew distribution to homebrew-core",
+      "decision": "Stop publishing to the personal tap and rely on BrewTestBot autobumps in homebrew-core.",
+      "alternatives": [
+        "Keep maintaining joshrotenberg/homebrew-brew"
+      ],
+      "reason": "adrs was accepted into homebrew-core and gets autobumped.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f5a2d65f514b109e717f7ca097639a521fee8823",
+          "quote": "adrs was accepted into homebrew-core (Homebrew/homebrew-core#290715,",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "f5a2d65f514b109e717f7ca097639a521fee8823",
+          "quote": "Stop generating and publishing the tap formula:",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "homebrew-core acceptance is stated; autobumping is not quoted."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D036",
+      "title": "Per-crate MSRV with a CI guard",
+      "decision": "adrs-core MSRV is 1.88 and adrs is 1.90, with each checked in CI using --locked.",
+      "alternatives": [
+        "Single workspace MSRV",
+        "No MSRV"
+      ],
+      "reason": "Keep the library floor low for consumers that don't pull in the CLI's dependencies.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "129b22bb9d1a34fdedf94e77c3707ecbc1c75185",
+          "quote": "consumers that don't pull the CLI's deps aren't forced higher.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says consumers without CLI deps aren't forced higher."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D037",
+      "title": "Replace serde_yaml with serde_yaml_neo",
+      "decision": "Migrate adrs-core YAML handling to serde_yaml_neo 0.11.",
+      "alternatives": [
+        "Keep serde_yaml 0.9"
+      ],
+      "reason": "serde_yaml was marked deprecated.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "f5e355e2dbbc2e9a87b2aaa9c16cb3147df0d463",
+          "quote": "version = \"0.9.34+deprecated\"",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was deprecation the reason for choosing serde_yaml_neo over other forks?",
+      "support": {
+        "verdict": "implies",
+        "why": "Version tag shows deprecation but does not give it as a reason."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D038",
+      "title": "Switch template engine: tinytemplate -> handlebars -> minijinja",
+      "decision": "Moved to handlebars to allow custom runtime templates, then to minijinja in the v2 rewrite.",
+      "alternatives": [
+        "tinytemplate",
+        "handlebars"
+      ],
+      "reason": "Handlebars enabled custom templates. The reason for minijinja is not stated.",
+      "impact": 2,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "1e3d8b54fe84ab9bf365a4203b3d622fe83f22ba",
+          "quote": "Paves the way for allowing custom templates at runtime.",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "f5e355e2dbbc2e9a87b2aaa9c16cb3147df0d463",
+          "quote": "Updated dependencies (pulldown-cmark 0.12, minijinja instead of handlebars)",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Why was minijinja chosen over handlebars for v2?",
+      "support": {
+        "verdict": "implies",
+        "why": "Custom templates are mentioned, but not attributed to handlebars explicitly."
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D039",
+      "title": "Library functions return warnings instead of printing to stderr",
+      "decision": "Add export_directory_with_warnings, following the list/list_with_errors convention.",
+      "alternatives": [
+        "eprintln! inside the library"
+      ],
+      "reason": "Callers decide how, or whether, to surface warnings.",
+      "impact": 2,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "3f10a234d2bacc09fdd8eda8eca283d487c93fd0",
+          "quote": "callers control how (or whether) to surface them. Mirrors the existing",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says callers control how or whether to surface them."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D040",
+      "title": "Relative CLI paths resolve against -C",
+      "decision": "Add resolve_cli_path for output/input paths.",
+      "alternatives": [
+        "Resolve against process cwd"
+      ],
+      "reason": "-C means 'run from a different directory'. The old behavior silently overwrote files in the process cwd.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "680f18956ba9a5dd00cb30505a3346be172d94d8",
+          "quote": "-C directory, matching its documented semantics (run from a different",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "680f18956ba9a5dd00cb30505a3346be172d94d8",
+          "quote": "its output relative to the process cwd, silently overwriting any",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes state the documented -C semantics and the silent cwd overwriting."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D041",
+      "title": "Normalize rendered templates to exactly one trailing newline",
+      "decision": "Trim and append a single newline in Template::render.",
+      "alternatives": [
+        "Patch each template source (the #304 approach)"
+      ],
+      "reason": "Per-template fixes couldn't handle the empty-expression case. Doing it in one place also covers custom templates.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "420be79735cbae848f32452f931bcad516ae8e85",
+          "quote": "each template source (the #304 approach, which cannot fix the",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Says per-template approach can't fix something; empty-expression and custom templates not named"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D042",
+      "title": "Enable minijinja json feature for tojson",
+      "decision": "Turn on the json feature so custom templates can safely quote titles in YAML.",
+      "alternatives": [
+        "Hand-rolled escaping in templates"
+      ],
+      "reason": "Hand-rolled escaping is fragile.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "b11159239c70b63d8af769143848f030aa65c68c",
+          "quote": "Hand-rolled escaping in a template is fragile.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says hand-rolled escaping is fragile, nearly verbatim"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D043",
+      "title": "Shared UTF-8-safe snippet module",
+      "decision": "Move snippet extraction into one module used by the CLI and MCP, mapping lowercased offsets back to the original text.",
+      "alternatives": [
+        "Duplicated byte-slicing implementations"
+      ],
+      "reason": "Both copies panicked on multibyte text.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "208ee0ddd6fa860e5bd3771ed09c8ee0f447fdd9",
+          "quote": "Snippet extraction now lives in one place, shared by both call sites, and",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "unrelated",
+        "why": "Quote describes consolidation only; no mention of multibyte panics"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D044",
+      "title": "Unicode-heavy property-test alphabet",
+      "decision": "Replace ASCII-only proptest generators with PROP_ALPHABET, plus a guard test.",
+      "alternatives": [
+        "[a-zA-Z0-9 ] generators"
+      ],
+      "reason": "An ASCII-only alphabet can't reproduce the panics that actually shipped.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "d19830a6125a60ca8d3369bd3e3870b9c7bb0661",
+          "quote": "An alphabet that cannot produce a multi-byte character cannot produce any",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Truncated quote links multi-byte characters to failures; 'shipped panics' not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D045",
+      "title": "One broad non-default adr_dir MCP test",
+      "decision": "Add a single test covering the whole tool surface in a nested adr_dir.",
+      "alternatives": [
+        "Convert all 56 tests"
+      ],
+      "reason": "Converting them would just relocate the monoculture, and the default layout is still worth covering.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "aa1226c9d0b4792dc464eafd50dbcff3683757b0",
+          "quote": "This is deliberately one broad test rather than a conversion of the 56",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "aa1226c9d0b4792dc464eafd50dbcff3683757b0",
+          "quote": "existing ones: converting them would just relocate the monoculture, and the",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Monoculture part stated; default-layout coverage is truncated, not said"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D046",
+      "title": "CI runs on every PR (no paths-ignore)",
+      "decision": "Remove paths-ignore from the CI workflow.",
+      "alternatives": [
+        "Skip CI for docs-only changes"
+      ],
+      "reason": "Required checks would otherwise block docs-only PRs.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "19a68b7581e87e4a64a5731feb3e1fdbd463bf18",
+          "quote": "them from merging. Running CI on every PR keeps the required checks reliable.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Blocking merges is suggested; docs-only PRs not mentioned"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D047",
+      "title": "Only v* tags trigger cargo-dist",
+      "decision": "Restrict the release trigger to CLI tags.",
+      "alternatives": [
+        "Trigger on any versioned tag"
+      ],
+      "reason": "adrs-core tags created junk releases.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "c02ffd7d2e37513937324f72bfd18c48d7081e61",
+          "quote": "Restrict the trigger to 'v[0-9]+.[0-9]+.[0-9]+*' so only the dist-able CLI tag",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Trigger restriction suggests other tags caused releases; 'junk' not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D048",
+      "title": "Doctor --ng becomes an explicit no-op",
+      "decision": "Print a note when --ng is passed to doctor.",
+      "alternatives": [
+        "Silently ignore",
+        "Change lint behavior"
+      ],
+      "reason": "Lint rules detect the format per file, so the mode doesn't apply.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "e24987c012ed3333008f7432ccf1b8ef50fde79f",
+          "quote": "make the no-op explicit: 'doctor' now prints a note when --ng is passed and",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "No-op made explicit; per-file format detection not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D049",
+      "title": "Reject empty status at both CLI and core",
+      "decision": "Validate status in the CLI and guard set_status in core.",
+      "alternatives": [
+        "CLI-only validation"
+      ],
+      "reason": "An empty status wrote YAML null and hid the ADR. The core check is defense in depth.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "5dfdbce10005b7e235dbb04c0ca26e99b7fc51fc",
+          "quote": "as defense-in-depth so any caller that passes an empty custom status gets an",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Defense-in-depth stated; YAML null hiding the ADR not mentioned"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D050",
+      "title": "`adrs config` prints load errors but keeps exit code 0",
+      "decision": "Print the discovery error as a warning instead of dropping it.",
+      "alternatives": [
+        "Drop the error",
+        "Fail the command"
+      ],
+      "reason": "It is a diagnostic, and scripts should not start failing.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a3dc672662ee9eff928792eb0d3af1219da0b958",
+          "quote": "The exit code is deliberately unchanged: this is a diagnostic, and scripts",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says exit code unchanged because it's a diagnostic, scripts"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D051",
+      "title": "Update init ADR #0001 in place rather than superseding it",
+      "decision": "Move the seed text into init_adr.rs and edit it directly.",
+      "alternatives": [
+        "Supersede ADR #1"
+      ],
+      "reason": "Superseding would leave an awkward meta-ADR in the log.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ace568a0b32c32ca7af4efa91cd19908af75fc1b",
+          "quote": "replacing boilerplate ADR #1 would leave an",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Truncated quote suggests an undesirable leftover; 'awkward meta-ADR' not said"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D052",
+      "title": "Only inject MADR ### Consequences under Decision Outcome",
+      "decision": "Only inject ### Consequences under Decision Outcome. Error on Nygard files without ## Consequences, and reject empty update_content.",
+      "alternatives": [
+        "Always append ### Consequences"
+      ],
+      "reason": "Nygard files have their own ## Consequences section. An empty patch would silently do nothing.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "0e79ef8e794030bdea324e644c73f79190861c3c",
+          "quote": "Only append MADR ### Consequences under Decision Outcome; error on Nygard",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Nygard error stated; own section and empty-patch reasons not said"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D053",
+      "title": "CommonMark-accurate fence tracking",
+      "decision": "Track the fence character and run length.",
+      "alternatives": [
+        "XOR-toggle on any ``` or ~~~ line"
+      ],
+      "reason": "Nested or mixed fences truncated patches.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "44e28747ffb5b2f68b8537c3dca2c8f25811ce24",
+          "quote": "Record opening fence character and run length so nested backticks,",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Fix targets nested backticks; truncated patches not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D054",
+      "title": "Defer kebab-case LinkKind mapping",
+      "decision": "Leave `relates-to` deserializing as Custom.",
+      "alternatives": [
+        "Add serde aliases"
+      ],
+      "reason": "An alias would rewrite `relates-to` as `relatesto` on the next write, breaking byte-identity.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "fd088cc6d1c3eaa691d272c93ae47ee17c044571",
+          "quote": "byte-identity goal for fixture 0007. Left as a comment on LinkKind.",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Byte-identity goal mentioned; alias rewriting to relatesto not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D055",
+      "title": "Frontmatter title falls back to body H1",
+      "decision": "Fill a missing frontmatter title from the first H1 in the body.",
+      "alternatives": [
+        "Drop the ADR"
+      ],
+      "reason": "ADRs without a title field were silently dropped.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "1d87131535cce555960e4fb48fccec2f3e6e920d",
+          "quote": "now extracts the title from the first H1 heading in the body instead of",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "H1 fallback suggests missing titles mattered; silent dropping not stated"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D056",
+      "title": "Open the real file in $EDITOR",
+      "decision": "Use edit::edit_file on the ADR path.",
+      "alternatives": [
+        "Edit a temp copy"
+      ],
+      "reason": "The data states only that the editor should open the real file. Why the temp-copy approach was a problem is not stated.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ca96704f56d170fe46d5620c5b0846c4b2159684",
+          "quote": "Use edit::edit_file() instead of edit::edit() so $EDITOR opens the real",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "What problem did editing a temp copy cause?",
+      "support": {
+        "verdict": "states",
+        "why": "Quote says editor should open the real file"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D057",
+      "title": "Auto-derive the reverse link kind",
+      "decision": "Make reverse_link optional and derive it with LinkKind::reverse().",
+      "alternatives": [
+        "Require both link descriptions"
+      ],
+      "reason": "Simplifies the common case.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "49ded7c01f61482fc329cb2235ae419b5e424e34",
+          "quote": "This simplifies the common case from:",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says it simplifies the common case"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D058",
+      "title": "Correct spelling 'superseded' with a hidden alias",
+      "decision": "Rename the option to --superseded and keep --superceded as a hidden alias.",
+      "alternatives": [
+        "Keep the misspelling"
+      ],
+      "reason": "Backwards compatibility.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "af1f81d71d84e40fc93cbe7e6986c3c2ac6f2407",
+          "quote": "is a hidden alias for the correct spelling: `superseded`",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "af1f81d71d84e40fc93cbe7e6986c3c2ac6f2407",
+          "quote": "and is maintained for backwards compatibility",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote says alias maintained for backwards compatibility"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D059",
+      "title": "Ordered TOC option",
+      "decision": "Add --ordered to produce a proper ordered list.",
+      "alternatives": [
+        "Bullets with numbered titles"
+      ],
+      "reason": "The author considered the existing unordered-list output ugly markdown.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a4578eebf8560b02a3816a986e4f0e1f3694924a",
+          "quote": "In my opinion this is ugly markdown, since it generates an unordered list and",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Author calls the unordered-list output ugly markdown"
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D060",
+      "title": "Docker image with a non-root runtime",
+      "decision": "Build a multi-stage Debian slim image that runs as a non-root user.",
+      "alternatives": [
+        "No container distribution"
+      ],
+      "reason": "Non-root for security. The reason for offering Docker at all is not stated.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "212e3e1f62624ab6103bf96f9b30c9ddcd0d710c",
+          "quote": "Non-root user for security",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Who is the Docker image for (CI users)?",
+      "support": {
+        "verdict": "states",
+        "why": "Quote says non-root user for security"
+      },
+      "model_confidence": "inferred"
+    },
+    {
+      "id": "D061",
+      "title": "Audit: ignore unmaintained transitive deps; use the audit-check action",
+      "decision": "Ignore the bincode and yaml-rust advisories, and switch to rustsec/audit-check.",
+      "alternatives": [
+        "Fail on the advisories",
+        "cargo install cargo-audit"
+      ],
+      "reason": "No upgrade path exists for these transitive deps, and the action avoids a 60-90s rebuild.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "83f268f90eaf705d62533d26fcdb116dfbda1092",
+          "quote": "deps via syntect with no upgrade path available",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "507bf22e0e888a457173c58fb27ea3ac10ad26c2",
+          "quote": "eliminate 60-90s recompile on every run",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes explicitly state no upgrade path and eliminating 60-90s recompile."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D062",
+      "title": "Remove dead pulldown-cmark-to-cmark",
+      "decision": "Drop the unused dependency.",
+      "alternatives": [
+        "Keep it"
+      ],
+      "reason": "It had zero usages.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "2df00acfa0c105fe6cd6cd3e1bb10151e4decb61",
+          "quote": "but had zero usages in any source file (dead since the v2 rewrite).",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quote explicitly says zero usages in any source file."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D063",
+      "title": "Update generated release.yml by regenerating, not hand-editing",
+      "decision": "Bump actions in hand-maintained workflows, and upgrade cargo-dist for release.yml.",
+      "alternatives": [
+        "Hand-edit release.yml"
+      ],
+      "reason": "Node 20 is being deprecated, and manual edits would be clobbered on regeneration.",
+      "impact": 1,
+      "confidence": "explicit",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "ab200400a7b6cc4ac2a1182e79c308664227ce6b",
+          "quote": "GitHub is deprecating Node 20 actions (forced to Node 24 on 2026-06-16,",
+          "exists": true,
+          "rejected": null
+        },
+        {
+          "kind": "commit",
+          "ref": "ab200400a7b6cc4ac2a1182e79c308664227ce6b",
+          "quote": "would be clobbered on the next regeneration and risks the release pipeline).",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "states",
+        "why": "Quotes state Node 20 deprecation and clobbering on regeneration."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D064",
+      "title": "Safe filename prefix check with str::get",
+      "decision": "Replace name[..4] with str::get(..4).",
+      "alternatives": [
+        "Byte-length guard + slicing"
+      ],
+      "reason": "Slicing panicked on multibyte filenames.",
+      "impact": 1,
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "a2071f74bf88d4d50b116a7d3af11e5555b0068c",
+          "quote": "Use `str::get(..4)`, which returns None rather than panicking when the",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": null,
+      "support": {
+        "verdict": "implies",
+        "why": "Fix avoids panics, but quote is truncated before naming multibyte filenames."
+      },
+      "model_confidence": "explicit"
+    },
+    {
+      "id": "D065",
+      "title": "tower-mcp auto_instructions and read_only annotations",
+      "decision": "Generate server instructions from tool descriptions and annotate read tools.",
+      "alternatives": [
+        "Hand-written instructions string"
+      ],
+      "reason": "Not stated. Likely to keep the instructions in sync with the tools.",
+      "impact": 1,
+      "confidence": "guess",
+      "evidence": [
+        {
+          "kind": "commit",
+          "ref": "4597fb3b4331079633b6bd27c6a38bb149dfe7c3",
+          "quote": "Use auto_instructions() for server instructions generated from tool descriptions",
+          "exists": true,
+          "rejected": null
+        }
+      ],
+      "question": "Was auto_instructions adopted to avoid instructions drifting from the tool list?",
+      "support": {
+        "verdict": "implies",
+        "why": "Generation from tool descriptions suggests syncing, but no reason is stated."
+      },
+      "model_confidence": "guess"
+    }
+  ]
+}

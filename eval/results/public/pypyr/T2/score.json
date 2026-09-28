@@ -1,0 +1,426 @@
+{
+  "pairs": [
+    {
+      "gold": "G01",
+      "rec": "D016",
+      "score": 0.75
+    },
+    {
+      "gold": "G02",
+      "rec": "D002",
+      "score": 0.65
+    },
+    {
+      "gold": "G03",
+      "rec": "D042",
+      "score": 0.9
+    },
+    {
+      "gold": "G04",
+      "rec": "D014",
+      "score": 0.8
+    },
+    {
+      "gold": "G05",
+      "rec": "D017",
+      "score": 0.9
+    }
+  ],
+  "match_malformed": false,
+  "verdicts_pre": [
+    {
+      "gold": "G01",
+      "rec": "D016",
+      "verdict": "not-stated",
+      "why": "Only says the rationale lives in an ADR that was not provided."
+    },
+    {
+      "gold": "G02",
+      "rec": "D002",
+      "verdict": "consistent",
+      "why": "Supporting relative pipeline paths matches the gold's central idea of parent-relative paths."
+    },
+    {
+      "gold": "G03",
+      "rec": "D042",
+      "verdict": "not-stated",
+      "why": "Explicitly says the data states no reason."
+    },
+    {
+      "gold": "G04",
+      "rec": "D014",
+      "verdict": "consistent",
+      "why": "Making hardcoded values configurable matches the gold's goal of configurability via a config file."
+    },
+    {
+      "gold": "G05",
+      "rec": "D017",
+      "verdict": "not-stated",
+      "why": "Explicitly says the data states no reason."
+    }
+  ],
+  "PRE": {
+    "decisions": 82,
+    "nonguess": 52,
+    "confidence": {
+      "explicit": 19,
+      "inferred": 33,
+      "guess": 30
+    },
+    "gold": 5,
+    "gold_traceable": 5,
+    "matched": 5,
+    "recall": 1.0,
+    "recall_all_gold": 1.0,
+    "reasoned_recall": 0.4,
+    "precision": 0.0385,
+    "contradiction_rate": 0.0,
+    "unsupported_rate": 0.0,
+    "unsupported_rate_model_claimed": 0.037,
+    "pair_verdicts": {
+      "consistent": 2,
+      "contradicts": 0,
+      "unsupported": 0,
+      "not-stated": 3,
+      "unjudged": 0
+    },
+    "pair_unsupported_rate_nonguess": 0.0,
+    "matched_and_consistent": 2,
+    "question_targets": []
+  },
+  "leak": {
+    "hidden_files": [
+      "docs/adr/0001-namespace-on-eval-and-exec.md",
+      "docs/adr/0002-relative-pipelines-api-changes.md",
+      "docs/adr/0003-toml-in-core.md",
+      "docs/adr/0004-config-files.md",
+      "docs/adr/0005-build-front-end.md"
+    ],
+    "overlap_8grams": 10,
+    "explained_by_visible_messages_or_diffs": 10,
+    "residual_leak_8grams": 0,
+    "residual_files": [],
+    "residual_examples": [],
+    "gold_overlap_8grams": 0,
+    "gold_overlap_ids": []
+  },
+  "repo": "pypyr",
+  "track": "T2",
+  "head": "b3e8f8c6063c11e37c1c762b89b4cd8620460c79",
+  "wall_seconds": 395.3,
+  "questions_queued": 63,
+  "bodies_left": 116,
+  "pipeline_calls": [
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 573854,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 35501,
+        "output_tokens_details": {
+          "thinking_tokens": 14496
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 573854,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 35501,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 573854,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 573854
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 5.3011517999999995,
+      "seconds": 302.8,
+      "model": "claude-opus-5-5[1m]",
+      "purpose": "reconstruct"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3430,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2198,
+        "output_tokens_details": {
+          "thinking_tokens": 1328
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3430,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2198,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3430,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3430
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.07453180000000001,
+      "seconds": 23.0,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3305,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2126,
+        "output_tokens_details": {
+          "thinking_tokens": 1278
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3305,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2126,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3305,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3305
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.07200379999999999,
+      "seconds": 21.0,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3051,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1900,
+        "output_tokens_details": {
+          "thinking_tokens": 1070
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3051,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1900,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3051,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3051
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.06527980000000001,
+      "seconds": 19.7,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2890,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2005,
+        "output_tokens_details": {
+          "thinking_tokens": 1148
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2890,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2005,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 2890,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2890
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0659758,
+      "seconds": 20.8,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1305,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 185,
+        "output_tokens_details": {
+          "thinking_tokens": 99
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1305,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 185,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 1305,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1305
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0156548,
+      "seconds": 4.7,
+      "purpose": "support"
+    }
+  ],
+  "eval_calls": [
+    {
+      "purpose": "match",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 9891,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 750,
+        "output_tokens_details": {
+          "thinking_tokens": 320
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9891,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 750,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 9891,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 9891
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.10220180000000001,
+      "seconds": 9.5,
+      "model": "claude-opus-5-5[1m]",
+      "prompt_chars": 22953
+    },
+    {
+      "purpose": "reason-verdict",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2907,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 410,
+        "output_tokens_details": {
+          "thinking_tokens": 176
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2907,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 410,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 2907,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2907
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0341468,
+      "seconds": 6.1,
+      "model": "claude-opus-5-5[1m]",
+      "prompt_chars": 5420
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "candidates": [
+    {
+      "gold": "G01",
+      "rec": "D016",
+      "verdict": "same",
+      "score": 0.75
+    },
+    {
+      "gold": "G01",
+      "rec": "D068",
+      "verdict": "related",
+      "score": 0.2
+    },
+    {
+      "gold": "G01",
+      "rec": "D036",
+      "verdict": "related",
+      "score": 0.15
+    },
+    {
+      "gold": "G02",
+      "rec": "D002",
+      "verdict": "same",
+      "score": 0.65
+    },
+    {
+      "gold": "G02",
+      "rec": "D015",
+      "verdict": "related",
+      "score": 0.35
+    },
+    {
+      "gold": "G02",
+      "rec": "D011",
+      "verdict": "related",
+      "score": 0.2
+    },
+    {
+      "gold": "G02",
+      "rec": "D038",
+      "verdict": "related",
+      "score": 0.1
+    },
+    {
+      "gold": "G03",
+      "rec": "D042",
+      "verdict": "same",
+      "score": 0.9
+    },
+    {
+      "gold": "G03",
+      "rec": "D043",
+      "verdict": "related",
+      "score": 0.3
+    },
+    {
+      "gold": "G04",
+      "rec": "D014",
+      "verdict": "same",
+      "score": 0.8
+    },
+    {
+      "gold": "G05",
+      "rec": "D017",
+      "verdict": "same",
+      "score": 0.9
+    },
+    {
+      "gold": "G05",
+      "rec": "D018",
+      "verdict": "related",
+      "score": 0.1
+    }
+  ],
+  "pairs": [
+    {
+      "gold": "G01",
+      "rec": "D016",
+      "score": 0.75
+    },
+    {
+      "gold": "G02",
+      "rec": "D002",
+      "score": 0.65
+    },
+    {
+      "gold": "G03",
+      "rec": "D042",
+      "score": 0.9
+    },
+    {
+      "gold": "G04",
+      "rec": "D014",
+      "score": 0.8
+    },
+    {
+      "gold": "G05",
+      "rec": "D017",
+      "score": 0.9
+    }
+  ],
+  "malformed": false
+}

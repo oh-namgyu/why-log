@@ -1,0 +1,107 @@
+{
+  "schema": "why-log-gold/1",
+  "repo": "adrs",
+  "head": "d3b08eaccc6c4d1eee1c7a216694e2ad6d6b7030",
+  "adr_dir": "doc/adr",
+  "decisions": [
+    {
+      "id": "G01",
+      "title": "Record architecture decisions",
+      "decision": "We will use Architecture Decision Records, as described by Michael Nygard in his article [Documenting Architecture Decisions](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions).",
+      "reason": "We need to record the architectural decisions made on this project.",
+      "status": "Accepted",
+      "date": "2024-03-04",
+      "source": "doc/adr/0001-record-architecture-decisions.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G02",
+      "title": "Rewrite it in Rust",
+      "decision": "Rewrite the original `adr-tools` in Rust.",
+      "reason": "There are a bunch of rewrites already. Some of them look to be incomplete and/or abandoned. This implementation should be at least both feature equivalent to the current tools, compatible (or optionally compatible for backwards, uh, compatibility), and extensible with new features that make the tool even more useful.",
+      "status": "Accepted",
+      "date": "2024-03-04",
+      "source": "doc/adr/0002-rewrite-it-in-rust.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G03",
+      "title": "Use mdBook for documentation",
+      "decision": "`adrs` will have an [mdBook](https://github.com/rust-lang/mdBook) based documentation site.",
+      "reason": "A solid documentation site is the backbone of any good software project. While the tool should have decent built in docs, the doc site can contain a lot more information, as well as general information about the project.",
+      "status": "Accepted",
+      "date": "2024-03-06",
+      "source": "doc/adr/0003-use-mdbook-for-documentation.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G04",
+      "title": "Library-first architecture",
+      "decision": "Restructure adrs as a Cargo workspace with two crates: - `adrs-core`: The library crate containing all ADR types, parsing, configuration, templates, and repository operations - `adrs`: The CLI crate that provides a thin wrapper around adrs-core The CLI should contain only argument parsing and user interaction, delegating all business logic to the library.",
+      "reason": "The original adrs implementation was a single crate that mixed CLI concerns with core logic. This made it difficult to: - Test the core functionality in isolation - Reuse the ADR logic in other tools or libraries - Maintain clean separation of concerns - Extend the tool with new features without touching CLI code Other Rust CLI tools have successfully used a library-first approach where the core logic lives in a separate crate from the CLI.",
+      "status": "Accepted",
+      "date": "2025-01-21",
+      "source": "doc/adr/0004-library-first-architecture.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G05",
+      "title": "Dual-mode operation: Compatible and NextGen",
+      "decision": "Implement two modes of operation: 1. **Compatible mode** (default): Full compatibility with adr-tools - Uses `.adr-dir` configuration file - Generates plain markdown without frontmatter - Parses legacy status section format - Maintains filename conventions (NNNN-slug.md) 2. **NextGen mode** (opt-in via `--ng` flag or `adrs.toml`): - Uses `adrs.toml` configuration file - Generates YAML frontmatter with structured metadata - Supports enhanced features (custom templates, richer links) - Still readable by tools that ignore frontmatter The mode is determined by: 1. Explicit `--ng` flag on commands 2. Presence of `adrs.toml` with `mode = \"ng\"` 3. Default to compatible mode",
+      "reason": "A primary goal of adrs is to be a drop-in replacement for the original adr-tools. However, there are improvements we want to make that would break compatibility with adr-tools: - YAML frontmatter for structured metadata - Enhanced linking capabilities - Custom template formats - Richer status tracking We need to support both users migrating from adr-tools (who need compatibility) and users who want the enhanced features.",
+      "status": "Accepted",
+      "date": "2025-01-21",
+      "source": "doc/adr/0005-dual-mode-compatible-and-nextgen.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G06",
+      "title": "YAML frontmatter for metadata",
+      "decision": "In NextGen mode, use YAML frontmatter to store ADR metadata: ```yaml --- number: 5 title: Use PostgreSQL date: 2025-01-21 status: accepted links: - target: 3 kind: supersedes - target: 4 kind: amends --- ``` The frontmatter is: - Delimited by `---` on its own line - Valid YAML that can be parsed by standard libraries - Optional in compatible mode, required in nextgen mode - Extensible with additional fields as needed The markdown body still contains the human-readable sections (Context, Decision, Consequences) but without embedded metadata.",
+      "reason": "The original adr-tools format stores metadata (status, links) inline in the markdown content. This approach has several problems: - Parsing status and links requires regex patterns that can be fragile - The status section mixes metadata with display formatting - Links use a specific markdown format that's hard to extend - Adding new metadata fields requires changing the parsing logic - Tools that want to read ADR metadata must parse markdown Many static site generators and documentation tools already use YAML frontmatter as a standard way to store document metadata.",
+      "status": "Accepted",
+      "date": "2025-01-21",
+      "source": "doc/adr/0006-yaml-frontmatter-for-metadata.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G07",
+      "title": "Use minijinja for templates",
+      "decision": "Use minijinja for template rendering because: - Jinja2 syntax is widely known (Python, Ansible, Hugo, etc.) - Minimal dependencies and fast compilation - Excellent error messages with source locations - Supports all features we need (conditionals, loops, filters) - Active maintenance by the Tera author (Armin Ronacher) - Easy to embed custom templates from files Built-in templates provided: - **Nygard**: Michael Nygard's original ADR format (default) - **MADR**: Markdown Any Decision Records format",
+      "reason": "ADR tools need to generate markdown files from templates. The template system should: - Support both built-in templates (Nygard, MADR) and custom user templates - Be familiar to users (similar syntax to popular template engines) - Be lightweight and fast - Support conditional logic for mode-specific output (compatible vs nextgen) - Have good error messages for template debugging The original implementation used handlebars-rust. Other options include: - **Tera**: Full-featured, Django/Jinja2-like syntax - **minijinja**: Lightweight Jinja2 implementation, same author as Tera - **askama**: Compile-time templates, type-safe but less flexible - **handlebars-rust**: Mustache-like, used in v1",
+      "status": "Accepted",
+      "date": "2025-01-21",
+      "source": "doc/adr/0007-use-minijinja-for-templates.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G08",
+      "title": "Use tower-mcp for MCP server",
+      "decision": "Migrate the MCP server implementation from `rmcp` to `tower-mcp`. Key aspects of the migration: 1. **Router-based architecture**: Replace the manual `ServerHandler` trait implementation with `McpRouter::new()` and chained `.tool()` calls. 2. **Declarative tool definitions**: Use `ToolBuilder` to define each tool with name, description, and typed async handler, replacing the manual `list_tools`/`call_tool` dispatch. 3. **Transport abstraction**: Use `tower-mcp`'s built-in `StdioTransport` and `HttpTransport` instead of manually wiring transports. 4. **Macro for boilerplate reduction**: Introduce an `adr_tool!` macro to further reduce repetitive tool registration code across the 15 MCP tools. 5. **Workspace dependency**: Declare `tower-mcp` as a workspace dependency with optional `http` feature for HTTP transport support.",
+      "reason": "The adrs MCP server was originally implemented using the `rmcp` crate, which provides a low-level Rust SDK for the Model Context Protocol. While functional, `rmcp` requires manual implementation of the `ServerHandler` trait, explicit tool registration via `list_tools`/`call_tool` methods, and hand-wired JSON schema generation for tool parameters. The `tower-mcp` crate (v0.1) builds on top of `rmcp` and the Tower service framework to provide a higher-level, more ergonomic API. It offers a `McpRouter` with a builder pattern, `ToolBuilder` for declarative tool definitions, built-in support for both stdio and HTTP transports, and automatic parameter schema derivation via `schemars`. As the MCP server grew from a handful of tools to 15 tools with complex parameter types, the boilerplate required by raw `rmcp` became a maintenance burden.",
+      "status": "Accepted",
+      "date": "2026-01-28",
+      "source": "doc/adr/0008-use-tower-mcp-for-mcp-server.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G09",
+      "title": "Surgical body section updates preserve on-disk markdown",
+      "decision": "Patch only the body sections the caller explicitly requests to change. Leave all other on-disk bytes untouched. 1. **`BodySectionPatch` API** — `Repository::update(adr, patch)` takes optional `context`, `decision`, and `consequences` fields. `None` means do not rewrite that section. An empty patch runs metadata-only updates via the same path as `update_metadata`. 2. **Metadata/body split** — When `body` is non-empty, `update()` patches body sections only and does not rewrite metadata bytes (status, links, tags, or frontmatter people fields). MCP `create_adr` calls `update_metadata` and `update` separately when both are needed. 3. **No lossy round-trip for unmodified sections** — Never source write content from reparsed `Adr` fields for sections absent from the patch, even if those fields were populated by `get()` or `parse()`. 4. **Fence-aware scanners** — Body section patching ignores `##` / `###` lines inside markdown code fences when locating section boundaries. 5. **MADR `## Decision Outcome`** — When `decision` is patched, replace only the intro text before the first `###` heading outside fences. Preserve all other H3 subsections verbatim. 6. **Consequences routing**: - When a top-level `## Consequences` H2 exists anywhere outside fences (before or after Decision), patch that H2 and do not inject `### Consequences` under Decision Outcome / Decision. - **MADR** (no Consequences H2): Patch the `### Consequences` subsection under `## Decision Outcome`. If that subsection d…",
+      "reason": "`Repository::update` and MCP tools such as `update_content` and `create_adr` follow a read-modify-write path: load the ADR, mutate in-memory fields, then write the file back. For body sections, the write path previously re-rendered every canonical section from the in-memory `Adr` struct. That approach is unsafe because `parse_sections` is intentionally lossy when reading markdown. It flattens pulldown-cmark events to plain text, which drops structure that ADRs commonly contain: - MADR 4.0.0 H3 subsections under `## Decision Outcome` (`### Consequences`, `### Confirmation`, and others) - Bulleted and numbered lists - Links and inline code - Optional MADR H2 sections such as `## Considered Options` and `## Pros and Cons of the Options` A context-only MCP update therefore corrupted untouched sections: Decision Outcome subsections disappeared, bullets flattened, and links lost their markdown syntax. The same bug affected NextGen Nygard ADRs and legacy adr-tools files, not only MADR 4.0.0. Metadata-only updates already had a separate, byte-preserving path (`update_metadata`). Body updates did not.",
+      "status": "Proposed",
+      "date": "2026-07-11",
+      "source": "doc/adr/0009-surgical-body-section-updates.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    }
+  ]
+}

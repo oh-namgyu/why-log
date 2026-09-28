@@ -1,0 +1,421 @@
+{
+  "pairs": [
+    {
+      "gold": "G01",
+      "rec": "D004",
+      "score": 0.95
+    },
+    {
+      "gold": "G02",
+      "rec": "D020",
+      "score": 0.75
+    },
+    {
+      "gold": "G03",
+      "rec": "D007",
+      "score": 0.95
+    },
+    {
+      "gold": "G04",
+      "rec": "D012",
+      "score": 0.95
+    },
+    {
+      "gold": "G05",
+      "rec": "D006",
+      "score": 0.95
+    },
+    {
+      "gold": "G06",
+      "rec": "D010",
+      "score": 0.85
+    },
+    {
+      "gold": "G07",
+      "rec": "D009",
+      "score": 0.9
+    },
+    {
+      "gold": "G08",
+      "rec": "D008",
+      "score": 0.95
+    },
+    {
+      "gold": "G09",
+      "rec": "D014",
+      "score": 0.95
+    },
+    {
+      "gold": "G10",
+      "rec": "D002",
+      "score": 0.8
+    },
+    {
+      "gold": "G13",
+      "rec": "D024",
+      "score": 0.95
+    }
+  ],
+  "match_malformed": false,
+  "verdicts_pre": [
+    {
+      "gold": "G01",
+      "rec": "D004",
+      "verdict": "unsupported",
+      "why": "Decoupling motive is quote-backed but absent from gold; gold's shared-data need is not stated."
+    },
+    {
+      "gold": "G02",
+      "rec": "D020",
+      "verdict": "consistent",
+      "why": "Asynchronous inter-context communication matches gold's event-driven integration-events motive."
+    },
+    {
+      "gold": "G03",
+      "rec": "D007",
+      "verdict": "consistent",
+      "why": "Separate read/write optimization matches gold's 'use separate models' option."
+    },
+    {
+      "gold": "G04",
+      "rec": "D012",
+      "verdict": "consistent",
+      "why": "Valid-to-valid state paraphrases gold's always-valid approach option."
+    },
+    {
+      "gold": "G05",
+      "rec": "D006",
+      "verdict": "consistent",
+      "why": "Avoiding primary keys between modules and external systems matches gold's global-identifier need."
+    },
+    {
+      "gold": "G06",
+      "rec": "D010",
+      "verdict": "consistent",
+      "why": "Encapsulated structure and logic matches gold's rich domain model option."
+    },
+    {
+      "gold": "G07",
+      "rec": "D009",
+      "verdict": "unsupported",
+      "why": "Early feedback and design discipline are absent from gold; 'stable APIs' is not in quotes."
+    },
+    {
+      "gold": "G08",
+      "rec": "D008",
+      "verdict": "consistent",
+      "why": "Returning generated identifiers as a trade-off matches gold."
+    },
+    {
+      "gold": "G09",
+      "rec": "D014",
+      "verdict": "unsupported",
+      "why": "Lists specific rules, not gold's motive of enforcing architecture principles application-wide."
+    },
+    {
+      "gold": "G10",
+      "rec": "D002",
+      "verdict": "consistent",
+      "why": "Avoiding custom DDD building-block classes matches gold; extra Axon detail doesn't conflict."
+    },
+    {
+      "gold": "G13",
+      "rec": "D024",
+      "verdict": "consistent",
+      "why": "Hedged guess about modern Java records matches gold's point about modern Java features."
+    }
+  ],
+  "PRE": {
+    "decisions": 38,
+    "nonguess": 20,
+    "confidence": {
+      "explicit": 8,
+      "inferred": 12,
+      "guess": 18
+    },
+    "gold": 13,
+    "gold_traceable": 13,
+    "matched": 11,
+    "recall": 0.8462,
+    "recall_all_gold": 0.8462,
+    "reasoned_recall": 0.6154,
+    "precision": 0.45,
+    "contradiction_rate": 0.0,
+    "unsupported_rate": 0.0,
+    "unsupported_rate_model_claimed": 0.0476,
+    "pair_verdicts": {
+      "consistent": 8,
+      "contradicts": 0,
+      "unsupported": 3,
+      "not-stated": 0,
+      "unjudged": 0
+    },
+    "pair_unsupported_rate_nonguess": 0.3333,
+    "matched_and_consistent": 8,
+    "question_targets": []
+  },
+  "leak": {
+    "hidden_files": [
+      "docs/architecture-decisions/0001-bounded-contexts-communication.md",
+      "docs/architecture-decisions/0002-integration-events-implementation.md",
+      "docs/architecture-decisions/0003-cqrs.md",
+      "docs/architecture-decisions/0004-validation.md",
+      "docs/architecture-decisions/0005-identifier-between-modules.md",
+      "docs/architecture-decisions/0006-rich-domain-model.md",
+      "docs/architecture-decisions/0007-api-first.md",
+      "docs/architecture-decisions/0008-result-from-comand-handlers.md",
+      "docs/architecture-decisions/0009-architecture-tests.md",
+      "docs/architecture-decisions/0010-use-axon-framework.md",
+      "docs/architecture-decisions/0011-use-axon-event-publishing-mechanism.md",
+      "docs/architecture-decisions/0012-make-application-framework-independent.md",
+      "docs/architecture-decisions/0013-removal-of-lombok-dependency.md"
+    ],
+    "overlap_8grams": 253,
+    "explained_by_visible_messages_or_diffs": 73,
+    "residual_leak_8grams": 180,
+    "residual_files": [
+      "docs/architecture-decisions/0001-bounded-contexts-communication.md",
+      "docs/architecture-decisions/0003-cqrs.md",
+      "docs/architecture-decisions/0004-validation.md",
+      "docs/architecture-decisions/0005-identifier-between-modules.md",
+      "docs/architecture-decisions/0007-api-first.md",
+      "docs/architecture-decisions/0008-result-from-comand-handlers.md"
+    ],
+    "residual_examples": [
+      {
+        "file": "docs/architecture-decisions/0001-bounded-contexts-communication.md",
+        "ngram": "https github com kgrzybek modular monolith with ddd"
+      },
+      {
+        "file": "docs/architecture-decisions/0003-cqrs.md",
+        "ngram": "aggregate on read operations dto objects are created"
+      },
+      {
+        "file": "docs/architecture-decisions/0003-cqrs.md",
+        "ngram": "application on write operations full logic is executed"
+      },
+      {
+        "file": "docs/architecture-decisions/0003-cqrs.md",
+        "ngram": "are created via jpql queries on repository level"
+      },
+      {
+        "file": "docs/architecture-decisions/0003-cqrs.md",
+        "ngram": "cqrs is implemented in this application on write"
+      }
+    ],
+    "gold_overlap_8grams": 214,
+    "gold_overlap_ids": [
+      "G01",
+      "G03",
+      "G04",
+      "G05",
+      "G07",
+      "G08"
+    ]
+  },
+  "repo": "educational-platform",
+  "track": "T2",
+  "head": "a6f575c3df95acd0e2891f23f8cab229cbb89c87",
+  "wall_seconds": 193.7,
+  "questions_queued": 30,
+  "bodies_left": 7,
+  "pipeline_calls": [
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 535593,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 18444,
+        "output_tokens_details": {
+          "thinking_tokens": 7908
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 535593,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 18444,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 535593,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 535593
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 4.6539238,
+      "seconds": 158.9,
+      "model": "claude-opus-5-5[1m]",
+      "purpose": "reconstruct"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3535,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1853,
+        "output_tokens_details": {
+          "thinking_tokens": 987
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3535,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1853,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3535,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3535
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.06852079999999999,
+      "seconds": 19.4,
+      "purpose": "support"
+    },
+    {
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2707,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 1320,
+        "output_tokens_details": {
+          "thinking_tokens": 541
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2707,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1320,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 2707,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2707
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.050660800000000006,
+      "seconds": 13.8,
+      "purpose": "support"
+    }
+  ],
+  "eval_calls": [
+    {
+      "purpose": "match",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6633,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 671,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6633,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 671,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 6633,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 6633
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.07200580000000001,
+      "seconds": 7.1,
+      "model": "claude-opus-5-5[1m]",
+      "prompt_chars": 15449
+    },
+    {
+      "purpose": "reason-verdict",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3288,
+        "cache_read_input_tokens": 1459,
+        "output_tokens": 2198,
+        "output_tokens_details": {
+          "thinking_tokens": 1609
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3288,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2198,
+            "cache_read_input_tokens": 1459,
+            "cache_creation_input_tokens": 3288,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3288
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "cost_usd": 0.0732098,
+      "seconds": 22.4,
+      "model": "claude-opus-5-5[1m]",
+      "prompt_chars": 6966
+    }
+  ]
+}

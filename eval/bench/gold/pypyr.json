@@ -1,0 +1,63 @@
+{
+  "schema": "why-log-gold/1",
+  "repo": "pypyr",
+  "head": "b3e8f8c6063c11e37c1c762b89b4cd8620460c79",
+  "adr_dir": "docs/adr",
+  "decisions": [
+    {
+      "id": "G01",
+      "title": "Namespace dictionaries for dynamic Python code in eval & exec",
+      "decision": "Because comprehensions is one of Python's most powerful features, and losing with a mysterious error a chunk of this functionality when these nest is needlessly hampering pypyr providing useful & compact expression of logic to pipeline authors: - pypyr should inject context into `globals` for both `eval` & `exec`. This is to ensure nested scopes resolve as expected. - `globals` should contain `__builtins__`, referring to the builtins dict. - `eval` & `exec` shouldn't add anything to context that the pipeline didn't explicitly ask for. Therefore, - `eval` will use a `ChainMap` that can pass as a `dict` via multiple inheritance. - Because `eval` is only for expressions, the limitation of this approach regarding class level globals is not relevant - you can't declare a class in an expression. - Since `!py` strings, which use `eval`, are potentially all over the pipeline, including in tight loops, it's more sensible for performance to use a `ChainMap` to avoid the overhead of unpacking/copying the full context on each evaluation. - Given how long the undocumented ability to use derived dicts as a namespace for evals has been around, it's _probably_ safe to assume it's not going to taken away anytime soon. If it does, the remedy is simple enough - revert to the (more inefficient) `dict` + shallow copy, which comes down to 2-4 lines of code. - `exec` will use a standard `dict`, with the contents of context shallow copied in. - Although this will have a performance impact for CPU (…",
+      "reason": "eval & exec free variables only resolve against globals Function signatures for eval and exec: - `eval(expression[, globals[, locals]])` - From Python documentation: > Note, eval() does not have access to the nested scopes (non-locals) in the enclosing environment. - `exec(object[, globals[, locals]])` - From Python documentation: > If exec gets two separate objects as globals and locals, the code will be executed as if it were embedded in a class definition. For both, [free variables resolve _only_ against globals](https://docs.python.org/3/reference/executionmodel.html#resolution-of-names). > Class definition blocks and arguments to exec() and eval() are special in the > context of name resolution. A class definition is an executable statement that > may use and define names. These references follow the normal rules for name > resolution with an exception that unbound local variables are looked up in the > global namespace. The namespace of the class definition becomes the attribute > dictionary of the class. The scope of names defined in a class block is > limited to the class block; it does not extend to the code blocks of methods – > this includes comprehensions and generator expressions since they are > implemented using a function scope. Simply put, that means this will not work because the nested scope in the comprehension will resolve in `globals`, not `locals`: ```python source = '[(x, y) for x in list1 for y in list2]' globals = {} locals = { 'list1': [0, 1, 2], 'list2': ['a', 'b', 'c'] } # both eval & exec will fail with: # NameError: name 'list2' is not defined eval(source, globals, locals) exec(source, globals, locals) ``` Whereas this will work: ```python source = '[(x, y) for x in list1 for y in list2]' globals = {'list1': [0, 1, 2], 'list2': ['a', 'b', 'c']} locals = {} # works. because list1 + list2 are in globals. eval(source, globals, locals) exec(source, globals, locals) ``` This is really not a great error: other than an operator being steeped…",
+      "status": null,
+      "date": null,
+      "source": "docs/adr/0001-namespace-on-eval-and-exec.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G02",
+      "title": "Relative pipelines & API changes",
+      "decision": "Make it so. Breaking changes are annoying and I try very hard to be sure that pypyr maintains backwards compatibility. So this decision I did not take lightly. Further mitigation, there was ~9 months for feedback on Discussion post #221 on this topic. In this case, I believe the positives outweigh the negatives. As is, new functionality that will broaden pypyr's usability & power is being held back by the cumulative effect of older code that has been overtaken by events.",
+      "reason": "The idea is to use paths relative to the parent pipeline instead of resolving everything from $PWD when parent pipelines use `pype` to call child pipelines. This allows portable pipeline directories - so you can more easily create shared/common pipeline libraries _without_ requiring `pip install` of custom code 1st. You'd be able to have a directory `/common`, and `pype` those pipelines from elsewhere. Any custom collateral that the pipelines need, such as custom steps, can exist in the shared pipeline directory _without_ the references depending on where pypyr was called from originally. ```text - root/ - subdir/ - pipeB.yaml - pipeC.yaml - customstep.py - pipeA.yaml ``` - `pipeA` calls `pipeB` like this: `subdir/pipeB`. - `pipeB` can just reference its own dependencies relative to itself: - `pipeC` rather than `subdir/pipeB` - `customstep` rather than `subdir.customstep` When everything sits under the same root directory, this doesn't seem like such a big deal. But this will allow the invoked child pipeline + collateral to be used anywhere else, meaning you open the door to have: ``` - /shared-pipelines/ - mydir/ - pipeB.yaml - pipeC.yaml - customstep.py - /git - myproject/ - pipelines/ - pipeA.yaml - anotherproject/ - pipeA.yaml ``` - You can now call your shared pipelines from anywhere: - Both of the `pipeA` pipelines live in their own respective projects. - Both of the `pipeA` pipelines can invoke `/shared-pipelines/mydir/pipeB` - `pipeB` can just reference its own dependencies relative to itself: - `pipeC` - `customstep` - If you did NOT have this change, you couldn't run `pipeA` which uses `pype` to call `pipeB` from either of the project directories. So this won't work: - `/git/myproject/pipelines> $ pypyr pipeA` - `/git/anotherproject> $ pypyr pipeA` Now your shared pipelines will work from wherever you call them. Much rejoicing!",
+      "status": null,
+      "date": null,
+      "source": "docs/adr/0002-relative-pipelines-api-changes.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G03",
+      "title": "Add TOML parsing to the core",
+      "decision": "Add `tomli` + `tomli-w` to the pypyr core as part of the default install.",
+      "reason": "[TOML](https://toml.io/en/) is becoming a popular configuration format, and unavoidably so in Python in the shape of `pyproject.toml` as accepted by [PEP518](https://www.python.org/dev/peps/pep-0518/). One of pypyr's better features is wrangling configuration files between text, JSON and YAML for automation activities. Given TOML's recent rise in prominence, it makes sense to add functionality to pypyr for the usual read, write and formatting built-in steps. Under consideration is 1. Which TOML library to use 2. Whether to add the TOML dependency to the pypyr core or as a separate plugin?",
+      "status": null,
+      "date": null,
+      "source": "docs/adr/0003-toml-in-core.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G04",
+      "title": "Config file locations",
+      "decision": "1. Check current directory 1st, in order, for - `./pypyr-config.yaml` - `./pyproject.toml` under table `tool.pypyr` 2. Thereafter, follow the XDG Base dir spec for and *nix, as much as possible for other platforms. - Per-user config reads from `~/.config/` on all platforms - Shared config - POSIX: XDG Base Dir spec - MacOs: `/Library/Application Support/` - Windows: `%ALLUSERSPROFILE%` (usually `C:\\ProgramData``) 3. In the user/shared config dirs, look for `pypyr/config.yaml` 4. To mitigate upset where users have strong opinions about where config should live, environment variable `$PYPYR_CONFIG_GLOBAL` over-rides opinionated implementation of per user/shared config locations, while still doing the current directory look-up as usual. 5. All config is optional. pypyr work with sensible defaults without any special config intervention necessary. 6. Only allow known properties in config files with a clear explicit error on unexpected keys.",
+      "reason": "For pypyr to be more configurable it has to be able to read settings from a configuration file. This is not only for run-time configuration values like default settings, but also to allow an operator to add extra functionality like create shortcuts to pipeline calls with complex input arguments or to add extra pipeline location look-up locations. Where exactly to save a CLI tool's config file is a potentially controversial decision. There are a lot of opinions & arguments about different users' preferences vs standards for the various operating systems. This ADR discusses the options and outlines the decision making process.",
+      "status": null,
+      "date": null,
+      "source": "docs/adr/0004-config-files.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    },
+    {
+      "id": "G05",
+      "title": "Replace setup.py build front-end",
+      "decision": "1. Replace deprecated `setup.py` build with `flit`. 2. Move as much config as possible to `pyproject.toml`. 3. Remove `twine` dependency.",
+      "reason": "The legacy setup.py packaging build front-end is deprecated. pypyr has to move to a supported and future-proof build & packaging mechanism. The standard in scope is [PEP517](https://peps.python.org/pep-0517/). > SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools",
+      "status": null,
+      "date": null,
+      "source": "docs/adr/0005-build-front-end.md",
+      "traceable": null,
+      "trace_note": "not verified (built from the ADR text only)"
+    }
+  ]
+}

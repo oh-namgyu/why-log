@@ -1,0 +1,14 @@
+{
+  "note": "Public ADR benchmark. Gold = the repo's own ADRs (eval/gold_adr.py); track T2 hides the ADR directory. No maintainer is available, so no answers are given (PRE only; queued questions are counted).",
+  "repos": [
+    {"name": "educational-platform", "source": "https://github.com/anton-liauchuk/educational-platform.git",
+     "gold": "gold/educational-platform.json", "tracks": ["T2"], "answers": false,
+     "hide": ["docs/architecture-decisions"]},
+    {"name": "adrs", "source": "https://github.com/joshrotenberg/adrs.git",
+     "gold": "gold/adrs.json", "tracks": ["T2"], "answers": false,
+     "hide": ["doc/adr"]},
+    {"name": "pypyr", "source": "https://github.com/pypyr/pypyr.git",
+     "gold": "gold/pypyr.json", "tracks": ["T2"], "answers": false,
+     "hide": ["docs/adr"]}
+  ]
+}
