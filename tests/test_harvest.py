@@ -163,6 +163,14 @@ class Hiding(TempRepoCase):
             self.assertNotIn("ledger", d["diff"])
         self.assertEqual(harvest.leak_check(pack, [GOLD_HANDOFF, GOLD_ADR]), [])
 
+    def test_globstar_prefix_also_hides_root_files(self) -> None:
+        r = self.repo()
+        pack = harvest.build_pack(r["repo"], hide=["**/HANDOFF*.md", "**/adr/**"])
+        paths = [f["path"] for c in pack["commits"] for f in c["files"]]
+        self.assertFalse([p for p in paths if "HANDOFF" in p or "adr" in p or "old-notes" in p])
+        self.assertEqual([d["path"] for d in pack["docs"]], ["README.md"])
+        self.assertFalse([d for d in pack["diffs"] if "broker" in d["diff"] or "ledger" in d["diff"]])
+
     def test_leak_check_positive_control(self) -> None:
         r = self.repo()
         pack = harvest.build_pack(r["repo"])

@@ -77,8 +77,21 @@ def split_rename(path: str) -> Tuple[str, ...]:
     return (path,)
 
 
+def expand_globs(hide: Sequence[str]) -> List[str]:
+    """`**/` also matches zero directories (globstar), so `**/HANDOFF*.md` hides a root HANDOFF.md too."""
+    out: List[str] = []
+    todo = list(hide)
+    while todo:
+        g = todo.pop(0)
+        if g not in out:
+            out.append(g)
+            if "**/" in g:
+                todo.append(g.replace("**/", "", 1))
+    return out
+
+
 def _glob_hidden(path: str, hide: Sequence[str]) -> bool:
-    return any(fnmatch.fnmatchcase(path, g) or path.startswith(g.rstrip("/") + "/") for g in hide)
+    return any(fnmatch.fnmatchcase(path, g) or path.startswith(g.rstrip("/") + "/") for g in expand_globs(hide))
 
 
 def _rename_closure(commits: List[Dict], hide: Sequence[str]) -> Set[str]:
@@ -113,7 +126,7 @@ def _apply_hide(commits: List[Dict], hide: Sequence[str], extra: Set[str]) -> Li
 
 
 def _pathspec(hide: Sequence[str], extra: Set[str]) -> List[str]:
-    return ["."] + [f":(exclude){g}" for g in hide] + [f":(exclude,literal){p}" for p in sorted(extra)]
+    return ["."] + [f":(exclude){g}" for g in expand_globs(hide)] + [f":(exclude,literal){p}" for p in sorted(extra)]
 
 
 def pack_pathspec(pack: Dict) -> List[str]:
