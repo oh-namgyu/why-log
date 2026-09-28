@@ -6,6 +6,7 @@ Lines that fail to parse or validate are moved to questions.jsonl.corrupt; every
 import datetime
 import json
 import os
+import re
 from typing import Dict, List, Optional, Tuple
 
 import schema
@@ -14,6 +15,9 @@ from common import WhyLogError, normalize_ws, read_json, state_path, write_json_
 QUEUE = "questions.jsonl"
 DECISIONS = "decisions.json"
 UNKNOWN = "Unknown / don't remember"
+# A "reason" that only says the reason is missing is not a hypothesis worth offering as an answer.
+NON_ANSWER = re.compile(r"not (explicitly )?(stated|specified|given|documented)|unclear|no reason|is unknown|"
+                        r"명시되지|알 수 없|불명|기록되지 않", re.IGNORECASE)
 CONF = {"explicit": 1.0, "inferred": 0.5, "guess": 0.0}
 MODES = ("choice", "free", "unknown")
 MAX_FREE = 2000
@@ -115,7 +119,7 @@ def _evidence(d: Dict) -> List[str]:
 def _options(d: Dict) -> List[str]:
     """Inferred: the quote-grounded hypothesis + Unknown. Guess/conflict: Unknown only (no anchoring)."""
     reason = normalize_ws(str(d.get("reason") or ""))
-    if d.get("confidence") == "inferred" and d.get("conflict") is None and reason:
+    if d.get("confidence") == "inferred" and d.get("conflict") is None and reason and not NON_ANSWER.search(reason):
         return [_clip(reason, OPTION_CHARS), UNKNOWN]
     return [UNKNOWN]
 

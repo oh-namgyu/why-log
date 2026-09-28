@@ -84,6 +84,12 @@ class QueueTest(unittest.TestCase):
         self.assertEqual(qs["D001"]["evidence"], ["a1b2c3d switch store to sqlite"])  # non-existent quote dropped
         self.assertEqual(len(qs["D002"]["evidence"][0]), 160)
 
+    def test_non_answer_reason_is_not_offered_as_an_option(self) -> None:
+        d = {"id": "D009", "title": "Doctor is read-only", "reason": "The motive is not stated beyond the docs.",
+             "confidence": "inferred", "impact": 2, "evidence": [_ev("doctor never repairs")]}
+        qa.enqueue(self.repo, [d], "r1")
+        self.assertEqual(self._lines()[0]["options"], [qa.UNKNOWN])
+
     def test_enqueue_idempotent_and_answers_survive(self) -> None:
         qa.enqueue(self.repo, self.decisions, "r1")
         qa.answer(self.repo, self._qid("D003"), "free", "we had no queue server")

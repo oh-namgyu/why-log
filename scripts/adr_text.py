@@ -25,14 +25,22 @@ def provenance(d: Dict) -> Optional[str]:
     return HISTORY.get(d.get("confidence", ""))
 
 
+def _history_reason(d: Dict) -> str:
+    """The reason reconstructed from history; an answer may have replaced `reason`, the original is `model_reason`."""
+    return str(d.get("model_reason") or d.get("reason") or "")
+
+
 def _reason(d: Dict) -> List[str]:
     t = _testimony(d)
     history = HISTORY.get(d.get("confidence", ""))
     if not t:
         return ["## Reason", d.get("reason", ""), ""]
+    past = _history_reason(d)
+    if history and past and " ".join(past.split()) == " ".join(str(t["answer"]).split()):
+        return ["## Reason", f"**Maintainer confirmed** the reason {history.lower()}:", past, ""]
     lines = ["## Reason", f"**Maintainer:** {t['answer']}", ""]
-    if history and d.get("reason"):
-        lines += [f"### {history}", d["reason"], ""]
+    if history and past:
+        lines += [f"### {history}", past, ""]
     return lines
 
 
@@ -42,7 +50,7 @@ def _conflict(d: Dict) -> List[str]:
     t = _testimony(d)
     history = HISTORY.get(d.get("confidence", ""))
     lines = ["> ⚠ **Conflict** — the sources disagree:", ">"]
-    lines.append(f"> - History: {d['reason']}" if history and d.get("reason") else
+    lines.append(f"> - History: {_history_reason(d)}" if history and _history_reason(d) else
                  "> - History: the reconstructed reason is contradicted by its own evidence")
     if t:
         lines.append(f"> - Maintainer: {t['answer']}")

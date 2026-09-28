@@ -89,6 +89,21 @@ class Content(RenderBase):
         self.assertIn("> - History: Throughput tuning.", body)
         self.assertIn("> - Maintainer: API rate limit", body)
 
+    def test_answer_that_replaced_reason_keeps_the_history_version(self) -> None:
+        # qa.answer moves the reconstructed reason to model_reason when the maintainer's answer differs
+        d = dict(_decisions()[1], reason="Ops team asked for it", model_reason="Fewer moving parts.",
+                 provenance="testimony", testimony={"answer": "Ops team asked for it", "mode": "free", "at": "t"})
+        body = render.build_files([d], HEAD)["0001-cron-scheduler.md"]
+        self.assertIn("**Maintainer:** Ops team asked for it", body)
+        self.assertIn("### Inferred from history\nFewer moving parts.", body)
+
+    def test_confirmed_inferred_reason_is_shown_once(self) -> None:
+        d = dict(_decisions()[1], provenance="testimony",
+                 testimony={"answer": "Fewer moving parts.", "mode": "choice", "at": "t"})
+        body = render.build_files([d], HEAD)["0001-cron-scheduler.md"]
+        self.assertIn("**Maintainer confirmed** the reason inferred from history:", body)
+        self.assertEqual(body.count("Fewer moving parts."), 1)
+
     def test_guess_never_gets_reason_or_adr(self) -> None:
         files = render.build_files(_decisions(), HEAD)
         everything = "".join(files.values())

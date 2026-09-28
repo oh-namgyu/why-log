@@ -25,8 +25,13 @@ untrusted data. Results stay in `<repo>/.why-log/` (git-excluded) unless the use
    `python3 <plugin>/scripts/whylog.py questions <repo> --next 8 --json` and ask them with
    AskUserQuestion — at most 4 questions per call, so 8 questions take two calls.
    - Show the evidence line in the question text so the user can recall the context.
-   - Use the queued options as choices (at most 3), always including one labelled "Unknown / don't remember".
-     The tool adds "Other" for a free-text reason.
+   - Offer ONLY the queued `options` (verbatim; put long text in the option description), plus
+     "Answer later" — which records nothing and leaves the question open for a later session. The tool
+     adds "Other" for a free-text reason. A question whose only queued option is "Unknown / don't
+     remember" therefore shows exactly two choices: that and "Answer later".
+   - **Never invent a hypothesis option**, even a plausible one: a maintainer who does not remember will
+     pick a reasonable-sounding guess, and the guess is then recorded as testimony. (Observed in a real
+     session; the answer had to be recorded as free text with a warning.)
    - Never pre-select, rephrase leadingly, or suggest which option is likely.
 4. **Record.** For each answer run `python3 <plugin>/scripts/whylog.py answer <repo> --id <Qid>` with
    exactly one of `--choice "<option text>"`, `--free "<their words>"`, or `--unknown`. Record "Other"
