@@ -108,3 +108,6 @@ what is written where.
 ## License
 
 MIT — see [LICENSE](LICENSE). Security policy: [SECURITY.md](SECURITY.md).
+
+The public benchmark includes condensed excerpts of third-party ADRs (MIT / Apache-2.0); see
+[eval/bench/NOTICE.md](eval/bench/NOTICE.md).
